@@ -79,8 +79,10 @@ public class TimeLatencyPercentilePlotDataProvider implements PlotDataProvider {
     @SuppressWarnings("unchecked")
     private List<Object[]> findAllTimeInvocationStatisticsByTaskData(long taskId) {
         return entityManager.createQuery(
-                "select tis.time, ps.percentileKey, ps.percentileValue from TimeLatencyPercentile as ps inner join ps.timeInvocationStatistics as tis where tis.taskData.id=:taskId")
-                .setParameter("taskId", taskId).getResultList();
+                "select tis.time, ps.percentileKey, ps.percentileValue from TimeLatencyPercentile as ps inner join ps.timeInvocationStatistics as tis where tis.metric=:metric and tis.taskData.id=:taskId")
+                .setParameter("taskId", taskId)
+                .setParameter("metric", "duration")
+                .getResultList();
     }
 
     private List<PlotDatasetDto> assemble(List<Object[]> rawData, String sessionId, boolean addSessionPrefix) {

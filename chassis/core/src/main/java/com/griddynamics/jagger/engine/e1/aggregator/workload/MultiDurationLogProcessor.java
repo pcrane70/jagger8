@@ -1,35 +1,18 @@
-/*
- * Copyright (c) 2010-2012 Grid Dynamics Consulting Services, Inc, All Rights Reserved
- * http://www.griddynamics.com
- *
- * This library is free software; you can redistribute it and/or modify it under the terms of
- * the GNU Lesser General Public License as published by the Free Software Foundation; either
- * version 2.1 of the License, or any later version.
- *
- * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
- * AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
- * IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
- * DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE
- * FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
- * DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
- * SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
- * CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
- * OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
- * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
- */
-
 package com.griddynamics.jagger.engine.e1.aggregator.workload;
 
+import com.caucho.hessian.io.Hessian2Input;
+import com.google.common.collect.Lists;
 import com.griddynamics.jagger.coordinator.NodeId;
 import com.griddynamics.jagger.engine.e1.aggregator.session.model.TaskData;
+import com.griddynamics.jagger.engine.e1.aggregator.workload.model.DurationMetricLatencyPercentile;
+import com.griddynamics.jagger.engine.e1.aggregator.workload.model.DurationMetricStatistics;
 import com.griddynamics.jagger.engine.e1.aggregator.workload.model.TimeInvocationStatistics;
-import com.griddynamics.jagger.engine.e1.aggregator.workload.model.WorkloadProcessDescriptiveStatistics;
-import com.griddynamics.jagger.engine.e1.collector.DurationCollector;
+import com.griddynamics.jagger.engine.e1.collector.MultiDurationCollector;
 import com.griddynamics.jagger.engine.e1.scenario.WorkloadTask;
 import com.griddynamics.jagger.master.DistributionListener;
-import com.griddynamics.jagger.master.Master;
 import com.griddynamics.jagger.master.SessionIdProvider;
 import com.griddynamics.jagger.master.configuration.Task;
+import com.griddynamics.jagger.storage.FileStorage;
 import com.griddynamics.jagger.storage.fs.logging.*;
 import com.griddynamics.jagger.util.statistics.StatisticsCalculator;
 import org.hibernate.HibernateException;
@@ -42,18 +25,17 @@ import org.springframework.orm.hibernate3.HibernateCallback;
 import java.io.File;
 import java.io.IOException;
 import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Iterator;
+import java.util.*;
 
 /**
- * @author Alexey Kiselyov
- *         Date: 20.07.11
+ * @author Sergey Pulyaev
+ * Date: 23.10.12
  */
-public class DurationLogProcessor extends LogProcessor implements DistributionListener {
+public class MultiDurationLogProcessor  extends LogProcessor implements DistributionListener {
 
-    private static final Logger log = LoggerFactory.getLogger(Master.class);
+    private static final Logger log = LoggerFactory.getLogger(MultiDurationLogProcessor.class);
 
+    private FileStorage fileStorage;
     private LogAggregator logAggregator;
     private LogReader logReader;
     private SessionIdProvider sessionIdProvider;
@@ -79,6 +61,11 @@ public class DurationLogProcessor extends LogProcessor implements DistributionLi
         this.logAggregator = logAggregator;
     }
 
+    @Required
+    public void setFileStorage(FileStorage fileStorage) {
+        this.fileStorage = fileStorage;
+    }
+
     @Override
     public void onDistributionStarted(String sessionId, String taskId, Task task, Collection<NodeId> capableNodes) {
         // do nothing
@@ -87,14 +74,23 @@ public class DurationLogProcessor extends LogProcessor implements DistributionLi
     @Override
     public void onTaskDistributionCompleted(String sessionId, String taskId, Task task) {
         if (task instanceof WorkloadTask) {
-            processLog(sessionIdProvider.getSessionId(), taskId);
+            String dir = sessionId + "/" + taskId + "/" + MultiDurationCollector.DURATION_MARKER;
+            try {
+                Set<String> metricsNames = fileStorage.getFileNameList(dir);
+                for (String metric : metricsNames) {
+                    processLog(sessionIdProvider.getSessionId(), taskId, metric, new File(metric).getName());
+                }
+            } catch (Exception e) {
+                log.error("Error during log processing", e);
+            }
         }
     }
 
-    private void processLog(String sessionId, String taskId) {
+    private void processLog(String sessionId, String taskId, String dir, String metricName) {
+        Hessian2Input in = null;
+        String file = null;
         try {
-            String dir = sessionId + File.separatorChar + taskId + File.separatorChar + DurationCollector.DURATION_MARKER;
-            String file = dir + File.separatorChar + "aggregated.dat";
+            file = dir + "/aggregated.dat";
             AggregationInfo aggregationInfo = logAggregator.chronology(dir, file);
 
             int intervalSize = (int) ((aggregationInfo.getMaxTime() - aggregationInfo.getMinTime()) / pointCount);
@@ -102,15 +98,21 @@ public class DurationLogProcessor extends LogProcessor implements DistributionLi
                 intervalSize = 1;
             }
 
+            in = new Hessian2Input(fileStorage.open(file));
+
             TaskData taskData = getTaskData(taskId, sessionId);
             if (taskData == null) {
                 log.error("TaskData not found by taskId: {}", taskId);
                 return;
             }
 
-            StatisticsGenerator statisticsGenerator = new StatisticsGenerator(file, aggregationInfo, intervalSize, taskData).generate();
+            StatisticsGenerator statisticsGenerator = new StatisticsGenerator(file, aggregationInfo, intervalSize, taskData).generate(metricName);
             final Collection<TimeInvocationStatistics> statistics = statisticsGenerator.getStatistics();
-            final WorkloadProcessDescriptiveStatistics workloadProcessDescriptiveStatistics = statisticsGenerator.getWorkloadProcessDescriptiveStatistics();
+            final DurationMetricStatistics durationMetricDescriptiveStatistics = statisticsGenerator.getDurationMetricDescriptiveStatistics();
+            durationMetricDescriptiveStatistics.setName(metricName);
+            durationMetricDescriptiveStatistics.setCount(aggregationInfo.getCount());
+            durationMetricDescriptiveStatistics.setMaxTime(aggregationInfo.getMaxTime());
+            durationMetricDescriptiveStatistics.setMinTime(aggregationInfo.getMinTime());
 
             getHibernateTemplate().execute(new HibernateCallback<Void>() {
                 @Override
@@ -118,7 +120,7 @@ public class DurationLogProcessor extends LogProcessor implements DistributionLi
                     for (TimeInvocationStatistics stat : statistics) {
                         session.persist(stat);
                     }
-                    session.persist(workloadProcessDescriptiveStatistics);
+                    session.persist(durationMetricDescriptiveStatistics);
                     session.flush();
                     return null;
                 }
@@ -126,8 +128,16 @@ public class DurationLogProcessor extends LogProcessor implements DistributionLi
 
         } catch (Exception e) {
             log.error("Error during log processing", e);
+        } finally {
+            if (in != null) {
+                try {
+                    in.close();
+//                    fileStorage.delete(file, true);
+                } catch (Exception e) {
+                    log.warn(e.getMessage(), e);
+                }
+            }
         }
-
     }
 
     private class StatisticsGenerator {
@@ -136,7 +146,7 @@ public class DurationLogProcessor extends LogProcessor implements DistributionLi
         private int intervalSize;
         private TaskData taskData;
         private Collection<TimeInvocationStatistics> statistics;
-        private WorkloadProcessDescriptiveStatistics workloadProcessDescriptiveStatistics;
+        private DurationMetricStatistics durationMetricDescriptiveStatistics;
 
         public StatisticsGenerator(String path, AggregationInfo aggregationInfo, int intervalSize, TaskData taskData) {
             this.path = path;
@@ -149,11 +159,11 @@ public class DurationLogProcessor extends LogProcessor implements DistributionLi
             return statistics;
         }
 
-        public WorkloadProcessDescriptiveStatistics getWorkloadProcessDescriptiveStatistics() {
-            return workloadProcessDescriptiveStatistics;
+        public DurationMetricStatistics getDurationMetricDescriptiveStatistics() {
+            return durationMetricDescriptiveStatistics;
         }
 
-        public StatisticsGenerator generate() throws IOException {
+        public StatisticsGenerator generate(String metricName) throws IOException {
             statistics = new ArrayList<TimeInvocationStatistics>();
 
             long currentInterval = aggregationInfo.getMinTime() + intervalSize;
@@ -176,7 +186,7 @@ public class DurationLogProcessor extends LogProcessor implements DistributionLi
 
                         if (currentCount > 0) {
                             double throughput = (double) currentCount * 1000 / intervalSize;
-                            statistics.add(assembleInvocationStatistics("duration", time, windowStatisticsCalculator, throughput, taskData));
+                            statistics.add(assembleInvocationStatistics(metricName, time, windowStatisticsCalculator, throughput, taskData));
                             currentCount = 0;
                             windowStatisticsCalculator.reset();
                         } else {
@@ -197,11 +207,38 @@ public class DurationLogProcessor extends LogProcessor implements DistributionLi
 
             if (currentCount > 0) {
                 double throughput = (double) currentCount * 1000 / intervalSize;
-                statistics.add(assembleInvocationStatistics("duration", time, windowStatisticsCalculator, throughput, taskData));
+                statistics.add(assembleInvocationStatistics(metricName, time, windowStatisticsCalculator, throughput, taskData));
             }
 
-            workloadProcessDescriptiveStatistics = assembleDescriptiveScenarioStatistics(globalStatisticsCalculator, taskData);
+            durationMetricDescriptiveStatistics = assembleMetricDescriptiveScenarioStatistics(globalStatisticsCalculator, taskData);
             return this;
         }
+    }
+
+    private List<Double> globalPercentilesKeysLocal;
+
+    @Required
+    public void setGlobalPercentilesKeys(List<Double> globalPercentilesKeys) {
+        this.globalPercentilesKeysLocal = globalPercentilesKeys;
+        super.setGlobalPercentilesKeys(globalPercentilesKeys);
+    }
+
+    protected DurationMetricStatistics assembleMetricDescriptiveScenarioStatistics(StatisticsCalculator calculator, TaskData taskData) {
+        DurationMetricStatistics statistics = new DurationMetricStatistics();
+        statistics.setTaskData(taskData);
+
+        List<DurationMetricLatencyPercentile> percentiles = Lists.newArrayList();
+        for (double percentileKey : globalPercentilesKeysLocal) {
+            double percentileValue = calculator.getPercentile(percentileKey);
+            DurationMetricLatencyPercentile percentile = new DurationMetricLatencyPercentile(percentileKey, percentileValue);
+            percentile.setDurationMetricStatistic(statistics);
+            if (Double.isNaN(percentileKey) || Double.isNaN(percentileValue))
+                log.error("Percentile has NaN values : key={}, value={}", percentileKey, percentileValue);
+            percentiles.add(percentile);
+        }
+        if (!percentiles.isEmpty()) {
+            statistics.setPercentiles(percentiles);
+        }
+        return statistics;
     }
 }

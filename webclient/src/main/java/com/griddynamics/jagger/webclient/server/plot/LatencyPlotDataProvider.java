@@ -90,7 +90,9 @@ public class LatencyPlotDataProvider implements PlotDataProvider {
     @SuppressWarnings("unchecked")
     private List<Object[]> findAllTimeInvocationStatisticsByTaskData(long taskId) {
         return entityManager.createQuery(
-                "select tis.time, tis.latency, tis.latencyStdDev from TimeInvocationStatistics as tis where tis.taskData.id=:taskId")
-                .setParameter("taskId", taskId).getResultList();
+                "select tis.time, tis.latency, tis.latencyStdDev from TimeInvocationStatistics as tis where tis.metric=:metric and tis.taskData.id=:taskId")
+                .setParameter("taskId", taskId)
+                .setParameter("metric", "duration")
+                .getResultList();
     }
 }

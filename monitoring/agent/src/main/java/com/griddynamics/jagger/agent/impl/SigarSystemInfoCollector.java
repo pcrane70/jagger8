@@ -298,7 +298,7 @@ public class SigarSystemInfoCollector implements SystemInfoCollector {
             long readBytes = 0;
             FileSystem[] devices = sigar.getFileSystemList();
             for (FileSystem dev : devices) {
-                if(FileSystem.TYPE_LOCAL_DISK == dev.getType()) {
+                if (FileSystem.TYPE_LOCAL_DISK == dev.getType()) {
                     DiskUsage disk = sigar.getDiskUsage(dev.getDirName());
                     readBytes += disk.getReadBytes();
                 }
@@ -317,7 +317,7 @@ public class SigarSystemInfoCollector implements SystemInfoCollector {
             long writeBytes = 0;
             FileSystem[] devices = sigar.getFileSystemList();
             for (FileSystem dev : devices) {
-                if(FileSystem.TYPE_LOCAL_DISK == dev.getType()) {
+                if (FileSystem.TYPE_LOCAL_DISK == dev.getType()) {
                     DiskUsage disk = sigar.getDiskUsage(dev.getDirName());
                     writeBytes += disk.getWriteBytes();
                 }

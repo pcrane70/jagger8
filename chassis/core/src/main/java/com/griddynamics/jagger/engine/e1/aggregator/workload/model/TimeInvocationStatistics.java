@@ -33,6 +33,9 @@ public class TimeInvocationStatistics {
     private Long id;
 
     @Column
+    private String metric;
+
+    @Column
     private long time;
 
     @Column
@@ -70,6 +73,14 @@ public class TimeInvocationStatistics {
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public String getMetric() {
+        return metric;
+    }
+
+    public void setMetric(String metric) {
+        this.metric = metric;
     }
 
     public long getTime() {

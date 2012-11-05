@@ -230,16 +230,23 @@ public class MonitoringAggregator extends LogProcessor implements DistributionLi
                 for (Map.Entry<MonitoringParameter, Double> entry : sysUnderTest.get(url).getSysUTInfo().entrySet()) {
                     Double prevSum = sumSysUnderTestMetrics.get(entry.getKey());
                     double value = entry.getValue();
-                    if (prevSum != null) {
-                        if (!entry.getKey().isCumulativeCounter()) {
-                            value += prevSum;
-                        } else {
-                            value = Math.max(value, prevSum);
+                    // During jagger execution ClassCast is thrown. This temporary is dirty hack.
+                    if (entry.getKey() instanceof MonitoringParameter) {
+                        if (prevSum != null) {
+                            if (!entry.getKey().isCumulativeCounter()) {
+                                value += prevSum;
+                            } else {
+                                value = Math.max(value, prevSum);
+                            }
                         }
+                        sumSysUnderTestMetrics.put(entry.getKey(), value);
+                        Long prevCount = countSysUnderTestMetrics.get(entry.getKey());
+                        countSysUnderTestMetrics.put(entry.getKey(), (prevCount == null || entry.getKey().isCumulativeCounter()) ? 1 : prevCount + 1);
+                    } else if (entry.getKey() != null) {
+                        log.warn("Wrong key type.");
+                    } else {
+                        log.warn("Wrong key type. NULL");
                     }
-                    sumSysUnderTestMetrics.put(entry.getKey(), value);
-                    Long prevCount = countSysUnderTestMetrics.get(entry.getKey());
-                    countSysUnderTestMetrics.put(entry.getKey(), (prevCount == null || entry.getKey().isCumulativeCounter()) ? 1 : prevCount + 1);
                 }
             }
         }

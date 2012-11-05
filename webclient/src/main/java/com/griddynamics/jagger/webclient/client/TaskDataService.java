@@ -6,6 +6,7 @@ import com.google.gwt.core.client.GWT;
 import com.griddynamics.jagger.webclient.client.dto.TaskDataDto;
 
 import java.util.List;
+import java.util.Map;
 import java.util.Set;
 
 /**
@@ -18,6 +19,8 @@ public interface TaskDataService extends RemoteService {
     List<TaskDataDto> getTaskDataForSession(String sessionId);
 
     List<TaskDataDto> getTaskDataForSessions(Set<String> sessionIds);
+
+    Map<String, TaskDetails> getTaskDetails(Set<Long> taskIds);
 
     public static class Async {
         private static final TaskDataServiceAsync ourInstance = (TaskDataServiceAsync) GWT.create(TaskDataService.class);

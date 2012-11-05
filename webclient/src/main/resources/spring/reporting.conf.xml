@@ -215,7 +215,6 @@
                         <value>NON_HEAP_MEMORY_MAX</value>
                     </list>
                 </entry>
-
                 <entry>
                     <key>
                         <bean class="com.griddynamics.jagger.monitoring.reporting.GroupKey">
@@ -228,7 +227,6 @@
                         <value>DISKS_WRITE_BYTES_TOTAL</value>
                     </array>
                 </entry>
-
             </map>
         </constructor-arg>
     </bean>

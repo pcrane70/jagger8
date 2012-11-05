@@ -43,8 +43,8 @@ public class TaskDataDtoListQueryAsyncCallback implements AsyncCallback<List<Tas
 
         // Populate available plots tree level for each task for selected session
         for (TaskDataDto taskDataDto : result) {
-            taskDataTreeViewModel.getPlotNameDataProviders().put
-                    (taskDataDto, new TaskPlotNamesAsyncDataProvider(taskDataDto, sessionIds));
+            taskDataTreeViewModel.addPlotNameDataProvider(taskDataDto,
+                    new TaskPlotNamesAsyncDataProvider(taskDataDto, sessionIds));
         }
     }
 }

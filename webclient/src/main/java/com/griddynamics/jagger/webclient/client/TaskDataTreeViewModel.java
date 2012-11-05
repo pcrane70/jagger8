@@ -157,8 +157,8 @@ public class TaskDataTreeViewModel implements TreeViewModel {
         return plotNameDataProviders.get(taskDataDto);
     }
 
-    public Map<TaskDataDto, AbstractDataProvider<PlotNameDto>> getPlotNameDataProviders() {
-        return plotNameDataProviders;
+    public void addPlotNameDataProvider(TaskDataDto dto, AbstractDataProvider<PlotNameDto> provider) {
+        plotNameDataProviders.put(dto, provider);
     }
 
     public MultiSelectionModel<PlotNameDto> getSelectionModel() {

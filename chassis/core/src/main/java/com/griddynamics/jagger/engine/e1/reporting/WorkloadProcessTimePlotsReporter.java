@@ -76,7 +76,7 @@ public class WorkloadProcessTimePlotsReporter extends AbstractMappedReportProvid
 
         @SuppressWarnings("unchecked")
         List<TimeInvocationStatistics> statistics = getHibernateTemplate().find(
-                "select t from TimeInvocationStatistics t where t.taskData.sessionId=?", sessionId);
+                "select t from TimeInvocationStatistics t where t.taskData.sessionId=? and t.metric=?", sessionId, "duration");
         Map<String, List<TimeInvocationStatistics>> aggregatedByTasks = Maps.newLinkedHashMap();
 
         for (TimeInvocationStatistics stat : statistics) {

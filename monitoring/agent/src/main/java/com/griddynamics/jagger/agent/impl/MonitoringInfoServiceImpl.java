@@ -87,7 +87,6 @@ public class MonitoringInfoServiceImpl implements MonitoringInfoService {
         sysInfoStringMap.put(DefaultMonitoringParameters.CPU_STATE_SYSTEM_PERC, systemInfoService.getCPUStateSys() * 100);
         sysInfoStringMap.put(DefaultMonitoringParameters.CPU_STATE_IDLE_PERC, systemInfoService.getCPUStateIdle() * 100);
         sysInfoStringMap.put(DefaultMonitoringParameters.CPU_STATE_IDLE_WAIT, systemInfoService.getCPUStateWait() * 100);
-
         log.debug("finish collecting box info through sigar on agent: time {} ms", System.currentTimeMillis() - startTimeLog);
         startTimeLog = System.currentTimeMillis();
         log.debug("start collecting LoadAverage info on agent");

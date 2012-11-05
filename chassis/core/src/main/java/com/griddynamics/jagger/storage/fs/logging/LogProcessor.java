@@ -63,7 +63,7 @@ public class LogProcessor extends HibernateDaoSupport {
         });
     }
 
-    protected TimeInvocationStatistics assembleInvocationStatistics(long time, StatisticsCalculator calculator,
+    protected TimeInvocationStatistics assembleInvocationStatistics(String name, long time, StatisticsCalculator calculator,
                                                                     Double throughput, TaskData taskData) {
         TimeInvocationStatistics statistics = new TimeInvocationStatistics(
                 time,
@@ -72,6 +72,8 @@ public class LogProcessor extends HibernateDaoSupport {
                 throughput,
                 taskData
         );
+
+        statistics.setMetric(name);
 
         List<TimeLatencyPercentile> percentiles = new ArrayList<TimeLatencyPercentile>();
         for (double percentileKey : timeWindowPercentilesKeys) {

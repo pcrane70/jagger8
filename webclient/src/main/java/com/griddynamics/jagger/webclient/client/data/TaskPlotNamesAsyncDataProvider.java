@@ -11,6 +11,7 @@ import com.griddynamics.jagger.webclient.client.dto.PlotNameDto;
 import com.griddynamics.jagger.webclient.client.dto.TaskDataDto;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Set;
 
 /**
@@ -18,6 +19,7 @@ import java.util.Set;
  * @since 6/19/12
  */
 public class TaskPlotNamesAsyncDataProvider extends AsyncDataProvider<PlotNameDto> {
+    public static final String DUMMY_TASK_SUMMARY = "Task Summary";
     private final TaskDataDto taskDataDto;
     private final Set<String> sessionIds;
 
@@ -45,8 +47,12 @@ public class TaskPlotNamesAsyncDataProvider extends AsyncDataProvider<PlotNameDt
 
             @Override
             public void onSuccess(Set<PlotNameDto> result) {
-                updateRowData(start, new ArrayList<PlotNameDto>(result));
-                updateRowCount(result.size(), false);
+                List<PlotNameDto> values = new ArrayList<PlotNameDto>(result.size() + 1);
+                values.add(new PlotNameDto(taskDataDto.getIds(), DUMMY_TASK_SUMMARY));
+                values.addAll(result);
+
+                updateRowData(start, values);
+                updateRowCount(values.size(), false);
             }
         });
     }

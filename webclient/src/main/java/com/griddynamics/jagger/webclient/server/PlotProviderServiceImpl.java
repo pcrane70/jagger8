@@ -1,10 +1,12 @@
 package com.griddynamics.jagger.webclient.server;
 
+import com.google.common.collect.Sets;
 import com.griddynamics.jagger.agent.model.DefaultMonitoringParameters;
 import com.griddynamics.jagger.monitoring.reporting.GroupKey;
 import com.griddynamics.jagger.webclient.client.PlotProviderService;
 import com.griddynamics.jagger.webclient.client.dto.*;
 import com.griddynamics.jagger.webclient.server.plot.DataPointCompressingProcessor;
+import com.griddynamics.jagger.webclient.server.plot.DurationMetricLatencyPlotDataProvider;
 import com.griddynamics.jagger.webclient.server.plot.PlotDataProvider;
 import com.griddynamics.jagger.webclient.server.plot.SessionScopePlotDataProvider;
 import org.slf4j.Logger;
@@ -29,6 +31,7 @@ public class PlotProviderServiceImpl implements PlotProviderService {
     private Map<GroupKey, DefaultMonitoringParameters[]> monitoringPlotGroups;
     private Map<String, PlotDataProvider> workloadPlotDataProviders;
     private Map<String, PlotDataProvider> monitoringPlotDataProviders;
+    private DurationMetricLatencyPlotDataProvider durationMetricLatencyPlotDataProvider;
 
     //==========Setters
 
@@ -57,6 +60,11 @@ public class PlotProviderServiceImpl implements PlotProviderService {
         this.monitoringPlotDataProviders = monitoringPlotDataProviders;
     }
 
+    @Required
+    public void setDurationMetricLatencyPlotDataProvider(DurationMetricLatencyPlotDataProvider durationMetricLatencyPlotDataProvider) {
+        this.durationMetricLatencyPlotDataProvider = durationMetricLatencyPlotDataProvider;
+    }
+
     @PersistenceContext
     public void setEntityManager(EntityManager entityManager) {
         this.entityManager = entityManager;
@@ -83,6 +91,11 @@ public class PlotProviderServiceImpl implements PlotProviderService {
                     }
                 }
             }
+
+            for (String metricName : getMetricNames(taskDataDto.getIds())) {
+                plotNameDtoSet.add(new PlotNameDto(taskDataDto.getIds(), metricName));
+            }
+
             log.debug("For sessions {} are available these plots: {}", sessionIds, plotNameDtoSet);
         } catch (Exception e) {
             log.error("Error was occurred during task scope plots data getting for session IDs " + sessionIds + ", task name " + taskDataDto.getTaskName(), e);
@@ -118,7 +131,7 @@ public class PlotProviderServiceImpl implements PlotProviderService {
         long timestamp = System.currentTimeMillis();
         log.debug("getPlotData was invoked with taskId={} and plotName={}", taskId, plotName);
 
-        PlotDataProvider plotDataProvider = findPlotDataProvider(plotName);
+        PlotDataProvider plotDataProvider = findPlotDataProvider(plotName, Collections.singleton(taskId));
 
         List<PlotSeriesDto> plotSeriesDto = null;
         try {
@@ -137,7 +150,7 @@ public class PlotProviderServiceImpl implements PlotProviderService {
         long timestamp = System.currentTimeMillis();
         log.debug("getPlotData was invoked with taskIds={} and plotName={}", taskIds, plotName);
 
-        PlotDataProvider plotDataProvider = findPlotDataProvider(plotName);
+        PlotDataProvider plotDataProvider = findPlotDataProvider(plotName, taskIds);
 
         List<PlotSeriesDto> plotSeriesDtoList = null;
         try {
@@ -244,9 +257,10 @@ public class PlotProviderServiceImpl implements PlotProviderService {
 
     private boolean isWorkloadStatisticsAvailable(Set<String> sessionIds, String taskName) {
         long timestamp = System.currentTimeMillis();
-        long workloadStatisticsCount = (Long) entityManager.createQuery("select count(tis.id) from TimeInvocationStatistics as tis where tis.taskData.sessionId in (:sessionIds) and tis.taskData.taskName=:taskName")
+        long workloadStatisticsCount = (Long) entityManager.createQuery("select count(tis.id) from TimeInvocationStatistics as tis where tis.metric = :metric and tis.taskData.sessionId in (:sessionIds) and tis.taskData.taskName=:taskName")
                 .setParameter("taskName", taskName)
                 .setParameter("sessionIds", sessionIds)
+                .setParameter("metric", "duration")
                 .getSingleResult();
 
         if (workloadStatisticsCount == 0) {
@@ -257,8 +271,14 @@ public class PlotProviderServiceImpl implements PlotProviderService {
         return true;
     }
 
-    private PlotDataProvider findPlotDataProvider(String plotName) {
+    private PlotDataProvider findPlotDataProvider(String plotName, Collection<Long> taskIds) {
         PlotDataProvider plotDataProvider = workloadPlotDataProviders.get(plotName);
+        if (plotDataProvider == null) {
+            Set<String> metricNames = getMetricNames(taskIds);
+            if (metricNames.contains(plotName)) {
+                plotDataProvider = durationMetricLatencyPlotDataProvider;
+            }
+        }
         if (plotDataProvider == null) {
             plotDataProvider = monitoringPlotDataProviders.get(plotName);
         }
@@ -268,5 +288,13 @@ public class PlotProviderServiceImpl implements PlotProviderService {
         }
 
         return plotDataProvider;
+    }
+
+    @SuppressWarnings("unchecked")
+    private Set<String> getMetricNames(Collection<Long> taskIds) {
+        return Sets.newTreeSet(entityManager.createQuery("select stat.name from DurationMetricStatistics stat where stat.taskData.id in (:taskIds)")
+                .setParameter("taskIds", taskIds)
+                .getResultList()
+        );
     }
 }

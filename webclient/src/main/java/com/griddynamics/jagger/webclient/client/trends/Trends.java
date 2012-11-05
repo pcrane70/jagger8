@@ -594,26 +594,49 @@ public class Trends extends DefaultActivity {
                     plotPanel.add(loadIndicator);
                     scrollPanel.scrollToBottom();
                     final int loadingId = plotPanel.getWidgetCount() - 1;
-                    // Invoke remote service for plot data retrieving
-                    PlotProviderService.Async.getInstance().getPlotData(plotNameDto.getTaskId(), plotNameDto.getPlotName(), new AsyncCallback<List<PlotSeriesDto>>() {
-                        @Override
-                        public void onFailure(Throwable caught) {
-                            plotPanel.remove(loadingId);
+                    if (TaskPlotNamesAsyncDataProvider.DUMMY_TASK_SUMMARY.equals(plotNameDto.getPlotName())) {
+                        TaskDataService.Async.getInstance().getTaskDetails(plotNameDto.getTaskIds(), new AsyncCallback<Map<String, TaskDetails>>() {
+                            @Override
+                            public void onFailure(Throwable caught) {
+                                plotPanel.remove(loadingId);
 
-                            Window.alert("Error is occurred during server request processing (" + plotNameDto.getPlotName() + " data fetching)");
-                        }
-
-                        @Override
-                        public void onSuccess(List<PlotSeriesDto> result) {
-                            plotPanel.remove(loadingId);
-
-                            if (result.isEmpty()) {
-                                Window.alert("There are no data found for " + plotNameDto.getPlotName());
+                                Window.alert("Error is occurred during server request processing (" + plotNameDto.getPlotName() + " data fetching)");
                             }
 
-                            renderPlots(result, id);
-                        }
-                    });
+                            @Override
+                            public void onSuccess(Map<String, TaskDetails> result) {
+                                plotPanel.remove(loadingId);
+
+                                if (result == null) {
+                                    Window.alert("Result not found " + result);
+                                } else {
+                                    renderTaskDetails(result);
+                                }
+
+                            }
+                        });
+                    } else {
+                        // Invoke remote service for plot data retrieving
+                        PlotProviderService.Async.getInstance().getPlotData(plotNameDto.getTaskId(), plotNameDto.getPlotName(), new AsyncCallback<List<PlotSeriesDto>>() {
+                            @Override
+                            public void onFailure(Throwable caught) {
+                                plotPanel.remove(loadingId);
+
+                                Window.alert("Error is occurred during server request processing (" + plotNameDto.getPlotName() + " data fetching)");
+                            }
+
+                            @Override
+                            public void onSuccess(List<PlotSeriesDto> result) {
+                                plotPanel.remove(loadingId);
+
+                                if (result.isEmpty()) {
+                                    Window.alert("There are no data found for " + plotNameDto.getPlotName());
+                                }
+
+                                renderPlots(result, id);
+                            }
+                        });
+                    }
                 }
             } else {
                 // Generate all id of plots which should be displayed
@@ -652,29 +675,86 @@ public class Trends extends DefaultActivity {
                     scrollPanel.scrollToBottom();
                     final int loadingId = plotPanel.getWidgetCount() - 1;
 
-                    // Invoke remote service for plot data retrieving
-                    PlotProviderService.Async.getInstance().getPlotData(plotNameDto.getTaskIds(), plotNameDto.getPlotName(), new AsyncCallback<List<PlotSeriesDto>>() {
-                        @Override
-                        public void onFailure(Throwable caught) {
-                            plotPanel.remove(loadingId);
 
-                            Window.alert("Error is occurred during server request processing (" + plotNameDto.getPlotName() + " data fetching)");
-                        }
+                    // TODO avoid copy paste!
+                    if (TaskPlotNamesAsyncDataProvider.DUMMY_TASK_SUMMARY.equals(plotNameDto.getPlotName())) {
+                        TaskDataService.Async.getInstance().getTaskDetails(plotNameDto.getTaskIds(), new AsyncCallback<Map<String, TaskDetails>>() {
+                            @Override
+                            public void onFailure(Throwable caught) {
+                                plotPanel.remove(loadingId);
 
-                        @Override
-                        public void onSuccess(List<PlotSeriesDto> result) {
-                            plotPanel.remove(loadingId);
-
-                            if (result.isEmpty()) {
-                                Window.alert("There are no data found for " + plotNameDto.getPlotName());
+                                Window.alert("Error is occurred during server request processing (" + plotNameDto.getPlotName() + " data fetching)");
                             }
 
-                            renderPlots(result, id);
-                        }
-                    });
+                            @Override
+                            public void onSuccess(Map<String, TaskDetails> result) {
+                                plotPanel.remove(loadingId);
+
+                                if (result == null) {
+                                    Window.alert("Result not found " + result);
+                                } else {
+                                    renderTaskDetails(result);
+                                }
+
+                            }
+                        });
+                    } else {
+                        // Invoke remote service for plot data retrieving
+                        PlotProviderService.Async.getInstance().getPlotData(plotNameDto.getTaskIds(), plotNameDto.getPlotName(), new AsyncCallback<List<PlotSeriesDto>>() {
+                            @Override
+                            public void onFailure(Throwable caught) {
+                                plotPanel.remove(loadingId);
+
+                                Window.alert("Error is occurred during server request processing (" + plotNameDto.getPlotName() + " data fetching)");
+                            }
+
+                            @Override
+                            public void onSuccess(List<PlotSeriesDto> result) {
+                                plotPanel.remove(loadingId);
+
+                                if (result.isEmpty()) {
+                                    Window.alert("There are no data found for " + plotNameDto.getPlotName());
+                                }
+
+                                renderPlots(result, id);
+                            }
+                        });
+                    }
                 }
             }
         }
+    }
+
+    private void renderTaskDetails(Map<String, TaskDetails> result) {
+        TaskDetailView.Builder builder = TaskDetailView.builder();
+        for (Map.Entry<String, TaskDetails> entry : result.entrySet()) {
+            builder.processDetails(entry.getKey(), entry.getValue());
+        }
+        TaskDetailView view = builder.build();
+
+        DataGrid<TaskDetailView.Metric> layout = new DataGrid<TaskDetailView.Metric>();
+
+        layout.addColumn(new TextColumn<TaskDetailView.Metric>() {
+            @Override
+            public String getValue(TaskDetailView.Metric object) {
+                return object.getName();
+            }
+        }, "Metric");
+
+        for (final String session : view.getSessions()) {
+            layout.addColumn(new TextColumn<TaskDetailView.Metric>() {
+                @Override
+                public String getValue(TaskDetailView.Metric object) {
+                    return object.getValue(session);
+                }
+            }, session);
+        }
+
+        layout.setRowData(view.getMetrics());
+        layout.setPageSize(view.getMetrics().size());
+        layout.setHeight("500px");
+
+        plotPanel.add(layout);
     }
 
     /**
