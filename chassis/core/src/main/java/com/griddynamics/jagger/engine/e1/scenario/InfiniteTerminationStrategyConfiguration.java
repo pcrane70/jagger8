@@ -10,4 +10,9 @@ public class InfiniteTerminationStrategyConfiguration implements  TerminateStrat
             }
         };
     }
+
+    @Override
+    public String toString() {
+        return "Background task";
+    }
 }

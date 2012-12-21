@@ -100,7 +100,7 @@ public class CompositeTaskDistributor implements TaskDistributor<CompositeTask> 
 
                     TimeUtils.sleepMillis(500);
                 }
-
+                stopAll();
             }
 
             private int activeLeadingTasks() {
