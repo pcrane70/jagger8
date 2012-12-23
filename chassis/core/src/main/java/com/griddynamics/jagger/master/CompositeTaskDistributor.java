@@ -111,7 +111,8 @@ public class CompositeTaskDistributor implements TaskDistributor<CompositeTask> 
                     Service service = it.next();
                     if (service.state() == State.TERMINATED || service.state() == State.FAILED) {
                         log.debug("State {}", service.state());
-                        stopAll(Collections.singleton(service), true);
+                        List<Future<State>> leadingFutures = requestTermination(Collections.singleton(service), true);
+                        awaitLeading(leadingFutures);
                         it.remove();
                     } else {
                         result++;
@@ -125,11 +126,6 @@ public class CompositeTaskDistributor implements TaskDistributor<CompositeTask> 
             protected void shutDown() throws Exception {
                 stopAll();
                 super.shutDown();
-            }
-
-            private void stopAll(Iterable<Service> services, boolean leading) {
-                List<Future<State>> leadingFutures = requestTermination(services, leading);
-                await(leadingFutures, leading);
             }
 
             private void awaitLeading(List<Future<State>> leadingFutures) {
@@ -156,16 +152,10 @@ public class CompositeTaskDistributor implements TaskDistributor<CompositeTask> 
             }
 
             private void stopAll() {
-                stopAll(leading, true);
-                stopAll(attendant, false);
-            }
-
-            private void await(List<Future<State>> futures, boolean leading) {
-                if (leading) {
-                    awaitLeading(futures);
-                } else {
-                    awaitAttendant(futures);
-                }
+                List<Future<State>> leadingFutures = requestTermination(leading, true);
+                List<Future<State>> attendantFutures = requestTermination(attendant, false);
+                awaitLeading(leadingFutures);
+                awaitAttendant(attendantFutures);
             }
 
             private void awaitAttendant(List<Future<State>> attendantFutures) {
