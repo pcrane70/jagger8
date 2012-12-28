@@ -78,6 +78,8 @@ public class CompositeTaskDistributor implements TaskDistributor<CompositeTask> 
 
         return new AbstractDistributionService(executor) {
 
+            final List<Future<State>> leadingTerminateFutures = Lists.newLinkedList();
+
             @Override
             protected void run() throws Exception {
 
@@ -100,7 +102,6 @@ public class CompositeTaskDistributor implements TaskDistributor<CompositeTask> 
 
                     TimeUtils.sleepMillis(500);
                 }
-                stopAll();
             }
 
             private int activeLeadingTasks() {
@@ -111,8 +112,7 @@ public class CompositeTaskDistributor implements TaskDistributor<CompositeTask> 
                     Service service = it.next();
                     if (service.state() == State.TERMINATED || service.state() == State.FAILED) {
                         log.debug("State {}", service.state());
-                        List<Future<State>> leadingFutures = requestTermination(Collections.singleton(service), true);
-                        awaitLeading(leadingFutures);
+                        leadingTerminateFutures.addAll(requestTermination(Collections.singleton(service), true));
                         it.remove();
                     } else {
                         result++;
@@ -154,6 +154,8 @@ public class CompositeTaskDistributor implements TaskDistributor<CompositeTask> 
             private void stopAll() {
                 List<Future<State>> leadingFutures = requestTermination(leading, true);
                 List<Future<State>> attendantFutures = requestTermination(attendant, false);
+                leadingFutures.addAll(leadingTerminateFutures);
+
                 awaitLeading(leadingFutures);
                 awaitAttendant(attendantFutures);
             }
