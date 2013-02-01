@@ -142,8 +142,8 @@ public class MonitorProcess extends LogProcessor implements NodeProcess<Monitori
                         log.debug("latch is available");
                         latch.countDown();
                     }
+                    alive = false;
                     log.debug("latch released");
-
                 }
             }
         };
@@ -159,12 +159,14 @@ public class MonitorProcess extends LogProcessor implements NodeProcess<Monitori
     @Override
     public void stop() {
         log.debug("Stop of monitoring requested. agent {}", agentId);
-        latch = new CountDownLatch(1);
-        alive = false;
-        try {
-            latch.await();
-        } catch (InterruptedException e) {
-            log.warn("Interrupted {}", e);
+        if (alive) {
+            latch = new CountDownLatch(1);
+            alive = false;
+            try {
+                latch.await();
+            } catch (InterruptedException e) {
+                log.warn("Interrupted {}", e);
+            }
         }
         log.info("Kernel {} has stopped monitoring on agent {}", nodeContext.getId(), agentId);
     }
