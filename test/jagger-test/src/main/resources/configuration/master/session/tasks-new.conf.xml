@@ -48,6 +48,7 @@
 
              <query-provider xsi:type="query-provider-list">
                  <query-http>emptyTestQuery</query-http>
+
              </query-provider>
 
          </scenario>
