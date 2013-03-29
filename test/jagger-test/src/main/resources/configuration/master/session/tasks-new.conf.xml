@@ -99,7 +99,7 @@
 
 
     <beans:bean id="endpointsIterable-pulse-service-30000-500" class="java.util.LinkedList">
-        <beans:constructor-arg value="#{endpointConfigurator.getEndpoints('sleep/pulse/30000/500')}"/>
+        <beans:constructor-arg value="#{endpointConfigurator.getEndpoints('/sleep/pulse/30000/500')}"/>
     </beans:bean>
 
     <test-description id="pulse-service-30000-500-abstract" name="pulse-service-30000-500" version="1" >
@@ -120,7 +120,7 @@
 
 
      <beans:bean id="endpointsIterable-load-cpu-service-10000000" class="java.util.LinkedList">
-        <beans:constructor-arg value="#{endpointConfigurator.getEndpoints('load/10000000')}"/>
+        <beans:constructor-arg value="#{endpointConfigurator.getEndpoints('/load/10000000')}"/>
     </beans:bean>
 
     <test-description id="load-cpu-service-10000000" name="load-cpu-service-10000000" version="1" >
@@ -141,7 +141,7 @@
 
 
     <beans:bean id="endpointsIterable-allocate-memory-service-1000000x200" class="java.util.LinkedList">
-        <beans:constructor-arg value="#{endpointConfigurator.getEndpoints('allocate/1000000x200')}"/>
+        <beans:constructor-arg value="#{endpointConfigurator.getEndpoints('/allocate/1000000x200')}"/>
     </beans:bean>
 
     <test-description id="allocate-memory-service-1000000x200" name="allocate-memory-service-1000000x200" version="1" >
@@ -162,7 +162,7 @@
 
 
     <beans:bean id="endpointsIterable-tcp-service-10000" class="java.util.LinkedList">
-        <beans:constructor-arg value="#{endpointConfigurator.getEndpoints('net/text/10000')}"/>
+        <beans:constructor-arg value="#{endpointConfigurator.getEndpoints('/net/text/10000')}"/>
     </beans:bean>
 
     <test-description id="tcp-service-10000" name="tcp-service-10000" version="1" >
