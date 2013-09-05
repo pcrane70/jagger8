@@ -1,0 +1,13 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="node3" href="$interfacecom_1_1griddynamics_1_1jagger_1_1engine_1_1e1_1_1collector_1_1MetricCalculator_3_01R_01_4.html" title="??? Some short description " alt="" coords="145,5,428,51"/>
+<area shape="rect" id="node5" href="$interfacecom_1_1griddynamics_1_1jagger_1_1invoker_1_1Invoker_3_01Q_00_01R_00_01E_01_4.html" title="Responsible for action invocation on specified endpoint. " alt="" coords="179,74,395,121"/>
+<area shape="rect" id="node7" href="$interfacecom_1_1griddynamics_1_1jagger_1_1invoker_1_1LoadBalancer_3_01Q_00_01E_01_4.html" title="??? Some short description " alt="" coords="179,213,395,259"/>
+<area shape="rect" id="node21" href="$interfacecom_1_1griddynamics_1_1jagger_1_1providers_1_1creators_1_1ObjectCreator_3_01T_01_4.html" title="??? Some short description " alt="" coords="148,143,425,190"/>
+<area shape="rect" id="node9" href="$classcom_1_1griddynamics_1_1jagger_1_1invoker_1_1QueryPoolLoadBalancer_3_01Q_00_01E_01_4.html" title="??? Some short description " alt="" coords="479,178,695,225"/>
+<area shape="rect" id="node19" href="$classcom_1_1griddynamics_1_1jagger_1_1invoker_1_1SimpleLoadBalancer_3_01Q_00_01E_01_4.html" title="??? Some short description " alt="" coords="479,247,695,294"/>
+<area shape="rect" id="node11" href="$classcom_1_1griddynamics_1_1jagger_1_1invoker_1_1OneByOneLoadBalancer_3_01Q_00_01E_01_4.html" title="Schedules queries across endpoints one by one. " alt="" coords="769,109,985,155"/>
+<area shape="rect" id="node13" href="$classcom_1_1griddynamics_1_1jagger_1_1invoker_1_1PairSupplierFactoryLoadBalancer_3_01Q_00_01E_01_4.html" title="Provides ability to share pairs(pairSupplier) via threads on kernel. " alt="" coords="744,178,1011,225"/>
+<area shape="rect" id="node17" href="$classcom_1_1griddynamics_1_1jagger_1_1invoker_1_1RoundRobinLoadBalancer_3_01Q_00_01E_01_4.html" title="Encapsulates round robin algorithm. " alt="" coords="765,247,989,294"/>
+<area shape="rect" id="node15" href="$classcom_1_1griddynamics_1_1jagger_1_1invoker_1_1SimpleCircularLoadBalancer_3_01Q_00_01E_01_4.html" title="LoadBalancer that share PairSupplier (list of pairs (query, endpoint)) with threads on kernel..." alt="" coords="1059,178,1296,225"/>
+<area shape="rect" id="node22" href="$classIterable.html" title="Iterable" alt="" coords="19,221,83,251"/>
+</map>
