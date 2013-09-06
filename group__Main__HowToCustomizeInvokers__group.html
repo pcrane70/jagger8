@@ -80,8 +80,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">Custom invokers</div>  </div>
 </div><!--header-->
 <div class="contents">
-<p><b>Note:</b> full examples of the code are available in maven archetype-examples</p>
-<p>To add custom invoker you need to do:</p>
+<p><a class="el" href="group__Main__Invokers__General__group.html">General information about invokers</a> <br/>
+ <br/>
+ To add custom invoker you need to do:</p>
 <ol type="1">
 <li>Create class which implements interface <a class="el" href="interfacecom_1_1griddynamics_1_1jagger_1_1invoker_1_1Invoker_3_01Q_00_01R_00_01E_01_4.html">Invoker&lt;Q,R,E&gt;</a>  <div class="fragment"><div class="line"><span class="keyword">public</span> <span class="keyword">class </span>PageVisitorInvoker <span class="keyword">implements</span> Invoker&lt;String, String, String&gt; {</div>
 </div><!-- fragment --> <br/>
@@ -98,18 +99,23 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line">&lt;!-- end: following section is used <span class="keywordflow">for</span> docu generation - invoker bean --&gt;</div>
 </div><!-- fragment --> <br/>
 </li>
-<li>Create component "invoker" with type "invoker-class" and set attribute "class" with full class name of invoker  <div class="fragment"><div class="line">    &lt;!-- begin: following section is used <span class="keywordflow">for</span> docu generation - invoker usage --&gt;</div>
+<li>Create component <a href="./xsd/http___www.griddynamics.com_schema_jagger/element/invoker.html">invoker</a> with type <a href="./xsd/http___www.griddynamics.com_schema_jagger/element/invoker-class.html">invoker-class</a> and set attribute <a href="./xsd/http___www.griddynamics.com_schema_jagger/element/invoker-class.html#attr_class">class</a> with full class name of invoker  <div class="fragment"><div class="line">    &lt;!-- begin: following section is used <span class="keywordflow">for</span> docu generation - invoker usage --&gt;</div>
 <div class="line">    &lt;scenario <span class="keywordtype">id</span>=<span class="stringliteral">&quot;pageScenario&quot;</span> xsi:type=<span class="stringliteral">&quot;scenario-query-pool&quot;</span>&gt;</div>
 <div class="line">        &lt;query-distributor xsi:type=<span class="stringliteral">&quot;query-distributor-round-robin&quot;</span>/&gt;</div>
 <div class="line">        &lt;invoker xsi:type=<span class="stringliteral">&quot;invoker-class&quot;</span> <span class="keyword">class</span>=<span class="stringliteral">&quot;${package}.invoker.PageVisitorInvoker&quot;</span>/&gt;</div>
 <div class="line">    &lt;/scenario&gt;</div>
 <div class="line">    &lt;!-- end: following section is used <span class="keywordflow">for</span> docu generation - invoker usage --&gt;</div>
-</div><!-- fragment --> </li>
+</div><!-- fragment --> <br/>
+ <b>Note:</b> <ul>
+<li>full examples of the code are available in maven archetype-examples </li>
+<li>instead of ${package} write the name of your package </li>
+</ul>
+</li>
 </ol>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Sep 2 2013 10:33:52 for Jagger by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Sep 6 2013 16:43:36 for Jagger by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.4
 </small></address>

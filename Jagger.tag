@@ -2,7 +2,7 @@
 <tagfile>
   <compound kind="file">
     <name>CompositeValidator.java</name>
-    <path>/home/dmitry/git/jagger/chassis/core/src/main/java/com/griddynamics/jagger/engine/e1/collector/</path>
+    <path>/home/dmitry/git/temp/jagger/chassis/core/src/main/java/com/griddynamics/jagger/engine/e1/collector/</path>
     <filename>CompositeValidator_8java</filename>
     <class kind="class">com::griddynamics::jagger::engine::e1::collector::CompositeValidator</class>
     <namespace>com::griddynamics::jagger::engine::e1::collector</namespace>
@@ -10,7 +10,7 @@
   </compound>
   <compound kind="file">
     <name>ConsistencyValidator.java</name>
-    <path>/home/dmitry/git/jagger/chassis/core/src/main/java/com/griddynamics/jagger/engine/e1/collector/</path>
+    <path>/home/dmitry/git/temp/jagger/chassis/core/src/main/java/com/griddynamics/jagger/engine/e1/collector/</path>
     <filename>ConsistencyValidator_8java</filename>
     <class kind="class">com::griddynamics::jagger::engine::e1::collector::ConsistencyValidator&lt; Q, E, R &gt;</class>
     <namespace>com::griddynamics::jagger::engine::e1::collector</namespace>
@@ -18,7 +18,7 @@
   </compound>
   <compound kind="file">
     <name>MetricCalculator.java</name>
-    <path>/home/dmitry/git/jagger/chassis/core/src/main/java/com/griddynamics/jagger/engine/e1/collector/</path>
+    <path>/home/dmitry/git/temp/jagger/chassis/core/src/main/java/com/griddynamics/jagger/engine/e1/collector/</path>
     <filename>MetricCalculator_8java</filename>
     <class kind="interface">com::griddynamics::jagger::engine::e1::collector::MetricCalculator&lt; R &gt;</class>
     <namespace>com::griddynamics::jagger::engine::e1::collector</namespace>
@@ -26,7 +26,7 @@
   </compound>
   <compound kind="file">
     <name>NotNullResponseValidator.java</name>
-    <path>/home/dmitry/git/jagger/chassis/core/src/main/java/com/griddynamics/jagger/engine/e1/collector/</path>
+    <path>/home/dmitry/git/temp/jagger/chassis/core/src/main/java/com/griddynamics/jagger/engine/e1/collector/</path>
     <filename>NotNullResponseValidator_8java</filename>
     <class kind="class">com::griddynamics::jagger::engine::e1::collector::NotNullResponseValidator&lt; Q, E, R &gt;</class>
     <namespace>com::griddynamics::jagger::engine::e1::collector</namespace>
@@ -34,7 +34,7 @@
   </compound>
   <compound kind="file">
     <name>ResponseValidator.java</name>
-    <path>/home/dmitry/git/jagger/chassis/core/src/main/java/com/griddynamics/jagger/engine/e1/collector/</path>
+    <path>/home/dmitry/git/temp/jagger/chassis/core/src/main/java/com/griddynamics/jagger/engine/e1/collector/</path>
     <filename>ResponseValidator_8java</filename>
     <class kind="class">com::griddynamics::jagger::engine::e1::collector::ResponseValidator&lt; Q, E, R &gt;</class>
     <namespace>com::griddynamics::jagger::engine::e1::collector</namespace>
@@ -42,7 +42,7 @@
   </compound>
   <compound kind="file">
     <name>SimpleMetricCalculator.java</name>
-    <path>/home/dmitry/git/jagger/chassis/core/src/main/java/com/griddynamics/jagger/engine/e1/collector/</path>
+    <path>/home/dmitry/git/temp/jagger/chassis/core/src/main/java/com/griddynamics/jagger/engine/e1/collector/</path>
     <filename>SimpleMetricCalculator_8java</filename>
     <class kind="class">com::griddynamics::jagger::engine::e1::collector::SimpleMetricCalculator</class>
     <namespace>com::griddynamics::jagger::engine::e1::collector</namespace>
@@ -50,7 +50,7 @@
   </compound>
   <compound kind="file">
     <name>TerminationStrategy.java</name>
-    <path>/home/dmitry/git/jagger/chassis/core/src/main/java/com/griddynamics/jagger/engine/e1/scenario/</path>
+    <path>/home/dmitry/git/temp/jagger/chassis/core/src/main/java/com/griddynamics/jagger/engine/e1/scenario/</path>
     <filename>TerminationStrategy_8java</filename>
     <class kind="interface">com::griddynamics::jagger::engine::e1::scenario::TerminationStrategy</class>
     <namespace>com::griddynamics::jagger::engine::e1::scenario</namespace>
@@ -58,7 +58,7 @@
   </compound>
   <compound kind="file">
     <name>UserTerminationStrategy.java</name>
-    <path>/home/dmitry/git/jagger/chassis/core/src/main/java/com/griddynamics/jagger/engine/e1/scenario/</path>
+    <path>/home/dmitry/git/temp/jagger/chassis/core/src/main/java/com/griddynamics/jagger/engine/e1/scenario/</path>
     <filename>UserTerminationStrategy_8java</filename>
     <class kind="class">com::griddynamics::jagger::engine::e1::scenario::UserTerminationStrategy</class>
     <namespace>com::griddynamics::jagger::engine::e1::scenario</namespace>
@@ -66,7 +66,7 @@
   </compound>
   <compound kind="file">
     <name>DecisionMaker.java</name>
-    <path>/home/dmitry/git/jagger/chassis/core/src/main/java/com/griddynamics/jagger/engine/e1/sessioncomparation/</path>
+    <path>/home/dmitry/git/temp/jagger/chassis/core/src/main/java/com/griddynamics/jagger/engine/e1/sessioncomparation/</path>
     <filename>DecisionMaker_8java</filename>
     <class kind="interface">com::griddynamics::jagger::engine::e1::sessioncomparation::DecisionMaker</class>
     <namespace>com::griddynamics::jagger::engine::e1::sessioncomparation</namespace>
@@ -74,7 +74,7 @@
   </compound>
   <compound kind="file">
     <name>WorstCaseDecisionMaker.java</name>
-    <path>/home/dmitry/git/jagger/chassis/core/src/main/java/com/griddynamics/jagger/engine/e1/sessioncomparation/</path>
+    <path>/home/dmitry/git/temp/jagger/chassis/core/src/main/java/com/griddynamics/jagger/engine/e1/sessioncomparation/</path>
     <filename>WorstCaseDecisionMaker_8java</filename>
     <class kind="class">com::griddynamics::jagger::engine::e1::sessioncomparation::WorstCaseDecisionMaker</class>
     <namespace>com::griddynamics::jagger::engine::e1::sessioncomparation</namespace>
@@ -82,7 +82,7 @@
   </compound>
   <compound kind="file">
     <name>Invoker.java</name>
-    <path>/home/dmitry/git/jagger/chassis/core/src/main/java/com/griddynamics/jagger/invoker/</path>
+    <path>/home/dmitry/git/temp/jagger/chassis/core/src/main/java/com/griddynamics/jagger/invoker/</path>
     <filename>Invoker_8java</filename>
     <class kind="interface">com::griddynamics::jagger::invoker::Invoker&lt; Q, R, E &gt;</class>
     <namespace>com::griddynamics::jagger::invoker</namespace>
@@ -90,7 +90,7 @@
   </compound>
   <compound kind="file">
     <name>LoadBalancer.java</name>
-    <path>/home/dmitry/git/jagger/chassis/core/src/main/java/com/griddynamics/jagger/invoker/</path>
+    <path>/home/dmitry/git/temp/jagger/chassis/core/src/main/java/com/griddynamics/jagger/invoker/</path>
     <filename>LoadBalancer_8java</filename>
     <class kind="interface">com::griddynamics::jagger::invoker::LoadBalancer&lt; Q, E &gt;</class>
     <namespace>com::griddynamics::jagger::invoker</namespace>
@@ -98,7 +98,7 @@
   </compound>
   <compound kind="file">
     <name>OneByOneLoadBalancer.java</name>
-    <path>/home/dmitry/git/jagger/chassis/core/src/main/java/com/griddynamics/jagger/invoker/</path>
+    <path>/home/dmitry/git/temp/jagger/chassis/core/src/main/java/com/griddynamics/jagger/invoker/</path>
     <filename>OneByOneLoadBalancer_8java</filename>
     <class kind="class">com::griddynamics::jagger::invoker::OneByOneLoadBalancer&lt; Q, E &gt;</class>
     <namespace>com::griddynamics::jagger::invoker</namespace>
@@ -106,7 +106,7 @@
   </compound>
   <compound kind="file">
     <name>PairSupplierFactoryLoadBalancer.java</name>
-    <path>/home/dmitry/git/jagger/chassis/core/src/main/java/com/griddynamics/jagger/invoker/</path>
+    <path>/home/dmitry/git/temp/jagger/chassis/core/src/main/java/com/griddynamics/jagger/invoker/</path>
     <filename>PairSupplierFactoryLoadBalancer_8java</filename>
     <class kind="class">com::griddynamics::jagger::invoker::PairSupplierFactoryLoadBalancer&lt; Q, E &gt;</class>
     <namespace>com::griddynamics::jagger::invoker</namespace>
@@ -114,7 +114,7 @@
   </compound>
   <compound kind="file">
     <name>QueryPoolLoadBalancer.java</name>
-    <path>/home/dmitry/git/jagger/chassis/core/src/main/java/com/griddynamics/jagger/invoker/</path>
+    <path>/home/dmitry/git/temp/jagger/chassis/core/src/main/java/com/griddynamics/jagger/invoker/</path>
     <filename>QueryPoolLoadBalancer_8java</filename>
     <class kind="class">com::griddynamics::jagger::invoker::QueryPoolLoadBalancer&lt; Q, E &gt;</class>
     <namespace>com::griddynamics::jagger::invoker</namespace>
@@ -122,7 +122,7 @@
   </compound>
   <compound kind="file">
     <name>RoundRobinLoadBalancer.java</name>
-    <path>/home/dmitry/git/jagger/chassis/core/src/main/java/com/griddynamics/jagger/invoker/</path>
+    <path>/home/dmitry/git/temp/jagger/chassis/core/src/main/java/com/griddynamics/jagger/invoker/</path>
     <filename>RoundRobinLoadBalancer_8java</filename>
     <class kind="class">com::griddynamics::jagger::invoker::RoundRobinLoadBalancer&lt; Q, E &gt;</class>
     <namespace>com::griddynamics::jagger::invoker</namespace>
@@ -130,7 +130,7 @@
   </compound>
   <compound kind="file">
     <name>SimpleCircularLoadBalancer.java</name>
-    <path>/home/dmitry/git/jagger/chassis/core/src/main/java/com/griddynamics/jagger/invoker/</path>
+    <path>/home/dmitry/git/temp/jagger/chassis/core/src/main/java/com/griddynamics/jagger/invoker/</path>
     <filename>SimpleCircularLoadBalancer_8java</filename>
     <class kind="class">com::griddynamics::jagger::invoker::SimpleCircularLoadBalancer&lt; Q, E &gt;</class>
     <namespace>com::griddynamics::jagger::invoker</namespace>
@@ -138,7 +138,7 @@
   </compound>
   <compound kind="file">
     <name>SimpleLoadBalancer.java</name>
-    <path>/home/dmitry/git/jagger/chassis/core/src/main/java/com/griddynamics/jagger/invoker/</path>
+    <path>/home/dmitry/git/temp/jagger/chassis/core/src/main/java/com/griddynamics/jagger/invoker/</path>
     <filename>SimpleLoadBalancer_8java</filename>
     <class kind="class">com::griddynamics::jagger::invoker::SimpleLoadBalancer&lt; Q, E &gt;</class>
     <namespace>com::griddynamics::jagger::invoker</namespace>
@@ -146,7 +146,7 @@
   </compound>
   <compound kind="file">
     <name>HessianInvoker.java</name>
-    <path>/home/dmitry/git/jagger/chassis/invoker.hessian/src/main/java/com/griddynamics/jagger/invoker/hessian/</path>
+    <path>/home/dmitry/git/temp/jagger/chassis/invoker.hessian/src/main/java/com/griddynamics/jagger/invoker/hessian/</path>
     <filename>HessianInvoker_8java</filename>
     <class kind="class">com::griddynamics::jagger::invoker::hessian::HessianInvoker&lt; S, Q, R &gt;</class>
     <namespace>com::griddynamics::jagger::invoker::hessian</namespace>
@@ -154,7 +154,7 @@
   </compound>
   <compound kind="file">
     <name>ApacheAbstractHttpInvoker.java</name>
-    <path>/home/dmitry/git/jagger/chassis/invokers/src/main/java/com/griddynamics/jagger/invoker/http/</path>
+    <path>/home/dmitry/git/temp/jagger/chassis/invokers/src/main/java/com/griddynamics/jagger/invoker/http/</path>
     <filename>ApacheAbstractHttpInvoker_8java</filename>
     <class kind="class">com::griddynamics::jagger::invoker::http::ApacheAbstractHttpInvoker&lt; Q &gt;</class>
     <namespace>com::griddynamics::jagger::invoker::http</namespace>
@@ -162,7 +162,7 @@
   </compound>
   <compound kind="file">
     <name>ApacheHttpInvoker.java</name>
-    <path>/home/dmitry/git/jagger/chassis/invokers/src/main/java/com/griddynamics/jagger/invoker/http/</path>
+    <path>/home/dmitry/git/temp/jagger/chassis/invokers/src/main/java/com/griddynamics/jagger/invoker/http/</path>
     <filename>ApacheHttpInvoker_8java</filename>
     <class kind="class">com::griddynamics::jagger::invoker::http::ApacheHttpInvoker</class>
     <namespace>com::griddynamics::jagger::invoker::http</namespace>
@@ -170,7 +170,7 @@
   </compound>
   <compound kind="file">
     <name>HttpInvoker.java</name>
-    <path>/home/dmitry/git/jagger/chassis/invokers/src/main/java/com/griddynamics/jagger/invoker/http/</path>
+    <path>/home/dmitry/git/temp/jagger/chassis/invokers/src/main/java/com/griddynamics/jagger/invoker/http/</path>
     <filename>HttpInvoker_8java</filename>
     <class kind="class">com::griddynamics::jagger::invoker::http::HttpInvoker</class>
     <namespace>com::griddynamics::jagger::invoker::http</namespace>
@@ -178,7 +178,7 @@
   </compound>
   <compound kind="file">
     <name>HttpVisitorInvoker.java</name>
-    <path>/home/dmitry/git/jagger/chassis/invokers/src/main/java/com/griddynamics/jagger/invoker/http/</path>
+    <path>/home/dmitry/git/temp/jagger/chassis/invokers/src/main/java/com/griddynamics/jagger/invoker/http/</path>
     <filename>HttpVisitorInvoker_8java</filename>
     <class kind="class">com::griddynamics::jagger::invoker::http::HttpVisitorInvoker</class>
     <namespace>com::griddynamics::jagger::invoker::http</namespace>
@@ -186,7 +186,7 @@
   </compound>
   <compound kind="file">
     <name>TcpTrafficInvoker.java</name>
-    <path>/home/dmitry/git/jagger/chassis/invokers/src/main/java/com/griddynamics/jagger/invoker/http/</path>
+    <path>/home/dmitry/git/temp/jagger/chassis/invokers/src/main/java/com/griddynamics/jagger/invoker/http/</path>
     <filename>TcpTrafficInvoker_8java</filename>
     <class kind="class">com::griddynamics::jagger::invoker::http::TcpTrafficInvoker</class>
     <namespace>com::griddynamics::jagger::invoker::http</namespace>
@@ -194,7 +194,7 @@
   </compound>
   <compound kind="file">
     <name>SOAPInvoker.java</name>
-    <path>/home/dmitry/git/jagger/chassis/invokers/src/main/java/com/griddynamics/jagger/invoker/soap/</path>
+    <path>/home/dmitry/git/temp/jagger/chassis/invokers/src/main/java/com/griddynamics/jagger/invoker/soap/</path>
     <filename>SOAPInvoker_8java</filename>
     <class kind="class">com::griddynamics::jagger::invoker::soap::SOAPInvoker</class>
     <namespace>com::griddynamics::jagger::invoker::soap</namespace>
@@ -202,7 +202,7 @@
   </compound>
   <compound kind="file">
     <name>WaitingInvoker.java</name>
-    <path>/home/dmitry/git/jagger/chassis/invokers/src/main/java/com/griddynamics/jagger/invoker/stubs/</path>
+    <path>/home/dmitry/git/temp/jagger/chassis/invokers/src/main/java/com/griddynamics/jagger/invoker/stubs/</path>
     <filename>WaitingInvoker_8java</filename>
     <class kind="class">com::griddynamics::jagger::invoker::stubs::WaitingInvoker&lt; Q, R, E &gt;</class>
     <namespace>com::griddynamics::jagger::invoker::stubs</namespace>
@@ -210,7 +210,7 @@
   </compound>
   <compound kind="file">
     <name>ObjectCreator.java</name>
-    <path>/home/dmitry/git/jagger/chassis/providers/src/main/java/com/griddynamics/jagger/providers/creators/</path>
+    <path>/home/dmitry/git/temp/jagger/chassis/providers/src/main/java/com/griddynamics/jagger/providers/creators/</path>
     <filename>ObjectCreator_8java</filename>
     <class kind="interface">com::griddynamics::jagger::providers::creators::ObjectCreator&lt; T &gt;</class>
     <namespace>com::griddynamics::jagger::providers::creators</namespace>
@@ -218,16 +218,47 @@
   </compound>
   <compound kind="file">
     <name>StringCreator.java</name>
-    <path>/home/dmitry/git/jagger/chassis/providers/src/main/java/com/griddynamics/jagger/providers/creators/</path>
+    <path>/home/dmitry/git/temp/jagger/chassis/providers/src/main/java/com/griddynamics/jagger/providers/creators/</path>
     <filename>StringCreator_8java</filename>
     <class kind="class">com::griddynamics::jagger::providers::creators::StringCreator</class>
     <namespace>com::griddynamics::jagger::providers::creators</namespace>
     <namespace>com::griddynamics::jagger::providers::creators</namespace>
   </compound>
+  <compound kind="file">
+    <name>CsvProvider.java</name>
+    <path>/home/dmitry/git/temp/jagger/chassis/providers/src/main/java/com/griddynamics/jagger/providers/</path>
+    <filename>CsvProvider_8java</filename>
+    <class kind="class">com::griddynamics::jagger::providers::CsvProvider&lt; T &gt;</class>
+    <namespace>com::griddynamics::jagger::providers</namespace>
+    <namespace>com::griddynamics::jagger::providers</namespace>
+  </compound>
+  <compound kind="file">
+    <name>FileProvider.java</name>
+    <path>/home/dmitry/git/temp/jagger/chassis/providers/src/main/java/com/griddynamics/jagger/providers/</path>
+    <filename>FileProvider_8java</filename>
+    <class kind="class">com::griddynamics::jagger::providers::FileProvider&lt; T &gt;</class>
+    <namespace>com::griddynamics::jagger::providers</namespace>
+    <namespace>com::griddynamics::jagger::providers</namespace>
+  </compound>
   <compound kind="group">
-    <name>Main_Customize_group</name>
-    <title>How to customize Jagger components</title>
-    <filename>group__Main__Customize__group.html</filename>
+    <name>Main_Test_Suite_Flow_group</name>
+    <title>Test suite execution sequence</title>
+    <filename>group__Main__Test__Suite__Flow__group.html</filename>
+  </compound>
+  <compound kind="group">
+    <name>Main_Test_Flow_group</name>
+    <title>Test execution sequence</title>
+    <filename>group__Main__Test__Flow__group.html</filename>
+  </compound>
+  <compound kind="group">
+    <name>Main_Custom_Components_group</name>
+    <title>Custom component</title>
+    <filename>group__Main__Custom__Components__group.html</filename>
+  </compound>
+  <compound kind="group">
+    <name>Main_Invokers_General_group</name>
+    <title>General information about invokers</title>
+    <filename>group__Main__Invokers__General__group.html</filename>
   </compound>
   <compound kind="group">
     <name>Main_HowToCustomizeInvokers_group</name>
@@ -241,12 +272,6 @@
     <class kind="interface">com::griddynamics::jagger::invoker::Invoker&lt; Q, R, E &gt;</class>
   </compound>
   <compound kind="group">
-    <name>Main_Providers_Base_group</name>
-    <title>Provider</title>
-    <filename>group__Main__Providers__Base__group.html</filename>
-    <class kind="interface">com::griddynamics::jagger::providers::creators::ObjectCreator&lt; T &gt;</class>
-  </compound>
-  <compound kind="group">
     <name>Main_Distributors_Base_group</name>
     <title>Distributor</title>
     <filename>group__Main__Distributors__Base__group.html</filename>
@@ -256,25 +281,8 @@
     <name>Main_Collectors_Base_group</name>
     <title>Collector</title>
     <filename>group__Main__Collectors__Base__group.html</filename>
-    <class kind="class">com::griddynamics::jagger::engine::e1::collector::ResponseValidator&lt; Q, E, R &gt;</class>
-  </compound>
-  <compound kind="group">
-    <name>Main_Calculators_Base_group</name>
-    <title>Calculator</title>
-    <filename>group__Main__Calculators__Base__group.html</filename>
     <class kind="interface">com::griddynamics::jagger::engine::e1::collector::MetricCalculator&lt; R &gt;</class>
-  </compound>
-  <compound kind="group">
-    <name>Main_DecisionMakers_Base_group</name>
-    <title>Decision Maker</title>
-    <filename>group__Main__DecisionMakers__Base__group.html</filename>
-    <class kind="interface">com::griddynamics::jagger::engine::e1::sessioncomparation::DecisionMaker</class>
-  </compound>
-  <compound kind="group">
-    <name>Main_Terminators_Base_group</name>
-    <title>Termination Strategy</title>
-    <filename>group__Main__Terminators__Base__group.html</filename>
-    <class kind="interface">com::griddynamics::jagger::engine::e1::scenario::TerminationStrategy</class>
+    <class kind="class">com::griddynamics::jagger::engine::e1::collector::ResponseValidator&lt; Q, E, R &gt;</class>
   </compound>
   <compound kind="group">
     <name>Main_Invokers_group</name>
@@ -293,31 +301,24 @@
     <name>Main_Providers_group</name>
     <title>Implementations of providers</title>
     <filename>group__Main__Providers__group.html</filename>
-    <class kind="class">com::griddynamics::jagger::providers::creators::StringCreator</class>
+    <class kind="class">com::griddynamics::jagger::providers::CsvProvider&lt; T &gt;</class>
+    <class kind="class">com::griddynamics::jagger::providers::FileProvider&lt; T &gt;</class>
   </compound>
   <compound kind="group">
     <name>Main_Distributors_group</name>
     <title>Implementations of distributors</title>
     <filename>group__Main__Distributors__group.html</filename>
     <class kind="class">com::griddynamics::jagger::invoker::OneByOneLoadBalancer&lt; Q, E &gt;</class>
-    <class kind="class">com::griddynamics::jagger::invoker::PairSupplierFactoryLoadBalancer&lt; Q, E &gt;</class>
     <class kind="class">com::griddynamics::jagger::invoker::QueryPoolLoadBalancer&lt; Q, E &gt;</class>
     <class kind="class">com::griddynamics::jagger::invoker::RoundRobinLoadBalancer&lt; Q, E &gt;</class>
-    <class kind="class">com::griddynamics::jagger::invoker::SimpleCircularLoadBalancer&lt; Q, E &gt;</class>
     <class kind="class">com::griddynamics::jagger::invoker::SimpleLoadBalancer&lt; Q, E &gt;</class>
   </compound>
   <compound kind="group">
     <name>Main_Collectors_group</name>
     <title>Implementations of collectors</title>
     <filename>group__Main__Collectors__group.html</filename>
-    <class kind="class">com::griddynamics::jagger::engine::e1::collector::CompositeValidator</class>
     <class kind="class">com::griddynamics::jagger::engine::e1::collector::ConsistencyValidator&lt; Q, E, R &gt;</class>
     <class kind="class">com::griddynamics::jagger::engine::e1::collector::NotNullResponseValidator&lt; Q, E, R &gt;</class>
-  </compound>
-  <compound kind="group">
-    <name>Main_Calculators_group</name>
-    <title>Implementations of calculators</title>
-    <filename>group__Main__Calculators__group.html</filename>
     <class kind="class">com::griddynamics::jagger::engine::e1::collector::SimpleMetricCalculator</class>
   </compound>
   <compound kind="group">
@@ -333,9 +334,19 @@
     <class kind="class">com::griddynamics::jagger::engine::e1::scenario::UserTerminationStrategy</class>
   </compound>
   <compound kind="group">
+    <name>Main_Distributors_General_group</name>
+    <title>General information about distributors</title>
+    <filename>group__Main__Distributors__General__group.html</filename>
+  </compound>
+  <compound kind="group">
     <name>Main_HowToCustomizeDistributors_group</name>
     <title>Custom distributors</title>
     <filename>group__Main__HowToCustomizeDistributors__group.html</filename>
+  </compound>
+  <compound kind="group">
+    <name>Main_Collectors_General_group</name>
+    <title>General information about collectors</title>
+    <filename>group__Main__Collectors__General__group.html</filename>
   </compound>
   <compound kind="group">
     <name>Main_HowToCustomizeCollectors_group</name>
@@ -343,19 +354,14 @@
     <filename>group__Main__HowToCustomizeCollectors__group.html</filename>
   </compound>
   <compound kind="group">
-    <name>Main_HowToCustomizeCalculators_group</name>
-    <title>Custom calculators</title>
-    <filename>group__Main__HowToCustomizeCalculators__group.html</filename>
-  </compound>
-  <compound kind="group">
     <name>Main_HowToCustomizeDecisionMakers_group</name>
     <title>Custom decision makers</title>
     <filename>group__Main__HowToCustomizeDecisionMakers__group.html</filename>
   </compound>
   <compound kind="group">
-    <name>Main_HowToCustomizeTerminators_group</name>
-    <title>Custom termination strategies</title>
-    <filename>group__Main__HowToCustomizeTerminators__group.html</filename>
+    <name>Main_Providers_General_group</name>
+    <title>General information about providers</title>
+    <filename>group__Main__Providers__General__group.html</filename>
   </compound>
   <compound kind="group">
     <name>Main_HowToCustomizeProviders_group</name>
@@ -373,10 +379,6 @@
   <compound kind="class">
     <name>MetricCalculator</name>
     <filename>classMetricCalculator.html</filename>
-  </compound>
-  <compound kind="class">
-    <name>ObjectCreator</name>
-    <filename>classObjectCreator.html</filename>
   </compound>
   <compound kind="class">
     <name>ResponseValidator</name>
@@ -1149,6 +1151,165 @@
     <name>com::griddynamics::jagger::providers</name>
     <filename>namespacecom_1_1griddynamics_1_1jagger_1_1providers.html</filename>
     <namespace>com::griddynamics::jagger::providers::creators</namespace>
+    <class kind="class">com::griddynamics::jagger::providers::CsvProvider&lt; T &gt;</class>
+    <class kind="class">com::griddynamics::jagger::providers::FileProvider&lt; T &gt;</class>
+  </compound>
+  <compound kind="class">
+    <name>com::griddynamics::jagger::providers::CsvProvider&lt; T &gt;</name>
+    <filename>classcom_1_1griddynamics_1_1jagger_1_1providers_1_1CsvProvider_3_01T_01_4.html</filename>
+    <base>Iterable</base>
+    <member kind="function">
+      <type></type>
+      <name>CsvProvider</name>
+      <anchorfile>classcom_1_1griddynamics_1_1jagger_1_1providers_1_1CsvProvider_3_01T_01_4_adf3200e150d5b740ef69c425e5faf71a.html</anchorfile>
+      <anchor>adf3200e150d5b740ef69c425e5faf71a</anchor>
+      <arglist>(String path)</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>CsvProvider</name>
+      <anchorfile>classcom_1_1griddynamics_1_1jagger_1_1providers_1_1CsvProvider_3_01T_01_4_a126476b962b275687476438cf54a7eed.html</anchorfile>
+      <anchor>a126476b962b275687476438cf54a7eed</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>ObjectCreator&lt; T &gt;</type>
+      <name>getObjectCreator</name>
+      <anchorfile>classcom_1_1griddynamics_1_1jagger_1_1providers_1_1CsvProvider_3_01T_01_4_ade93a55f9c0f42d6992c257e4f3e1b35.html</anchorfile>
+      <anchor>ade93a55f9c0f42d6992c257e4f3e1b35</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>String</type>
+      <name>getPath</name>
+      <anchorfile>classcom_1_1griddynamics_1_1jagger_1_1providers_1_1CsvProvider_3_01T_01_4_a7c222710b97b02be87d7d3aa7ca04f07.html</anchorfile>
+      <anchor>a7c222710b97b02be87d7d3aa7ca04f07</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>boolean</type>
+      <name>getReadHeader</name>
+      <anchorfile>classcom_1_1griddynamics_1_1jagger_1_1providers_1_1CsvProvider_3_01T_01_4_a9115bc75061abfe77c64aa1ea2c77d28.html</anchorfile>
+      <anchor>a9115bc75061abfe77c64aa1ea2c77d28</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>CSVStrategy</type>
+      <name>getStrategy</name>
+      <anchorfile>classcom_1_1griddynamics_1_1jagger_1_1providers_1_1CsvProvider_3_01T_01_4_ab0b1791ebae1901a91655dc4de9b3347.html</anchorfile>
+      <anchor>ab0b1791ebae1901a91655dc4de9b3347</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>Iterator&lt; T &gt;</type>
+      <name>iterator</name>
+      <anchorfile>classcom_1_1griddynamics_1_1jagger_1_1providers_1_1CsvProvider_3_01T_01_4_a8acc1135e57c19390d7a10bae62e54fe.html</anchorfile>
+      <anchor>a8acc1135e57c19390d7a10bae62e54fe</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>setObjectCreator</name>
+      <anchorfile>classcom_1_1griddynamics_1_1jagger_1_1providers_1_1CsvProvider_3_01T_01_4_a08ad4d2ef6efffdf3d97163f066d7ecf.html</anchorfile>
+      <anchor>a08ad4d2ef6efffdf3d97163f066d7ecf</anchor>
+      <arglist>(ObjectCreator&lt; T &gt; objectCreator)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>setPath</name>
+      <anchorfile>classcom_1_1griddynamics_1_1jagger_1_1providers_1_1CsvProvider_3_01T_01_4_af78b25fc5c198322b21a5891e4b9c975.html</anchorfile>
+      <anchor>af78b25fc5c198322b21a5891e4b9c975</anchor>
+      <arglist>(String path)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>setReadHeader</name>
+      <anchorfile>classcom_1_1griddynamics_1_1jagger_1_1providers_1_1CsvProvider_3_01T_01_4_a89d5c28c741e6307f4bcff7c3b08e596.html</anchorfile>
+      <anchor>a89d5c28c741e6307f4bcff7c3b08e596</anchor>
+      <arglist>(boolean readHeader)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>setStrategy</name>
+      <anchorfile>classcom_1_1griddynamics_1_1jagger_1_1providers_1_1CsvProvider_3_01T_01_4_a0a33eb72950b191163038d346366f263.html</anchorfile>
+      <anchor>a0a33eb72950b191163038d346366f263</anchor>
+      <arglist>(CSVStrategy strategy)</arglist>
+    </member>
+  </compound>
+  <compound kind="class">
+    <name>com::griddynamics::jagger::providers::FileProvider&lt; T &gt;</name>
+    <filename>classcom_1_1griddynamics_1_1jagger_1_1providers_1_1FileProvider_3_01T_01_4.html</filename>
+    <base>Iterable</base>
+    <member kind="function">
+      <type></type>
+      <name>FileProvider</name>
+      <anchorfile>classcom_1_1griddynamics_1_1jagger_1_1providers_1_1FileProvider_3_01T_01_4_ade9c70b2b344cbce77bffb6449efdde2.html</anchorfile>
+      <anchor>ade9c70b2b344cbce77bffb6449efdde2</anchor>
+      <arglist>(String path, String delimeter, ObjectCreator&lt; T &gt; objectCreator)</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>FileProvider</name>
+      <anchorfile>classcom_1_1griddynamics_1_1jagger_1_1providers_1_1FileProvider_3_01T_01_4_a558ab763022f04eb2f92408da1e2b692.html</anchorfile>
+      <anchor>a558ab763022f04eb2f92408da1e2b692</anchor>
+      <arglist>(String path, ObjectCreator&lt; T &gt; objectCreator)</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>FileProvider</name>
+      <anchorfile>classcom_1_1griddynamics_1_1jagger_1_1providers_1_1FileProvider_3_01T_01_4_aa2353255be2d831b392dff2886d5c91e.html</anchorfile>
+      <anchor>aa2353255be2d831b392dff2886d5c91e</anchor>
+      <arglist>(String path)</arglist>
+    </member>
+    <member kind="function">
+      <type>String</type>
+      <name>getDelimeter</name>
+      <anchorfile>classcom_1_1griddynamics_1_1jagger_1_1providers_1_1FileProvider_3_01T_01_4_a80b3944b0de786df707d15fb69fa1d67.html</anchorfile>
+      <anchor>a80b3944b0de786df707d15fb69fa1d67</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>ObjectCreator&lt; T &gt;</type>
+      <name>getObjectCreator</name>
+      <anchorfile>classcom_1_1griddynamics_1_1jagger_1_1providers_1_1FileProvider_3_01T_01_4_a70c263392d475e10701d8663b1850f03.html</anchorfile>
+      <anchor>a70c263392d475e10701d8663b1850f03</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>String</type>
+      <name>getPath</name>
+      <anchorfile>classcom_1_1griddynamics_1_1jagger_1_1providers_1_1FileProvider_3_01T_01_4_a50acb43505968a47530f16209696d154.html</anchorfile>
+      <anchor>a50acb43505968a47530f16209696d154</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>Iterator&lt; T &gt;</type>
+      <name>iterator</name>
+      <anchorfile>classcom_1_1griddynamics_1_1jagger_1_1providers_1_1FileProvider_3_01T_01_4_aa607896b8523751c80df26bfaeae4823.html</anchorfile>
+      <anchor>aa607896b8523751c80df26bfaeae4823</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>setDelimeter</name>
+      <anchorfile>classcom_1_1griddynamics_1_1jagger_1_1providers_1_1FileProvider_3_01T_01_4_a888607c44e093f6def51da20348f1e8a.html</anchorfile>
+      <anchor>a888607c44e093f6def51da20348f1e8a</anchor>
+      <arglist>(String delimeter)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>setObjectCreator</name>
+      <anchorfile>classcom_1_1griddynamics_1_1jagger_1_1providers_1_1FileProvider_3_01T_01_4_ac4b8b00db02f7589f542e461515e121c.html</anchorfile>
+      <anchor>ac4b8b00db02f7589f542e461515e121c</anchor>
+      <arglist>(ObjectCreator&lt; T &gt; objectCreator)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>setPath</name>
+      <anchorfile>classcom_1_1griddynamics_1_1jagger_1_1providers_1_1FileProvider_3_01T_01_4_aea5d1d09c554f8995a78feef793da8eb.html</anchorfile>
+      <anchor>aea5d1d09c554f8995a78feef793da8eb</anchor>
+      <arglist>(String filePath)</arglist>
+    </member>
   </compound>
   <compound kind="namespace">
     <name>com::griddynamics::jagger::providers::creators</name>
@@ -1177,7 +1338,6 @@
   <compound kind="class">
     <name>com::griddynamics::jagger::providers::creators::StringCreator</name>
     <filename>classcom_1_1griddynamics_1_1jagger_1_1providers_1_1creators_1_1StringCreator.html</filename>
-    <base>ObjectCreator</base>
     <member kind="function">
       <type>String</type>
       <name>createObject</name>
@@ -1195,7 +1355,7 @@
   </compound>
   <compound kind="dir">
     <name>chassis</name>
-    <path>/home/dmitry/git/jagger/chassis/</path>
+    <path>/home/dmitry/git/temp/jagger/chassis/</path>
     <filename>dir_354fde1598c740904e35c8c80f256eba.html</filename>
     <dir>chassis/core</dir>
     <dir>chassis/invoker.hessian</dir>
@@ -1204,7 +1364,7 @@
   </compound>
   <compound kind="dir">
     <name>chassis/core/src/main/java/com/griddynamics/jagger/engine/e1/collector</name>
-    <path>/home/dmitry/git/jagger/chassis/core/src/main/java/com/griddynamics/jagger/engine/e1/collector/</path>
+    <path>/home/dmitry/git/temp/jagger/chassis/core/src/main/java/com/griddynamics/jagger/engine/e1/collector/</path>
     <filename>dir_d38b3a38f74de30ddadbfb67991687a4.html</filename>
     <file>CompositeValidator.java</file>
     <file>ConsistencyValidator.java</file>
@@ -1215,44 +1375,44 @@
   </compound>
   <compound kind="dir">
     <name>chassis/providers/src/main/java/com</name>
-    <path>/home/dmitry/git/jagger/chassis/providers/src/main/java/com/</path>
+    <path>/home/dmitry/git/temp/jagger/chassis/providers/src/main/java/com/</path>
     <filename>dir_a98b1e75321a800cf851e6e6c6c94cba.html</filename>
     <dir>chassis/providers/src/main/java/com/griddynamics</dir>
   </compound>
   <compound kind="dir">
     <name>chassis/invokers/src/main/java/com</name>
-    <path>/home/dmitry/git/jagger/chassis/invokers/src/main/java/com/</path>
+    <path>/home/dmitry/git/temp/jagger/chassis/invokers/src/main/java/com/</path>
     <filename>dir_65029377d2fc0ad855b2dcaaaeccfdfa.html</filename>
     <dir>chassis/invokers/src/main/java/com/griddynamics</dir>
   </compound>
   <compound kind="dir">
     <name>chassis/invoker.hessian/src/main/java/com</name>
-    <path>/home/dmitry/git/jagger/chassis/invoker.hessian/src/main/java/com/</path>
+    <path>/home/dmitry/git/temp/jagger/chassis/invoker.hessian/src/main/java/com/</path>
     <filename>dir_48ec507f6295e9452fa42665c7016763.html</filename>
     <dir>chassis/invoker.hessian/src/main/java/com/griddynamics</dir>
   </compound>
   <compound kind="dir">
     <name>chassis/core/src/main/java/com</name>
-    <path>/home/dmitry/git/jagger/chassis/core/src/main/java/com/</path>
+    <path>/home/dmitry/git/temp/jagger/chassis/core/src/main/java/com/</path>
     <filename>dir_535bcdc001ae4e127bab63a41738ad5d.html</filename>
     <dir>chassis/core/src/main/java/com/griddynamics</dir>
   </compound>
   <compound kind="dir">
     <name>chassis/core</name>
-    <path>/home/dmitry/git/jagger/chassis/core/</path>
+    <path>/home/dmitry/git/temp/jagger/chassis/core/</path>
     <filename>dir_1c395c5d69b313f390ed0328de1ab196.html</filename>
     <dir>chassis/core/src</dir>
   </compound>
   <compound kind="dir">
     <name>chassis/providers/src/main/java/com/griddynamics/jagger/providers/creators</name>
-    <path>/home/dmitry/git/jagger/chassis/providers/src/main/java/com/griddynamics/jagger/providers/creators/</path>
+    <path>/home/dmitry/git/temp/jagger/chassis/providers/src/main/java/com/griddynamics/jagger/providers/creators/</path>
     <filename>dir_1216813aa86f11a906efd8f90e8b21d8.html</filename>
     <file>ObjectCreator.java</file>
     <file>StringCreator.java</file>
   </compound>
   <compound kind="dir">
     <name>chassis/core/src/main/java/com/griddynamics/jagger/engine/e1</name>
-    <path>/home/dmitry/git/jagger/chassis/core/src/main/java/com/griddynamics/jagger/engine/e1/</path>
+    <path>/home/dmitry/git/temp/jagger/chassis/core/src/main/java/com/griddynamics/jagger/engine/e1/</path>
     <filename>dir_36f90a5ab4dc2fa9d9fea1514617df5f.html</filename>
     <dir>chassis/core/src/main/java/com/griddynamics/jagger/engine/e1/collector</dir>
     <dir>chassis/core/src/main/java/com/griddynamics/jagger/engine/e1/scenario</dir>
@@ -1260,43 +1420,43 @@
   </compound>
   <compound kind="dir">
     <name>chassis/core/src/main/java/com/griddynamics/jagger/engine</name>
-    <path>/home/dmitry/git/jagger/chassis/core/src/main/java/com/griddynamics/jagger/engine/</path>
+    <path>/home/dmitry/git/temp/jagger/chassis/core/src/main/java/com/griddynamics/jagger/engine/</path>
     <filename>dir_f4468060edc6945f489a9de0e3edc4cd.html</filename>
     <dir>chassis/core/src/main/java/com/griddynamics/jagger/engine/e1</dir>
   </compound>
   <compound kind="dir">
     <name>chassis/providers/src/main/java/com/griddynamics</name>
-    <path>/home/dmitry/git/jagger/chassis/providers/src/main/java/com/griddynamics/</path>
+    <path>/home/dmitry/git/temp/jagger/chassis/providers/src/main/java/com/griddynamics/</path>
     <filename>dir_8d54848487ba426f545a22452d3ac276.html</filename>
     <dir>chassis/providers/src/main/java/com/griddynamics/jagger</dir>
   </compound>
   <compound kind="dir">
     <name>chassis/invokers/src/main/java/com/griddynamics</name>
-    <path>/home/dmitry/git/jagger/chassis/invokers/src/main/java/com/griddynamics/</path>
+    <path>/home/dmitry/git/temp/jagger/chassis/invokers/src/main/java/com/griddynamics/</path>
     <filename>dir_f9b8fc12664b97f1b2f04deff54068f8.html</filename>
     <dir>chassis/invokers/src/main/java/com/griddynamics/jagger</dir>
   </compound>
   <compound kind="dir">
     <name>chassis/invoker.hessian/src/main/java/com/griddynamics</name>
-    <path>/home/dmitry/git/jagger/chassis/invoker.hessian/src/main/java/com/griddynamics/</path>
+    <path>/home/dmitry/git/temp/jagger/chassis/invoker.hessian/src/main/java/com/griddynamics/</path>
     <filename>dir_0bf1a626c585a3728256332fd228c620.html</filename>
     <dir>chassis/invoker.hessian/src/main/java/com/griddynamics/jagger</dir>
   </compound>
   <compound kind="dir">
     <name>chassis/core/src/main/java/com/griddynamics</name>
-    <path>/home/dmitry/git/jagger/chassis/core/src/main/java/com/griddynamics/</path>
+    <path>/home/dmitry/git/temp/jagger/chassis/core/src/main/java/com/griddynamics/</path>
     <filename>dir_4adb2e937a3a5425c075f14469ea09e0.html</filename>
     <dir>chassis/core/src/main/java/com/griddynamics/jagger</dir>
   </compound>
   <compound kind="dir">
     <name>chassis/invoker.hessian/src/main/java/com/griddynamics/jagger/invoker/hessian</name>
-    <path>/home/dmitry/git/jagger/chassis/invoker.hessian/src/main/java/com/griddynamics/jagger/invoker/hessian/</path>
+    <path>/home/dmitry/git/temp/jagger/chassis/invoker.hessian/src/main/java/com/griddynamics/jagger/invoker/hessian/</path>
     <filename>dir_03f707af9101cf3485600720063fe2d5.html</filename>
     <file>HessianInvoker.java</file>
   </compound>
   <compound kind="dir">
     <name>chassis/invokers/src/main/java/com/griddynamics/jagger/invoker/http</name>
-    <path>/home/dmitry/git/jagger/chassis/invokers/src/main/java/com/griddynamics/jagger/invoker/http/</path>
+    <path>/home/dmitry/git/temp/jagger/chassis/invokers/src/main/java/com/griddynamics/jagger/invoker/http/</path>
     <filename>dir_deba52fd810559bdf44d77a4c97dacf6.html</filename>
     <file>ApacheAbstractHttpInvoker.java</file>
     <file>ApacheHttpInvoker.java</file>
@@ -1306,7 +1466,7 @@
   </compound>
   <compound kind="dir">
     <name>chassis/invokers/src/main/java/com/griddynamics/jagger/invoker</name>
-    <path>/home/dmitry/git/jagger/chassis/invokers/src/main/java/com/griddynamics/jagger/invoker/</path>
+    <path>/home/dmitry/git/temp/jagger/chassis/invokers/src/main/java/com/griddynamics/jagger/invoker/</path>
     <filename>dir_4b073d9d4770d90305b8da51b365459a.html</filename>
     <dir>chassis/invokers/src/main/java/com/griddynamics/jagger/invoker/http</dir>
     <dir>chassis/invokers/src/main/java/com/griddynamics/jagger/invoker/soap</dir>
@@ -1314,13 +1474,13 @@
   </compound>
   <compound kind="dir">
     <name>chassis/invoker.hessian/src/main/java/com/griddynamics/jagger/invoker</name>
-    <path>/home/dmitry/git/jagger/chassis/invoker.hessian/src/main/java/com/griddynamics/jagger/invoker/</path>
+    <path>/home/dmitry/git/temp/jagger/chassis/invoker.hessian/src/main/java/com/griddynamics/jagger/invoker/</path>
     <filename>dir_ecbea868ae8700bf5369db78700154b2.html</filename>
     <dir>chassis/invoker.hessian/src/main/java/com/griddynamics/jagger/invoker/hessian</dir>
   </compound>
   <compound kind="dir">
     <name>chassis/core/src/main/java/com/griddynamics/jagger/invoker</name>
-    <path>/home/dmitry/git/jagger/chassis/core/src/main/java/com/griddynamics/jagger/invoker/</path>
+    <path>/home/dmitry/git/temp/jagger/chassis/core/src/main/java/com/griddynamics/jagger/invoker/</path>
     <filename>dir_3a25ad9b5849ea946427cad382bbd06a.html</filename>
     <file>Invoker.java</file>
     <file>LoadBalancer.java</file>
@@ -1333,148 +1493,150 @@
   </compound>
   <compound kind="dir">
     <name>chassis/invoker.hessian</name>
-    <path>/home/dmitry/git/jagger/chassis/invoker.hessian/</path>
+    <path>/home/dmitry/git/temp/jagger/chassis/invoker.hessian/</path>
     <filename>dir_7a8dd1710dd2c5fdd76e6b94bd9d7008.html</filename>
     <dir>chassis/invoker.hessian/src</dir>
   </compound>
   <compound kind="dir">
     <name>chassis/invokers</name>
-    <path>/home/dmitry/git/jagger/chassis/invokers/</path>
+    <path>/home/dmitry/git/temp/jagger/chassis/invokers/</path>
     <filename>dir_1b8bd868a0538799b6944c315ff97c04.html</filename>
     <dir>chassis/invokers/src</dir>
   </compound>
   <compound kind="dir">
     <name>chassis/providers/src/main/java/com/griddynamics/jagger</name>
-    <path>/home/dmitry/git/jagger/chassis/providers/src/main/java/com/griddynamics/jagger/</path>
+    <path>/home/dmitry/git/temp/jagger/chassis/providers/src/main/java/com/griddynamics/jagger/</path>
     <filename>dir_82168b61985a1cabbafd8be59577b72d.html</filename>
     <dir>chassis/providers/src/main/java/com/griddynamics/jagger/providers</dir>
   </compound>
   <compound kind="dir">
     <name>chassis/invokers/src/main/java/com/griddynamics/jagger</name>
-    <path>/home/dmitry/git/jagger/chassis/invokers/src/main/java/com/griddynamics/jagger/</path>
+    <path>/home/dmitry/git/temp/jagger/chassis/invokers/src/main/java/com/griddynamics/jagger/</path>
     <filename>dir_b0aea72e93a2d66ddf74b7864ebf3d0e.html</filename>
     <dir>chassis/invokers/src/main/java/com/griddynamics/jagger/invoker</dir>
   </compound>
   <compound kind="dir">
     <name>chassis/invoker.hessian/src/main/java/com/griddynamics/jagger</name>
-    <path>/home/dmitry/git/jagger/chassis/invoker.hessian/src/main/java/com/griddynamics/jagger/</path>
+    <path>/home/dmitry/git/temp/jagger/chassis/invoker.hessian/src/main/java/com/griddynamics/jagger/</path>
     <filename>dir_67ceb2acd7b85996f2730669f2383a47.html</filename>
     <dir>chassis/invoker.hessian/src/main/java/com/griddynamics/jagger/invoker</dir>
   </compound>
   <compound kind="dir">
     <name>chassis/core/src/main/java/com/griddynamics/jagger</name>
-    <path>/home/dmitry/git/jagger/chassis/core/src/main/java/com/griddynamics/jagger/</path>
+    <path>/home/dmitry/git/temp/jagger/chassis/core/src/main/java/com/griddynamics/jagger/</path>
     <filename>dir_ff3343372c886569025eb3fe5f9888cc.html</filename>
     <dir>chassis/core/src/main/java/com/griddynamics/jagger/engine</dir>
     <dir>chassis/core/src/main/java/com/griddynamics/jagger/invoker</dir>
   </compound>
   <compound kind="dir">
     <name>chassis/providers/src/main/java</name>
-    <path>/home/dmitry/git/jagger/chassis/providers/src/main/java/</path>
+    <path>/home/dmitry/git/temp/jagger/chassis/providers/src/main/java/</path>
     <filename>dir_d07ebbc09f09e402ae3dc09fc144b8a1.html</filename>
     <dir>chassis/providers/src/main/java/com</dir>
   </compound>
   <compound kind="dir">
     <name>chassis/invokers/src/main/java</name>
-    <path>/home/dmitry/git/jagger/chassis/invokers/src/main/java/</path>
+    <path>/home/dmitry/git/temp/jagger/chassis/invokers/src/main/java/</path>
     <filename>dir_8e55efdf5f1b963e521817d1dffc31c2.html</filename>
     <dir>chassis/invokers/src/main/java/com</dir>
   </compound>
   <compound kind="dir">
     <name>chassis/invoker.hessian/src/main/java</name>
-    <path>/home/dmitry/git/jagger/chassis/invoker.hessian/src/main/java/</path>
+    <path>/home/dmitry/git/temp/jagger/chassis/invoker.hessian/src/main/java/</path>
     <filename>dir_61bf54a175abec8e851da17eed2d2b74.html</filename>
     <dir>chassis/invoker.hessian/src/main/java/com</dir>
   </compound>
   <compound kind="dir">
     <name>chassis/core/src/main/java</name>
-    <path>/home/dmitry/git/jagger/chassis/core/src/main/java/</path>
+    <path>/home/dmitry/git/temp/jagger/chassis/core/src/main/java/</path>
     <filename>dir_a34f89c8ea11f95467c6d8e90c916c5b.html</filename>
     <dir>chassis/core/src/main/java/com</dir>
   </compound>
   <compound kind="dir">
     <name>chassis/providers/src/main</name>
-    <path>/home/dmitry/git/jagger/chassis/providers/src/main/</path>
+    <path>/home/dmitry/git/temp/jagger/chassis/providers/src/main/</path>
     <filename>dir_738b923a6b53f6b144716249abff6558.html</filename>
     <dir>chassis/providers/src/main/java</dir>
   </compound>
   <compound kind="dir">
     <name>chassis/invokers/src/main</name>
-    <path>/home/dmitry/git/jagger/chassis/invokers/src/main/</path>
+    <path>/home/dmitry/git/temp/jagger/chassis/invokers/src/main/</path>
     <filename>dir_3d8a73525acc38acbbdc1a383c86b097.html</filename>
     <dir>chassis/invokers/src/main/java</dir>
   </compound>
   <compound kind="dir">
     <name>chassis/invoker.hessian/src/main</name>
-    <path>/home/dmitry/git/jagger/chassis/invoker.hessian/src/main/</path>
+    <path>/home/dmitry/git/temp/jagger/chassis/invoker.hessian/src/main/</path>
     <filename>dir_ed677e20c9e435c2b91652897f4cbeda.html</filename>
     <dir>chassis/invoker.hessian/src/main/java</dir>
   </compound>
   <compound kind="dir">
     <name>chassis/core/src/main</name>
-    <path>/home/dmitry/git/jagger/chassis/core/src/main/</path>
+    <path>/home/dmitry/git/temp/jagger/chassis/core/src/main/</path>
     <filename>dir_be8f59c65a68c96238a608273de216fe.html</filename>
     <dir>chassis/core/src/main/java</dir>
   </compound>
   <compound kind="dir">
     <name>chassis/providers/src/main/java/com/griddynamics/jagger/providers</name>
-    <path>/home/dmitry/git/jagger/chassis/providers/src/main/java/com/griddynamics/jagger/providers/</path>
+    <path>/home/dmitry/git/temp/jagger/chassis/providers/src/main/java/com/griddynamics/jagger/providers/</path>
     <filename>dir_0d8d555982f7bdfa4a3f729655ec8463.html</filename>
     <dir>chassis/providers/src/main/java/com/griddynamics/jagger/providers/creators</dir>
+    <file>CsvProvider.java</file>
+    <file>FileProvider.java</file>
   </compound>
   <compound kind="dir">
     <name>chassis/providers</name>
-    <path>/home/dmitry/git/jagger/chassis/providers/</path>
+    <path>/home/dmitry/git/temp/jagger/chassis/providers/</path>
     <filename>dir_884c7b27761b488a71f9d0a85781f535.html</filename>
     <dir>chassis/providers/src</dir>
   </compound>
   <compound kind="dir">
     <name>chassis/core/src/main/java/com/griddynamics/jagger/engine/e1/scenario</name>
-    <path>/home/dmitry/git/jagger/chassis/core/src/main/java/com/griddynamics/jagger/engine/e1/scenario/</path>
+    <path>/home/dmitry/git/temp/jagger/chassis/core/src/main/java/com/griddynamics/jagger/engine/e1/scenario/</path>
     <filename>dir_0a7fdbb47f7ad4da020514769273562c.html</filename>
     <file>TerminationStrategy.java</file>
     <file>UserTerminationStrategy.java</file>
   </compound>
   <compound kind="dir">
     <name>chassis/core/src/main/java/com/griddynamics/jagger/engine/e1/sessioncomparation</name>
-    <path>/home/dmitry/git/jagger/chassis/core/src/main/java/com/griddynamics/jagger/engine/e1/sessioncomparation/</path>
+    <path>/home/dmitry/git/temp/jagger/chassis/core/src/main/java/com/griddynamics/jagger/engine/e1/sessioncomparation/</path>
     <filename>dir_494cccdd188d701a2eae43d8ec8a1a99.html</filename>
     <file>DecisionMaker.java</file>
     <file>WorstCaseDecisionMaker.java</file>
   </compound>
   <compound kind="dir">
     <name>chassis/invokers/src/main/java/com/griddynamics/jagger/invoker/soap</name>
-    <path>/home/dmitry/git/jagger/chassis/invokers/src/main/java/com/griddynamics/jagger/invoker/soap/</path>
+    <path>/home/dmitry/git/temp/jagger/chassis/invokers/src/main/java/com/griddynamics/jagger/invoker/soap/</path>
     <filename>dir_1cc87c09ac5b35cb93bb639909093de7.html</filename>
     <file>SOAPInvoker.java</file>
   </compound>
   <compound kind="dir">
     <name>chassis/providers/src</name>
-    <path>/home/dmitry/git/jagger/chassis/providers/src/</path>
+    <path>/home/dmitry/git/temp/jagger/chassis/providers/src/</path>
     <filename>dir_ccff7ad33d3ddcf0049be78e35a265b1.html</filename>
     <dir>chassis/providers/src/main</dir>
   </compound>
   <compound kind="dir">
     <name>chassis/invokers/src</name>
-    <path>/home/dmitry/git/jagger/chassis/invokers/src/</path>
+    <path>/home/dmitry/git/temp/jagger/chassis/invokers/src/</path>
     <filename>dir_b1ba3ce14f48e31d98949505d055be4f.html</filename>
     <dir>chassis/invokers/src/main</dir>
   </compound>
   <compound kind="dir">
     <name>chassis/invoker.hessian/src</name>
-    <path>/home/dmitry/git/jagger/chassis/invoker.hessian/src/</path>
+    <path>/home/dmitry/git/temp/jagger/chassis/invoker.hessian/src/</path>
     <filename>dir_26fd7b0c729fcc81e98d4a0863c01868.html</filename>
     <dir>chassis/invoker.hessian/src/main</dir>
   </compound>
   <compound kind="dir">
     <name>chassis/core/src</name>
-    <path>/home/dmitry/git/jagger/chassis/core/src/</path>
+    <path>/home/dmitry/git/temp/jagger/chassis/core/src/</path>
     <filename>dir_76447e333b2071dcf00c0b8f89538035.html</filename>
     <dir>chassis/core/src/main</dir>
   </compound>
   <compound kind="dir">
     <name>chassis/invokers/src/main/java/com/griddynamics/jagger/invoker/stubs</name>
-    <path>/home/dmitry/git/jagger/chassis/invokers/src/main/java/com/griddynamics/jagger/invoker/stubs/</path>
+    <path>/home/dmitry/git/temp/jagger/chassis/invokers/src/main/java/com/griddynamics/jagger/invoker/stubs/</path>
     <filename>dir_d53d07348a372361a31e6b5ab0c43615.html</filename>
     <file>WaitingInvoker.java</file>
   </compound>
@@ -1482,8 +1644,5 @@
     <name>index</name>
     <title>Custom components for Jagger</title>
     <filename>index</filename>
-    <docanchor file="index" title="General approach to customize Jagger components">Main_general_sec</docanchor>
-    <docanchor file="index" title="Detailed description how customize Jagger components">Main_detailes_sec</docanchor>
-    <docanchor file="index" title="Jagger implementations of base components that can be overrode">Main_override_sec</docanchor>
   </compound>
 </tagfile>

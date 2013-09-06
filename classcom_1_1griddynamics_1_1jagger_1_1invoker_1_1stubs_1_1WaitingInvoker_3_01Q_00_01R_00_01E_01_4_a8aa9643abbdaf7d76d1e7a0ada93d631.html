@@ -114,15 +114,33 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
         </tr>
       </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;                                                                    {</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        log.debug(<span class="stringliteral">&quot;Invoked query {} on endpoint {}&quot;</span>, query, endpoint);</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        <span class="keywordflow">try</span> {</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;            Thread.sleep(sleepMs);</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        } <span class="keywordflow">catch</span> (InterruptedException e) {</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;            log.error(<span class="stringliteral">&quot;Error&quot;</span>, e);</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        }</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        <span class="keywordflow">return</span> result;</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    }</div>
+
+<p>Sleep for exact time. </p>
+<dl class="section author"><dt>Author</dt><dd>Mairbek Khadikov <br/>
+ </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">query</td><td>- some query </td></tr>
+    <tr><td class="paramname">endpoint</td><td>- some endpoint</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>invocation result </dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">InvocationException</td><td>when invocation failed </td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="fragment"><div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;                                                                    {</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        log.debug(<span class="stringliteral">&quot;Invoked query {} on endpoint {}&quot;</span>, query, endpoint);</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        <span class="keywordflow">try</span> {</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;            Thread.sleep(sleepMs);</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        } <span class="keywordflow">catch</span> (InterruptedException e) {</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;            log.error(<span class="stringliteral">&quot;Error&quot;</span>, e);</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        }</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        <span class="keywordflow">return</span> result;</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -132,7 +150,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Sep 2 2013 10:33:52 for Jagger by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Sep 6 2013 16:43:36 for Jagger by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.4
 </small></address>

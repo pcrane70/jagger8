@@ -80,33 +80,36 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">Custom distributors</div>  </div>
 </div><!--header-->
 <div class="contents">
-<p><b>Note:</b> full examples of the code are available in maven archetype-examples</p>
-<p>To add custom distributor you need to do:</p>
+<p><a class="el" href="group__Main__Distributors__General__group.html">General information about distributors</a> <br/>
+ <br/>
+ To add custom distributor you need to do:</p>
 <ol type="1">
 <li>Create class which implements <a class="el" href="group__Main__Distributors__Base__group.html">Distributor</a> interface or extends one of classes <a class="el" href="group__Main__Distributors__group.html">Implementations of distributors</a>  <div class="fragment"><div class="line"><span class="keyword">public</span> <span class="keyword">class </span>RandomQueryDistributor&lt;Q, E&gt;  <span class="keyword">extends</span> QueryPoolLoadBalancer&lt;Q, E&gt; {</div>
-</div><!-- fragment --></li>
+</div><!-- fragment --> <br/>
+</li>
 <li>Create bean in XML file in the directory "suite/distributor/" with this class  <div class="fragment"><div class="line">    &lt;!-- begin: following section is used <span class="keywordflow">for</span> docu generation - distributor bean --&gt;</div>
-<div class="line">    &lt;beans:bean <span class="keywordtype">id</span>=<span class="stringliteral">&quot;jaggerRandomScenario&quot;</span> <span class="keyword">class</span>=<span class="stringliteral">&quot;com.griddynamics.jagger.invoker.QueryPoolScenarioFactory&quot;</span> parent=<span class="stringliteral">&quot;pageScenario&quot;</span>&gt;</div>
-<div class="line">        &lt;beans:<span class="keyword">property</span> name=<span class="stringliteral">&quot;loadBalancer&quot;</span>&gt;</div>
-<div class="line">            &lt;beans:bean <span class="keywordtype">id</span>=<span class="stringliteral">&quot;randomDistributor&quot;</span> <span class="keyword">class</span>=<span class="stringliteral">&quot;${package}.distributor.RandomQueryDistributor&quot;</span>&gt;</div>
-<div class="line">                &lt;beans:<span class="keyword">property</span> name=<span class="stringliteral">&quot;endpointProvider&quot;</span> ref=<span class="stringliteral">&quot;fileEndpointProvider&quot;</span>/&gt;</div>
-<div class="line">                &lt;beans:<span class="keyword">property</span> name=<span class="stringliteral">&quot;queryProvider&quot;</span> ref=<span class="stringliteral">&quot;fileQueryProvider&quot;</span>/&gt;</div>
-<div class="line">            &lt;/beans:bean&gt;</div>
-<div class="line">        &lt;/beans:<span class="keyword">property</span>&gt;</div>
-<div class="line">    &lt;/beans:bean&gt;</div>
+<div class="line">    &lt;beans:bean <span class="keywordtype">id</span>=<span class="stringliteral">&quot;randomQueryDistributor&quot;</span> <span class="keyword">class</span>=<span class="stringliteral">&quot;${package}.distributor.RandomQueryDistributor&quot;</span>/&gt;</div>
 <div class="line">    &lt;!-- end: following section is used <span class="keywordflow">for</span> docu generation - distributor bean --&gt;</div>
-</div><!-- fragment --></li>
-<li>Refer this class in test description XML file  <div class="fragment"><div class="line">    &lt;!-- begin: following section is used <span class="keywordflow">for</span> docu generation - distributor usage --&gt;</div>
-<div class="line">    &lt;test-description <span class="keywordtype">id</span>=<span class="stringliteral">&quot;jaggerRandomDistributorScenario&quot;</span> calibration=<span class="stringliteral">&quot;false&quot;</span>&gt;</div>
-<div class="line">        &lt;scenario xsi:type=<span class="stringliteral">&quot;scenario-ref&quot;</span> ref=<span class="stringliteral">&quot;jaggerRandomScenario&quot;</span>/&gt;</div>
+</div><!-- fragment --> <br/>
+</li>
+<li>Refer this class in your <a href="./xsd/http___www.griddynamics.com_schema_jagger/element/scenario-query-pool.html">scenario-query-pool</a> with element <a href="./xsd/http___www.griddynamics.com_schema_jagger/element/query-distributor.html">query-distributor</a>  <div class="fragment"><div class="line">    &lt;!-- begin: following section is used <span class="keywordflow">for</span> docu generation - distributor usage --&gt;</div>
+<div class="line">    &lt;test-description <span class="keywordtype">id</span>=<span class="stringliteral">&quot;jaggerRandomPageTest&quot;</span> parent=<span class="stringliteral">&quot;jaggerPageTest&quot;</span> calibration=<span class="stringliteral">&quot;true&quot;</span>&gt;</div>
+<div class="line">        &lt;scenario xsi:type=<span class="stringliteral">&quot;scenario-query-pool&quot;</span> parent=<span class="stringliteral">&quot;jaggerPageScenario&quot;</span>&gt;</div>
+<div class="line">            &lt;query-distributor xsi:type=<span class="stringliteral">&quot;query-distributor-ref&quot;</span> ref=<span class="stringliteral">&quot;randomQueryDistributor&quot;</span>/&gt;</div>
+<div class="line">        &lt;/scenario&gt;</div>
 <div class="line">    &lt;/test-description&gt;</div>
 <div class="line">    &lt;!-- end: following section is used <span class="keywordflow">for</span> docu generation - distributor usage --&gt;</div>
-</div><!-- fragment --> </li>
+</div><!-- fragment --></li>
 </ol>
+<p><b>Note:</b> </p>
+<ul>
+<li>full examples of the code are available in maven archetype-examples </li>
+<li>instead of ${package} write the name of your package </li>
+</ul>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Sep 2 2013 10:33:52 for Jagger by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Sep 6 2013 16:43:36 for Jagger by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.4
 </small></address>

@@ -113,13 +113,24 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;                                                              {</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        HttpParams clientParams = <span class="keyword">new</span> BasicHttpParams();</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        <span class="keywordflow">for</span> (Map.Entry&lt;String, Object&gt; clientParam : query.getClientParams().entrySet()) {</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;            clientParams.setParameter(clientParam.getKey(), clientParam.getValue());</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        }</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        <span class="keywordflow">return</span> clientParams;</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    }</div>
+
+<p>Creates http request with method params from query and with url equals endpoint. </p>
+<dl class="section author"><dt>Author</dt><dd>Alexey Kiselyov <br/>
+ </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">query</td><td>- contains client params</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>http params for http-client </dd></dl>
+<div class="fragment"><div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;                                                              {</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        HttpParams clientParams = <span class="keyword">new</span> BasicHttpParams();</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        <span class="keywordflow">for</span> (Map.Entry&lt;String, Object&gt; clientParam : query.getClientParams().entrySet()) {</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;            clientParams.setParameter(clientParam.getKey(), clientParam.getValue());</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        }</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        <span class="keywordflow">return</span> clientParams;</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -129,7 +140,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Sep 2 2013 10:33:52 for Jagger by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Sep 6 2013 16:43:36 for Jagger by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.4
 </small></address>

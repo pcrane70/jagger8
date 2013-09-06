@@ -80,11 +80,37 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">Custom providers</div>  </div>
 </div><!--header-->
 <div class="contents">
-<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000005">Todo:</a></b></dt><dd>finish section Custom providers </dd></dl>
+<p><a class="el" href="group__Main__Providers__General__group.html">General information about providers</a> <br/>
+ <br/>
+ To add custom provider you need to do -</p>
+<ol type="1">
+<li>Create class which implements interface Iterable&lt;Q&gt;  <div class="fragment"><div class="line"><span class="keyword">public</span> <span class="keyword">class </span>FileReaderIterable <span class="keyword">implements</span> <a class="code" href="classIterable.html">Iterable</a>&lt;String&gt; {</div>
+</div><!-- fragment --> <br/>
+</li>
+<li>Create bean in XML file with some id  <div class="fragment"><div class="line">    &lt;!-- begin: following section is used <span class="keywordflow">for</span> docu generation - provider usage --&gt;</div>
+<div class="line">    &lt;beans:bean <span class="keywordtype">id</span>=<span class="stringliteral">&quot;fileEndpointProvider&quot;</span> <span class="keyword">class</span>=<span class="stringliteral">&quot;${package}.provider.FileReaderIterable&quot;</span>&gt;</div>
+<div class="line">        &lt;beans:<span class="keyword">property</span> name=<span class="stringliteral">&quot;filePath&quot;</span> value=<span class="stringliteral">&quot;suite/provider/resources/endpoints.txt&quot;</span>/&gt;</div>
+<div class="line">    &lt;/beans:bean&gt;</div>
+<div class="line">    &lt;!-- end: following section is used <span class="keywordflow">for</span> docu generation - provider usage --&gt;</div>
+</div><!-- fragment --> <br/>
+</li>
+<li>Create component <a href="./xsd/http___www.griddynamics.com_schema_jagger/element/query-provider.html">query-provider</a>(or <a href="./xsd/http___www.griddynamics.com_schema_jagger/element/endpoint-provider.html">endpoint-provider</a>) with type query-provider-ref and set id of provider to attribute ref.  <div class="fragment"><div class="line">        &lt;!-- begin: following section is used <span class="keywordflow">for</span> docu generation - provider custom --&gt;</div>
+<div class="line">        &lt;scenario <span class="keywordtype">id</span>=<span class="stringliteral">&quot;fileProviderScenario&quot;</span> xsi:type=<span class="stringliteral">&quot;scenario-query-pool&quot;</span> parent=<span class="stringliteral">&quot;pageScenario&quot;</span>&gt;</div>
+<div class="line">            &lt;endpoint-provider xsi:type=<span class="stringliteral">&quot;endpoint-provider-ref&quot;</span> ref=<span class="stringliteral">&quot;fileEndpointProvider&quot;</span>/&gt;</div>
+<div class="line">            &lt;query-provider xsi:type=<span class="stringliteral">&quot;query-provider-ref&quot;</span> ref=<span class="stringliteral">&quot;fileQueryProvider&quot;</span>/&gt;</div>
+<div class="line">        &lt;/scenario&gt;</div>
+<div class="line">        &lt;!-- end: following section is used <span class="keywordflow">for</span> docu generation - provider custom --&gt;</div>
+</div><!-- fragment --> <br/>
+ <b>Note:</b> <ul>
+<li>full examples of the code are available in maven archetype-examples </li>
+<li>instead of ${package} write the name of your package </li>
+</ul>
+</li>
+</ol>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Sep 2 2013 10:33:52 for Jagger by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Sep 6 2013 16:43:36 for Jagger by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.4
 </small></address>

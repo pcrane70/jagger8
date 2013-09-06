@@ -97,19 +97,18 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!--header-->
 <div class="contents">
 
-<p>??? Some short description  
+<p>This class creates http request to the services of SuT.  
  <a href="classcom_1_1griddynamics_1_1jagger_1_1invoker_1_1http_1_1ApacheAbstractHttpInvoker_3_01Q_01_4.html#details">More...</a></p>
 <div class="dynheader">
 Inheritance diagram for com.griddynamics.jagger.invoker.http.ApacheAbstractHttpInvoker&lt; Q &gt;:</div>
 <div class="dyncontent">
 <div class="center"><img src="classcom_1_1griddynamics_1_1jagger_1_1invoker_1_1http_1_1ApacheAbstractHttpInvoker_3_01Q_01_4__inherit__graph.png" border="0" usemap="#com_8griddynamics_8jagger_8invoker_8http_8ApacheAbstractHttpInvoker_3_01Q_01_4_inherit__map" alt="Inheritance graph"/></div>
-<map name="com_8griddynamics_8jagger_8invoker_8http_8ApacheAbstractHttpInvoker_3_01Q_01_4_inherit__map" id="com_8griddynamics_8jagger_8invoker_8http_8ApacheAbstractHttpInvoker_3_01Q_01_4_inherit__map">
-</map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a406222ee09192585ceeb72298280ccc5"><td class="memItemLeft" align="right" valign="top">final HttpResponse&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1griddynamics_1_1jagger_1_1invoker_1_1http_1_1ApacheAbstractHttpInvoker_3_01Q_01_4_a406222ee09192585ceeb72298280ccc5.html#a406222ee09192585ceeb72298280ccc5">invoke</a> (Q query, String endpoint)  throws InvocationException </td></tr>
+<tr class="memdesc:a406222ee09192585ceeb72298280ccc5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Executes http request via apache http client.  <a href="#a406222ee09192585ceeb72298280ccc5">More...</a><br/></td></tr>
 <tr class="separator:a406222ee09192585ceeb72298280ccc5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a37d586d1cbe34d43d1509897f31619d8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1griddynamics_1_1jagger_1_1invoker_1_1http_1_1ApacheAbstractHttpInvoker_3_01Q_01_4_a37d586d1cbe34d43d1509897f31619d8.html#a37d586d1cbe34d43d1509897f31619d8">setHttpClient</a> (AbstractHttpClient httpClient)</td></tr>
 <tr class="separator:a37d586d1cbe34d43d1509897f31619d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -117,19 +116,21 @@ Public Member Functions</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
 <tr class="memitem:a4534e83506d920d0a0a73fa083282500"><td class="memItemLeft" align="right" valign="top">abstract HttpParams&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1griddynamics_1_1jagger_1_1invoker_1_1http_1_1ApacheAbstractHttpInvoker_3_01Q_01_4_a4534e83506d920d0a0a73fa083282500.html#a4534e83506d920d0a0a73fa083282500">getHttpClientParams</a> (Q query)</td></tr>
+<tr class="memdesc:a4534e83506d920d0a0a73fa083282500"><td class="mdescLeft">&#160;</td><td class="mdescRight">Extract client params from query.  <a href="#a4534e83506d920d0a0a73fa083282500">More...</a><br/></td></tr>
 <tr class="separator:a4534e83506d920d0a0a73fa083282500"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a544b36b5cb2c55c8591a1b90aa9054d1"><td class="memItemLeft" align="right" valign="top">abstract HttpRequestBase&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1griddynamics_1_1jagger_1_1invoker_1_1http_1_1ApacheAbstractHttpInvoker_3_01Q_01_4_a544b36b5cb2c55c8591a1b90aa9054d1.html#a544b36b5cb2c55c8591a1b90aa9054d1">getHttpMethod</a> (Q query, String endpoint)</td></tr>
+<tr class="memdesc:a544b36b5cb2c55c8591a1b90aa9054d1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates request(GET, POST, etc) from query and endpoint.  <a href="#a544b36b5cb2c55c8591a1b90aa9054d1">More...</a><br/></td></tr>
 <tr class="separator:a544b36b5cb2c55c8591a1b90aa9054d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>??? Some short description </p>
-<dl class="section author"><dt>Author</dt><dd>??? <br/>
+<div class="textblock"><p>This class creates http request to the services of SuT. </p>
+<dl class="section author"><dt>Author</dt><dd>Evelina Stepanova <br/>
  </dd></dl>
 <dl class="section user"><dt>Details:</dt><dd></dd></dl>
-<p>???</p>
+<p>An abstract implementation of http invoker. It based on apache http-client. Create http-requests and params from your queries and endpoints.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">&lt;Q&gt;</td><td>-??? </td></tr>
+    <tr><td class="paramname">&lt;Q&gt;</td><td>-query type </td></tr>
   </table>
   </dd>
 </dl>
@@ -139,7 +140,7 @@ Protected Member Functions</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Sep 2 2013 10:33:52 for Jagger by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Sep 6 2013 16:43:36 for Jagger by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.4
 </small></address>

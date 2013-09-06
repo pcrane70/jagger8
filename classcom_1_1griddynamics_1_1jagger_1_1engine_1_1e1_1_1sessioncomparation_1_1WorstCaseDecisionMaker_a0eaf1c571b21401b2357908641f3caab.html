@@ -104,34 +104,32 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       </table>
 </div><div class="memdoc">
 
-<p>??? Some short description </p>
-<dl class="section author"><dt>Author</dt><dd>??? <br/>
- </dd></dl>
-<dl class="section user"><dt>Details:</dt><dd></dd></dl>
-<p>???</p>
+<p>Returns the worst decision of comparisons. </p>
+<dl class="section author"><dt>Author</dt><dd>Dmitry Kotlyarov <br/>
+</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">verdicts</td><td>- ???</td></tr>
+    <tr><td class="paramname">verdicts</td><td>- verdicts of comparisons between current test and test from baseline session</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>??? </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>the worst decision </dd></dl>
 
 <p>Implements <a class="el" href="interfacecom_1_1griddynamics_1_1jagger_1_1engine_1_1e1_1_1sessioncomparation_1_1DecisionMaker_aa31ead2167b862a26e4e14cb95a038f9.html#aa31ead2167b862a26e4e14cb95a038f9">com.griddynamics.jagger.engine.e1.sessioncomparation.DecisionMaker</a>.</p>
-<div class="fragment"><div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;                                                                     {</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        Decision worstResult = Decision.OK;</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        <span class="keywordflow">for</span> (String feature : verdicts.keySet()) {</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;            <span class="keywordflow">for</span> (Verdict verdict : verdicts.get(feature)) {</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;                Decision decision = verdict.getDecision();</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;                <span class="keywordflow">if</span> (decision.ordinal() &gt; worstResult.ordinal()) {</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;                    worstResult = decision;</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;                }</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;            }</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        }</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        <span class="keywordflow">return</span> worstResult;</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    }</div>
+<div class="fragment"><div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;                                                                     {</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        Decision worstResult = Decision.OK;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        <span class="keywordflow">for</span> (String feature : verdicts.keySet()) {</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;            <span class="keywordflow">for</span> (Verdict verdict : verdicts.get(feature)) {</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;                Decision decision = verdict.getDecision();</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;                <span class="keywordflow">if</span> (decision.ordinal() &gt; worstResult.ordinal()) {</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;                    worstResult = decision;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;                }</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;            }</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        }</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        <span class="keywordflow">return</span> worstResult;</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -141,7 +139,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Sep 2 2013 10:33:52 for Jagger by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Sep 6 2013 16:43:36 for Jagger by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.4
 </small></address>

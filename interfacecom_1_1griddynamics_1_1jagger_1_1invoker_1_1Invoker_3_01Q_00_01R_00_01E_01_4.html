@@ -96,28 +96,28 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!--header-->
 <div class="contents">
 
-<p>Responsible for action invocation on specified endpoint.  
+<p>Responsible for action invocation on specified endpoint and query.  
  <a href="interfacecom_1_1griddynamics_1_1jagger_1_1invoker_1_1Invoker_3_01Q_00_01R_00_01E_01_4.html#details">More...</a></p>
 <div class="dynheader">
 Inheritance diagram for com.griddynamics.jagger.invoker.Invoker&lt; Q, R, E &gt;:</div>
 <div class="dyncontent">
 <div class="center"><img src="interfacecom_1_1griddynamics_1_1jagger_1_1invoker_1_1Invoker_3_01Q_00_01R_00_01E_01_4__inherit__graph.png" border="0" usemap="#com_8griddynamics_8jagger_8invoker_8Invoker_3_01Q_00_01R_00_01E_01_4_inherit__map" alt="Inheritance graph"/></div>
-<map name="com_8griddynamics_8jagger_8invoker_8Invoker_3_01Q_00_01R_00_01E_01_4_inherit__map" id="com_8griddynamics_8jagger_8invoker_8Invoker_3_01Q_00_01R_00_01E_01_4_inherit__map">
-</map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:abb3e5e1cf2008c46ecbd018efd6d2dce"><td class="memItemLeft" align="right" valign="top">R&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interfacecom_1_1griddynamics_1_1jagger_1_1invoker_1_1Invoker_3_01Q_00_01R_00_01E_01_4_abb3e5e1cf2008c46ecbd018efd6d2dce.html#abb3e5e1cf2008c46ecbd018efd6d2dce">invoke</a> (Q query, E endpoint)  throws InvocationException</td></tr>
-<tr class="memdesc:abb3e5e1cf2008c46ecbd018efd6d2dce"><td class="mdescLeft">&#160;</td><td class="mdescRight">Executes action with given input parameters.  <a href="#abb3e5e1cf2008c46ecbd018efd6d2dce">More...</a><br/></td></tr>
+<tr class="memdesc:abb3e5e1cf2008c46ecbd018efd6d2dce"><td class="mdescLeft">&#160;</td><td class="mdescRight">Makes an invocation to target.  <a href="#abb3e5e1cf2008c46ecbd018efd6d2dce">More...</a><br/></td></tr>
 <tr class="separator:abb3e5e1cf2008c46ecbd018efd6d2dce"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Responsible for action invocation on specified endpoint. </p>
+<div class="textblock"><p>Responsible for action invocation on specified endpoint and query. </p>
 <dl class="section author"><dt>Author</dt><dd>Mairbek Khadikov <br/>
  </dd></dl>
 <dl class="section user"><dt>Details:</dt><dd></dd></dl>
-<p>???</p>
+<p>Create a request to some target with specified query. The result of invocation can be collected by metrics and validators. Note that Invoker is used in multi thread environment, so realize thread-safe implementation <br/>
+ <br/>
+ To view all invokers implementations click here <a class="el" href="group__Main__Invokers__group.html">Implementations of invokers</a></p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">&lt;Q&gt;</td><td>- Query type </td></tr>
@@ -132,7 +132,7 @@ Public Member Functions</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Sep 2 2013 10:33:52 for Jagger by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Sep 6 2013 16:43:36 for Jagger by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.4
 </small></address>
