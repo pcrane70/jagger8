@@ -6,6 +6,5 @@ var searchData=
   ['httpinvoker_2ejava',['HttpInvoker.java',['../HttpInvoker_8java.html',1,'']]],
   ['httpvisitorinvoker',['HttpVisitorInvoker',['../classcom_1_1griddynamics_1_1jagger_1_1invoker_1_1http_1_1HttpVisitorInvoker_a45e7a7d6902c7cfe2e90fea94ccdd7f0.html#a45e7a7d6902c7cfe2e90fea94ccdd7f0',1,'com::griddynamics::jagger::invoker::http::HttpVisitorInvoker']]],
   ['httpvisitorinvoker',['HttpVisitorInvoker',['../classcom_1_1griddynamics_1_1jagger_1_1invoker_1_1http_1_1HttpVisitorInvoker.html',1,'com::griddynamics::jagger::invoker::http']]],
-  ['httpvisitorinvoker_2ejava',['HttpVisitorInvoker.java',['../HttpVisitorInvoker_8java.html',1,'']]],
-  ['how_20to_20customize_20jagger_20components',['How to customize Jagger components',['../group__Main__Customize__group.html',1,'']]]
+  ['httpvisitorinvoker_2ejava',['HttpVisitorInvoker.java',['../HttpVisitorInvoker_8java.html',1,'']]]
 ];
