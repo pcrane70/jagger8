@@ -121,7 +121,68 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><div style="z-index: 2;" class="tabPane" id="tabPane0">  <ol>
 <li>
 <p class="startli">Create class which implements <a class="el" href="classcom_1_1griddynamics_1_1jagger_1_1engine_1_1e1_1_1collector_1_1ResponseValidator_3_01Q_00_01E_00_01R_01_4.html">ResponseValidator&lt;Q,E,R&gt;</a> <br/>
- Will validate responce from SUT after every successful invocation  <div class="fragment"><div class="line"><span class="keyword">public</span> <span class="keyword">class </span>ResponseFromFileValidator&lt;Q, E, R&gt; <span class="keyword">extends</span> <a class="code" href="classResponseValidator.html">ResponseValidator</a>&lt;Q, E, R&gt; {</div>
+ Will validate responce from SUT after every successful invocation  <div class="fragment"><div class="line"><span class="comment">/* begin: following section is used for docu generation - validator-custom source */</span></div>
+<div class="line"><span class="comment">/* Will compare result of invokation with expected result, read from file</span></div>
+<div class="line"><span class="comment"> * @author Grid Dynamics</span></div>
+<div class="line"><span class="comment"> *</span></div>
+<div class="line"><span class="comment"> * @param &lt;Q&gt; - Query type</span></div>
+<div class="line"><span class="comment"> * @param &lt;E&gt; - Endpoint type</span></div>
+<div class="line"><span class="comment"> * @param &lt;R&gt; - Result type</span></div>
+<div class="line"><span class="comment"> */</span></div>
+<div class="line"><span class="keyword">public</span> <span class="keyword">class </span>ResponseFromFileValidator&lt;Q, E, R&gt; <span class="keyword">extends</span> <a class="code" href="classResponseValidator.html">ResponseValidator</a>&lt;Q, E, R&gt; {</div>
+<div class="line"></div>
+<div class="line">    <span class="keyword">private</span> String filePath= <span class="stringliteral">&quot;suite/validator/resources/response.txt&quot;</span>;</div>
+<div class="line">    <span class="keyword">private</span> String expectedResponse;</div>
+<div class="line"></div>
+<div class="line">    <span class="keyword">public</span> ResponseFromFileValidator(String taskId, String sessionId, NodeContext kernelContext) {</div>
+<div class="line">        super(taskId, sessionId, kernelContext);</div>
+<div class="line">    }</div>
+<div class="line"></div>
+<div class="line">    @Override</div>
+<div class="line">    <span class="keyword">public</span> String getName() {</div>
+<div class="line">        <span class="keywordflow">return</span> <span class="stringliteral">&quot;ResponseFromFileValidator&quot;</span>;</div>
+<div class="line">    }</div>
+<div class="line"></div>
+<div class="line">    <span class="keyword">private</span> <span class="keywordtype">void</span> initiate(){</div>
+<div class="line">        StringBuilder sb = <span class="keyword">new</span> StringBuilder();</div>
+<div class="line">        String fs = System.getProperty(<span class="stringliteral">&quot;line.separator&quot;</span>);</div>
+<div class="line">        Scanner scanner=null;</div>
+<div class="line">        <span class="keywordflow">try</span> {</div>
+<div class="line">            scanner= <span class="keyword">new</span> Scanner(<span class="keyword">new</span> FileInputStream(filePath));</div>
+<div class="line">            <span class="keywordflow">while</span> (scanner.hasNextLine()){</div>
+<div class="line">                sb.append(scanner.nextLine() + fs);</div>
+<div class="line">            }</div>
+<div class="line">        } <span class="keywordflow">catch</span> (FileNotFoundException e) {</div>
+<div class="line">            <span class="keywordflow">throw</span> <span class="keyword">new</span> TechnicalException(<span class="stringliteral">&quot;Error during read file &quot;</span>, e);</div>
+<div class="line">        } <span class="keywordflow">finally</span>{</div>
+<div class="line">            <span class="keywordflow">if</span>(scanner!=null){</div>
+<div class="line">                scanner.close();</div>
+<div class="line">            }</div>
+<div class="line">        }</div>
+<div class="line">        expectedResponse=sb.toString();</div>
+<div class="line">    }</div>
+<div class="line"></div>
+<div class="line">    <span class="comment">/* Following method will be called after every successful invoke to validate result</span></div>
+<div class="line"><span class="comment">     * @author Grid Dynamics</span></div>
+<div class="line"><span class="comment">     *</span></div>
+<div class="line"><span class="comment">     * @param query    - Query that was sent to endpoint</span></div>
+<div class="line"><span class="comment">     * @param endpoint - Endpoint - service under test</span></div>
+<div class="line"><span class="comment">     * @param result   - Result returned from endpoint</span></div>
+<div class="line"><span class="comment">     * @param duration - Duration of invoke</span></div>
+<div class="line"><span class="comment">     * */</span></div>
+<div class="line">    @Override</div>
+<div class="line">    <span class="keyword">public</span> <span class="keywordtype">boolean</span> validate(Q query, E endpoint, R result, <span class="keywordtype">long</span> duration) {</div>
+<div class="line">        <span class="keywordflow">if</span>(expectedResponse==null){</div>
+<div class="line">            <span class="keyword">synchronized</span> (filePath){</div>
+<div class="line">                <span class="keywordflow">if</span>(expectedResponse==null){</div>
+<div class="line">                    initiate();</div>
+<div class="line">                }</div>
+<div class="line">            }</div>
+<div class="line">        }</div>
+<div class="line">        <span class="keywordflow">return</span> expectedResponse.equals(result);</div>
+<div class="line">    }</div>
+<div class="line">}</div>
+<div class="line"><span class="comment">/* end: following section is used for docu generation - validator-custom source */</span></div>
 </div><!-- fragment --> <br/>
 </p>
 <p class="endli"></p>
@@ -140,7 +201,23 @@ If your validator doesn't have any properties, create <a href="./xsd/http___www.
 </div><div style="z-index: 2;" class="tabPane" id="tabPane1">  <ol>
 <li>
 <p class="startli">Create class which implements <a class="el" href="interfacecom_1_1griddynamics_1_1jagger_1_1engine_1_1e1_1_1collector_1_1MetricCalculator_3_01R_01_4.html">MetricCalculator&lt;R&gt;</a><br/>
- Will calculate some parameters according to SUT response  <div class="fragment"><div class="line"><span class="keyword">public</span> <span class="keyword">class </span>ResponseSize <span class="keyword">implements</span> <a class="code" href="classMetricCalculator.html">MetricCalculator</a>&lt;String&gt; {</div>
+ Will calculate some parameters according to SUT response  <div class="fragment"><div class="line"><span class="comment">/* begin: following section is used for docu generation - metric calculator source */</span></div>
+<div class="line"><span class="comment">/* Will calculate some parameter from endpoint response</span></div>
+<div class="line"><span class="comment"> * @author Grid Dynamics */</span></div>
+<div class="line"><span class="keyword">public</span> <span class="keyword">class </span>ResponseSize <span class="keyword">implements</span> <a class="code" href="classMetricCalculator.html">MetricCalculator</a>&lt;String&gt; {</div>
+<div class="line"></div>
+<div class="line">    <span class="comment">/* Following method will be called after every successful invoke to evaluate result</span></div>
+<div class="line"><span class="comment">     * In this simplified example we will just calculate length of result</span></div>
+<div class="line"><span class="comment">     * @author Grid Dynamics</span></div>
+<div class="line"><span class="comment">     *</span></div>
+<div class="line"><span class="comment">     * @param response - Result returned from endpoint</span></div>
+<div class="line"><span class="comment">     * */</span></div>
+<div class="line">    @Override</div>
+<div class="line">    <span class="keyword">public</span> Integer calculate(String response) {</div>
+<div class="line">        <span class="keywordflow">return</span> response.length();</div>
+<div class="line">    }</div>
+<div class="line">}</div>
+<div class="line"><span class="comment">/* end: following section is used for docu generation - metric calculator source */</span></div>
 </div><!-- fragment --> <br/>
 </p>
 <p class="endli"></p>
@@ -154,29 +231,42 @@ If your validator doesn't have any properties, create <a href="./xsd/http___www.
 <p class="endli"></p>
 </li>
 <li>
-Add <a href="./xsd/http___www.griddynamics.com_schema_jagger/element/metric-custom.html">metric-custom</a> collector to <a href="./xsd/http___www.griddynamics.com_schema_jagger/element/test-description.html#attr_info-collectors">info-collectors</a> block.<br/>
- Set id of bean to <a href="./xsd/http___www.griddynamics.com_schema_jagger/element/metric-custom.html#attr_calculator">calculator</a> attribute.  <div class="fragment"><div class="line">        &lt;!-- begin: following section is used <span class="keywordflow">for</span> docu generation - metric calculator usage--&gt;</div>
+<p class="startli">Add <a href="./xsd/http___www.griddynamics.com_schema_jagger/element/metric-custom.html">metric-custom</a> collector to <a href="./xsd/http___www.griddynamics.com_schema_jagger/element/test-description.html#attr_info-collectors">info-collectors</a> block.<br/>
+ Set id of custom metric class bean to <a href="./xsd/http___www.griddynamics.com_schema_jagger/element/metric-custom.html#attr_calculator">calculator</a> attribute <br/>
+ Attribute <a href="./xsd/http___www.griddynamics.com_schema_jagger/element/metric-custom.html#attr_id">id</a> will be used as metric name in reports <br/>
+ Set attribute <a href="./xsd/http___www.griddynamics.com_schema_jagger/element/metric-custom.html#attr_plotData">plotData</a> to true if you want to plot 'metric vs time' plot in report  <div class="fragment"><div class="line">        &lt;!-- begin: following section is used <span class="keywordflow">for</span> docu generation - metric calculator usage--&gt;</div>
 <div class="line">        &lt;info-collectors <span class="keywordtype">id</span>=<span class="stringliteral">&quot;defaultCollectors&quot;</span>&gt;</div>
 <div class="line">            &lt;validator xsi:type=<span class="stringliteral">&quot;validator-not-null-response&quot;</span>/&gt;</div>
 <div class="line">            &lt;validator xsi:type=<span class="stringliteral">&quot;validator-consistency&quot;</span>/&gt;</div>
-<div class="line">            &lt;metric <span class="keywordtype">id</span>=<span class="stringliteral">&quot;responseSize&quot;</span>  xsi:type=<span class="stringliteral">&quot;metric-custom&quot;</span> calculator=<span class="stringliteral">&quot;responseSize&quot;</span>/&gt;</div>
+<div class="line">            &lt;metric <span class="keywordtype">id</span>=<span class="stringliteral">&quot;responseSize&quot;</span>  xsi:type=<span class="stringliteral">&quot;metric-custom&quot;</span> calculator=<span class="stringliteral">&quot;responseSize&quot;</span> plotData=<span class="stringliteral">&quot;true&quot;</span>/&gt;</div>
 <div class="line">            &lt;metric xsi:type=<span class="stringliteral">&quot;metric-ref&quot;</span> ref=<span class="stringliteral">&quot;successRateCollector&quot;</span> plotData=<span class="stringliteral">&quot;true&quot;</span>/&gt;</div>
 <div class="line">        &lt;/info-collectors&gt;</div>
 <div class="line">        &lt;!-- end: following section is used <span class="keywordflow">for</span> docu generation - metric calculator usage--&gt;</div>
+</div><!-- fragment --> <br/>
+</p>
+<p class="endli"></p>
+</li>
+<li>
+Optional. Add custom aggregator to metric. <br/>
+ How to create aggregator provider - see 'Custom collector' example <div class="fragment"><div class="line">&lt;beans:bean <span class="keywordtype">id</span>=<span class="stringliteral">&quot;minAggregator&quot;</span> <span class="keyword">class</span>=<span class="stringliteral">&quot;test.MinAggregatorProvider&quot;</span>/&gt;</div>
+<div class="line">        ...</div>
+<div class="line">&lt;metric <span class="keywordtype">id</span>=<span class="stringliteral">&quot;customMetric1&quot;</span> xsi:type=<span class="stringliteral">&quot;metric-custom&quot;</span> calculator=<span class="stringliteral">&quot;customMetric&quot;</span> plotData=<span class="stringliteral">&quot;true&quot;</span>&gt;</div>
+<div class="line">&lt;metric-aggregator xsi:type=<span class="stringliteral">&quot;metric-aggregator-ref&quot;</span> ref=<span class="stringliteral">&quot;minAggregator&quot;</span>/&gt;</div>
+<div class="line">&lt;/metric&gt;</div>
 </div><!-- fragment --> </li>
 </ol>
  </div><div>
 </div><div style="z-index: 2;" class="tabPane" id="tabPane2">  <ol>
 <li>
 <p class="startli">Create collector class which implements <a class="el" href="classcom_1_1griddynamics_1_1jagger_1_1engine_1_1e1_1_1collector_1_1MetricCollector_3_01Q_00_01R_00_01E_01_4.html">MetricCollector&lt;Q,R,E&gt;</a><br/>
- Will proceed data after every invoke and save to Kernel storage  <div class="fragment"><div class="line"><span class="keyword">public</span> <span class="keyword">class </span>SuccessRateCollector&lt;Q, R, E&gt; <span class="keyword">extends</span> MetricCollector&lt;Q, R, E&gt; {</div>
+ Will proceed data after every invoke and save to Kernel storage  <div class="fragment"><div class="line"><span class="keyword">public</span> <span class="keyword">class </span>ExampleSuccessRateCollector&lt;Q, R, E&gt; <span class="keyword">extends</span> MetricCollector&lt;Q, R, E&gt; {</div>
 </div><!-- fragment --> <br/>
 </p>
 <p class="endli"></p>
 </li>
 <li>
 <p class="startli">Create collector provider class which implements <a class="el" href="classcom_1_1griddynamics_1_1jagger_1_1engine_1_1e1_1_1collector_1_1MetricCollectorProvider_3_01Q_00_01R_00_01E_01_4.html">MetricCollectorProvider&lt;Q,R,E&gt;</a><br/>
- Will provide an instance of custom collector to Jagger  <div class="fragment"><div class="line"><span class="keyword">public</span> <span class="keyword">class </span>ProviderOfSuccessRateCollector&lt;Q, R, E&gt; <span class="keyword">extends</span> MetricCollectorProvider&lt;Q, R, E&gt; {</div>
+ Will provide an instance of custom collector to Jagger  <div class="fragment"><div class="line"><span class="keyword">public</span> <span class="keyword">class </span>ProviderOfExampleSuccessRateCollector&lt;Q, R, E&gt; <span class="keyword">extends</span> MetricCollectorProvider&lt;Q, R, E&gt; {</div>
 </div><!-- fragment --> <br/>
 </p>
 <p class="endli"></p>
@@ -184,14 +274,14 @@ Add <a href="./xsd/http___www.griddynamics.com_schema_jagger/element/metric-cust
 <li>
 <p class="startli">Create aggregator class which implements <a class="el" href="interfacecom_1_1griddynamics_1_1jagger_1_1engine_1_1e1_1_1collector_1_1MetricAggregatorProvider.html">MetricAggregatorProvider</a><br/>
  Will proceed data after all tests are over and prepare data for DB <br/>
- Collector provider class is associating aggregator with collector.  <div class="fragment"><div class="line"><span class="keyword">public</span> <span class="keyword">class </span>ProviderOfSuccessRateAggregator <span class="keyword">implements</span> MetricAggregatorProvider {</div>
+ Collector provider class is associating aggregator with collector.  <div class="fragment"><div class="line"><span class="keyword">public</span> <span class="keyword">class </span>ProviderOfExampleSuccessRateAggregator <span class="keyword">implements</span> MetricAggregatorProvider {</div>
 </div><!-- fragment --> <br/>
 </p>
 <p class="endli"></p>
 </li>
 <li>
 <p class="startli">Create bean of provider class in some configuration file. Put some id for it.  <div class="fragment"><div class="line">    &lt;!-- begin: following section is used <span class="keywordflow">for</span> docu generation - custom collector --&gt;</div>
-<div class="line">    &lt;bean <span class="keywordtype">id</span>=<span class="stringliteral">&quot;successRateCollector&quot;</span> <span class="keyword">class</span>=<span class="stringliteral">&quot;${package}.provider.ProviderOfSuccessRateCollector&quot;</span>/&gt;</div>
+<div class="line">    &lt;bean <span class="keywordtype">id</span>=<span class="stringliteral">&quot;successRateCollector&quot;</span> <span class="keyword">class</span>=<span class="stringliteral">&quot;${package}.provider.ProviderOfExampleSuccessRateCollector&quot;</span>/&gt;</div>
 <div class="line">    &lt;!-- end: following section is used <span class="keywordflow">for</span> docu generation - custom collector --&gt;</div>
 </div><!-- fragment --> <br/>
 </p>
@@ -203,7 +293,7 @@ Add <a href="./xsd/http___www.griddynamics.com_schema_jagger/element/metric-ref.
 <div class="line">        &lt;info-collectors <span class="keywordtype">id</span>=<span class="stringliteral">&quot;defaultCollectors&quot;</span>&gt;</div>
 <div class="line">            &lt;validator xsi:type=<span class="stringliteral">&quot;validator-not-null-response&quot;</span>/&gt;</div>
 <div class="line">            &lt;validator xsi:type=<span class="stringliteral">&quot;validator-consistency&quot;</span>/&gt;</div>
-<div class="line">            &lt;metric <span class="keywordtype">id</span>=<span class="stringliteral">&quot;responseSize&quot;</span>  xsi:type=<span class="stringliteral">&quot;metric-custom&quot;</span> calculator=<span class="stringliteral">&quot;responseSize&quot;</span>/&gt;</div>
+<div class="line">            &lt;metric <span class="keywordtype">id</span>=<span class="stringliteral">&quot;responseSize&quot;</span>  xsi:type=<span class="stringliteral">&quot;metric-custom&quot;</span> calculator=<span class="stringliteral">&quot;responseSize&quot;</span> plotData=<span class="stringliteral">&quot;true&quot;</span>/&gt;</div>
 <div class="line">            &lt;metric xsi:type=<span class="stringliteral">&quot;metric-ref&quot;</span> ref=<span class="stringliteral">&quot;successRateCollector&quot;</span> plotData=<span class="stringliteral">&quot;true&quot;</span>/&gt;</div>
 <div class="line">        &lt;/info-collectors&gt;</div>
 <div class="line">        &lt;!-- end: following section is used <span class="keywordflow">for</span> docu generation - metric calculator usage--&gt;</div>
@@ -218,7 +308,7 @@ Add <a href="./xsd/http___www.griddynamics.com_schema_jagger/element/metric-ref.
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Sep 23 2013 16:42:25 for Jagger by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Oct 30 2013 19:02:58 for Jagger by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.4
 </small></address>

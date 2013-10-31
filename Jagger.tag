@@ -45,7 +45,6 @@
     <path>/home/dmitry/git/jagger/chassis/core/src/main/java/com/griddynamics/jagger/engine/e1/collector/</path>
     <filename>MetricCollectorProvider_8java</filename>
     <class kind="class">com::griddynamics::jagger::engine::e1::collector::MetricCollectorProvider&lt; Q, R, E &gt;</class>
-    <class kind="class">com::griddynamics::jagger::engine::e1::collector::MetricCollectorProvider&lt; Q, R, E &gt;::MetricDescriptionEntry</class>
     <namespace>com::griddynamics::jagger::engine::e1::collector</namespace>
     <namespace>com::griddynamics::jagger::engine::e1::collector</namespace>
   </compound>
@@ -70,6 +69,30 @@
     <path>/home/dmitry/git/jagger/chassis/core/src/main/java/com/griddynamics/jagger/engine/e1/collector/</path>
     <filename>SimpleMetricCalculator_8java</filename>
     <class kind="class">com::griddynamics::jagger::engine::e1::collector::SimpleMetricCalculator</class>
+    <namespace>com::griddynamics::jagger::engine::e1::collector</namespace>
+    <namespace>com::griddynamics::jagger::engine::e1::collector</namespace>
+  </compound>
+  <compound kind="file">
+    <name>SuccessRateAggregatorProvider.java</name>
+    <path>/home/dmitry/git/jagger/chassis/core/src/main/java/com/griddynamics/jagger/engine/e1/collector/</path>
+    <filename>SuccessRateAggregatorProvider_8java</filename>
+    <class kind="class">com::griddynamics::jagger::engine::e1::collector::SuccessRateAggregatorProvider</class>
+    <namespace>com::griddynamics::jagger::engine::e1::collector</namespace>
+    <namespace>com::griddynamics::jagger::engine::e1::collector</namespace>
+  </compound>
+  <compound kind="file">
+    <name>SuccessRateCollector.java</name>
+    <path>/home/dmitry/git/jagger/chassis/core/src/main/java/com/griddynamics/jagger/engine/e1/collector/</path>
+    <filename>SuccessRateCollector_8java</filename>
+    <class kind="class">com::griddynamics::jagger::engine::e1::collector::SuccessRateCollector&lt; Q, R, E &gt;</class>
+    <namespace>com::griddynamics::jagger::engine::e1::collector</namespace>
+    <namespace>com::griddynamics::jagger::engine::e1::collector</namespace>
+  </compound>
+  <compound kind="file">
+    <name>SuccessRateFailsAggregatorProvider.java</name>
+    <path>/home/dmitry/git/jagger/chassis/core/src/main/java/com/griddynamics/jagger/engine/e1/collector/</path>
+    <filename>SuccessRateFailsAggregatorProvider_8java</filename>
+    <class kind="class">com::griddynamics::jagger::engine::e1::collector::SuccessRateFailsAggregatorProvider</class>
     <namespace>com::griddynamics::jagger::engine::e1::collector</namespace>
     <namespace>com::griddynamics::jagger::engine::e1::collector</namespace>
   </compound>
@@ -345,6 +368,14 @@
     <class kind="class">com::griddynamics::jagger::engine::e1::collector::ConsistencyValidator&lt; Q, E, R &gt;</class>
     <class kind="class">com::griddynamics::jagger::engine::e1::collector::NotNullResponseValidator&lt; Q, E, R &gt;</class>
     <class kind="class">com::griddynamics::jagger::engine::e1::collector::SimpleMetricCalculator</class>
+    <class kind="class">com::griddynamics::jagger::engine::e1::collector::SuccessRateCollector&lt; Q, R, E &gt;</class>
+  </compound>
+  <compound kind="group">
+    <name>Main_Aggregators_group</name>
+    <title>Implementations of aggregators</title>
+    <filename>group__Main__Aggregators__group.html</filename>
+    <class kind="class">com::griddynamics::jagger::engine::e1::collector::SuccessRateAggregatorProvider</class>
+    <class kind="class">com::griddynamics::jagger::engine::e1::collector::SuccessRateFailsAggregatorProvider</class>
   </compound>
   <compound kind="group">
     <name>Main_DecisionMakers_group</name>
@@ -395,12 +426,24 @@
     <filename>group__Main__HowToCustomizeProviders__group.html</filename>
   </compound>
   <compound kind="class">
+    <name>AbstractMetricCalculator</name>
+    <filename>classAbstractMetricCalculator.html</filename>
+  </compound>
+  <compound kind="class">
     <name>ApacheAbstractHttpInvoker</name>
     <filename>classApacheAbstractHttpInvoker.html</filename>
   </compound>
   <compound kind="class">
+    <name>CalculatorContextAware</name>
+    <filename>classCalculatorContextAware.html</filename>
+  </compound>
+  <compound kind="class">
     <name>Iterable</name>
     <filename>classIterable.html</filename>
+  </compound>
+  <compound kind="class">
+    <name>MetricAggregator</name>
+    <filename>classMetricAggregator.html</filename>
   </compound>
   <compound kind="class">
     <name>MetricCalculator</name>
@@ -451,6 +494,9 @@
     <class kind="class">com::griddynamics::jagger::engine::e1::collector::NotNullResponseValidator&lt; Q, E, R &gt;</class>
     <class kind="class">com::griddynamics::jagger::engine::e1::collector::ResponseValidator&lt; Q, E, R &gt;</class>
     <class kind="class">com::griddynamics::jagger::engine::e1::collector::SimpleMetricCalculator</class>
+    <class kind="class">com::griddynamics::jagger::engine::e1::collector::SuccessRateAggregatorProvider</class>
+    <class kind="class">com::griddynamics::jagger::engine::e1::collector::SuccessRateCollector&lt; Q, R, E &gt;</class>
+    <class kind="class">com::griddynamics::jagger::engine::e1::collector::SuccessRateFailsAggregatorProvider</class>
   </compound>
   <compound kind="class">
     <name>com::griddynamics::jagger::engine::e1::collector::CompositeValidator</name>
@@ -532,11 +578,12 @@
   <compound kind="interface">
     <name>com::griddynamics::jagger::engine::e1::collector::MetricCalculator&lt; R &gt;</name>
     <filename>interfacecom_1_1griddynamics_1_1jagger_1_1engine_1_1e1_1_1collector_1_1MetricCalculator_3_01R_01_4.html</filename>
+    <base>AbstractMetricCalculator</base>
     <member kind="function">
-      <type>Integer</type>
+      <type>Number</type>
       <name>calculate</name>
-      <anchorfile>interfacecom_1_1griddynamics_1_1jagger_1_1engine_1_1e1_1_1collector_1_1MetricCalculator_3_01R_01_4_a119b094c90a9e66fcae721ac425b81cd.html</anchorfile>
-      <anchor>a119b094c90a9e66fcae721ac425b81cd</anchor>
+      <anchorfile>interfacecom_1_1griddynamics_1_1jagger_1_1engine_1_1e1_1_1collector_1_1MetricCalculator_3_01R_01_4_a365409167ad3369f732ae2d12e91a591.html</anchorfile>
+      <anchor>a365409167ad3369f732ae2d12e91a591</anchor>
       <arglist>(R response)</arglist>
     </member>
   </compound>
@@ -596,62 +643,13 @@
   <compound kind="class">
     <name>com::griddynamics::jagger::engine::e1::collector::MetricCollectorProvider&lt; Q, R, E &gt;</name>
     <filename>classcom_1_1griddynamics_1_1jagger_1_1engine_1_1e1_1_1collector_1_1MetricCollectorProvider_3_01Q_00_01R_00_01E_01_4.html</filename>
-    <class kind="class">com::griddynamics::jagger::engine::e1::collector::MetricCollectorProvider&lt; Q, R, E &gt;::MetricDescriptionEntry</class>
-    <member kind="function">
-      <type>List&lt; MetricDescriptionEntry &gt;</type>
-      <name>getAggregators</name>
-      <anchorfile>classcom_1_1griddynamics_1_1jagger_1_1engine_1_1e1_1_1collector_1_1MetricCollectorProvider_3_01Q_00_01R_00_01E_01_4_a3282cb6e4162fac7cf9a250790d8dff2.html</anchorfile>
-      <anchor>a3282cb6e4162fac7cf9a250790d8dff2</anchor>
-      <arglist>()</arglist>
-    </member>
-    <member kind="function">
-      <type>MetricCalculator&lt; R &gt;</type>
-      <name>getMetricCalculator</name>
-      <anchorfile>classcom_1_1griddynamics_1_1jagger_1_1engine_1_1e1_1_1collector_1_1MetricCollectorProvider_3_01Q_00_01R_00_01E_01_4_ab6cbc3951c923e85be1601811e6f2875.html</anchorfile>
-      <anchor>ab6cbc3951c923e85be1601811e6f2875</anchor>
-      <arglist>()</arglist>
-    </member>
-    <member kind="function">
-      <type>String</type>
-      <name>getName</name>
-      <anchorfile>classcom_1_1griddynamics_1_1jagger_1_1engine_1_1e1_1_1collector_1_1MetricCollectorProvider_3_01Q_00_01R_00_01E_01_4_ab19f2ce6e00ca9a4fb98fc73d9500704.html</anchorfile>
-      <anchor>ab19f2ce6e00ca9a4fb98fc73d9500704</anchor>
-      <arglist>()</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>init</name>
-      <anchorfile>classcom_1_1griddynamics_1_1jagger_1_1engine_1_1e1_1_1collector_1_1MetricCollectorProvider_3_01Q_00_01R_00_01E_01_4_aa6280bf9d512c083218292ddeb25682b.html</anchorfile>
-      <anchor>aa6280bf9d512c083218292ddeb25682b</anchor>
-      <arglist>(String sessionId, String taskId, NodeContext kernelContext)</arglist>
-    </member>
+    <base>CalculatorContextAware</base>
     <member kind="function">
       <type>ScenarioCollector&lt; Q, R, E &gt;</type>
       <name>provide</name>
       <anchorfile>classcom_1_1griddynamics_1_1jagger_1_1engine_1_1e1_1_1collector_1_1MetricCollectorProvider_3_01Q_00_01R_00_01E_01_4_afae5e243cd83b79db320647fde5060d2.html</anchorfile>
       <anchor>afae5e243cd83b79db320647fde5060d2</anchor>
       <arglist>(String sessionId, String taskId, NodeContext kernelContext)</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>setAggregators</name>
-      <anchorfile>classcom_1_1griddynamics_1_1jagger_1_1engine_1_1e1_1_1collector_1_1MetricCollectorProvider_3_01Q_00_01R_00_01E_01_4_a6685d9f6420679e3a7991fd6ad37ba12.html</anchorfile>
-      <anchor>a6685d9f6420679e3a7991fd6ad37ba12</anchor>
-      <arglist>(List&lt; MetricDescriptionEntry &gt; aggregators)</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>setMetricCalculator</name>
-      <anchorfile>classcom_1_1griddynamics_1_1jagger_1_1engine_1_1e1_1_1collector_1_1MetricCollectorProvider_3_01Q_00_01R_00_01E_01_4_a0b3e4777d2fdb6d41ff16627d28fd516.html</anchorfile>
-      <anchor>a0b3e4777d2fdb6d41ff16627d28fd516</anchor>
-      <arglist>(MetricCalculator&lt; R &gt; metricCalculator)</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>setName</name>
-      <anchorfile>classcom_1_1griddynamics_1_1jagger_1_1engine_1_1e1_1_1collector_1_1MetricCollectorProvider_3_01Q_00_01R_00_01E_01_4_ab2872725d600edcd49172d66af827b19.html</anchorfile>
-      <anchor>ab2872725d600edcd49172d66af827b19</anchor>
-      <arglist>(String name)</arglist>
     </member>
   </compound>
   <compound kind="class">
@@ -708,6 +706,77 @@
       <anchorfile>classcom_1_1griddynamics_1_1jagger_1_1engine_1_1e1_1_1collector_1_1SimpleMetricCalculator_a81f370f34c4492f5d749295973aefb00.html</anchorfile>
       <anchor>a81f370f34c4492f5d749295973aefb00</anchor>
       <arglist>(Object response)</arglist>
+    </member>
+  </compound>
+  <compound kind="class">
+    <name>com::griddynamics::jagger::engine::e1::collector::SuccessRateAggregatorProvider</name>
+    <filename>classcom_1_1griddynamics_1_1jagger_1_1engine_1_1e1_1_1collector_1_1SuccessRateAggregatorProvider.html</filename>
+    <base>com::griddynamics::jagger::engine::e1::collector::MetricAggregatorProvider</base>
+    <member kind="function">
+      <type>MetricAggregator</type>
+      <name>provide</name>
+      <anchorfile>classcom_1_1griddynamics_1_1jagger_1_1engine_1_1e1_1_1collector_1_1SuccessRateAggregatorProvider_aee4598d846e4b999625b8c07c3961314.html</anchorfile>
+      <anchor>aee4598d846e4b999625b8c07c3961314</anchor>
+      <arglist>()</arglist>
+    </member>
+  </compound>
+  <compound kind="class">
+    <name>com::griddynamics::jagger::engine::e1::collector::SuccessRateCollector&lt; Q, R, E &gt;</name>
+    <filename>classcom_1_1griddynamics_1_1jagger_1_1engine_1_1e1_1_1collector_1_1SuccessRateCollector_3_01Q_00_01R_00_01E_01_4.html</filename>
+    <base>com::griddynamics::jagger::engine::e1::collector::MetricCollector&lt; Q, R, E &gt;</base>
+    <member kind="function">
+      <type>void</type>
+      <name>flush</name>
+      <anchorfile>classcom_1_1griddynamics_1_1jagger_1_1engine_1_1e1_1_1collector_1_1SuccessRateCollector_3_01Q_00_01R_00_01E_01_4_ad0180b0e311f4937ff2e5b03cd6a9c1a.html</anchorfile>
+      <anchor>ad0180b0e311f4937ff2e5b03cd6a9c1a</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>onError</name>
+      <anchorfile>classcom_1_1griddynamics_1_1jagger_1_1engine_1_1e1_1_1collector_1_1SuccessRateCollector_3_01Q_00_01R_00_01E_01_4_aa629b24613ca892802729634a50925ea.html</anchorfile>
+      <anchor>aa629b24613ca892802729634a50925ea</anchor>
+      <arglist>(Object query, Object endpoint, Throwable error)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>onFail</name>
+      <anchorfile>classcom_1_1griddynamics_1_1jagger_1_1engine_1_1e1_1_1collector_1_1SuccessRateCollector_3_01Q_00_01R_00_01E_01_4_a62006c0d95e2aca925fff85abd37287d.html</anchorfile>
+      <anchor>a62006c0d95e2aca925fff85abd37287d</anchor>
+      <arglist>(Object query, Object endpoint, InvocationException e)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>onStart</name>
+      <anchorfile>classcom_1_1griddynamics_1_1jagger_1_1engine_1_1e1_1_1collector_1_1SuccessRateCollector_3_01Q_00_01R_00_01E_01_4_ad91610b6f5219d9d44c1085abd2e73b5.html</anchorfile>
+      <anchor>ad91610b6f5219d9d44c1085abd2e73b5</anchor>
+      <arglist>(Object query, Object endpoint)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>onSuccess</name>
+      <anchorfile>classcom_1_1griddynamics_1_1jagger_1_1engine_1_1e1_1_1collector_1_1SuccessRateCollector_3_01Q_00_01R_00_01E_01_4_a49d11744e8d2a50708a0cca506d49a18.html</anchorfile>
+      <anchor>a49d11744e8d2a50708a0cca506d49a18</anchor>
+      <arglist>(Object query, Object endpoint, Object result, long duration)</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>SuccessRateCollector</name>
+      <anchorfile>classcom_1_1griddynamics_1_1jagger_1_1engine_1_1e1_1_1collector_1_1SuccessRateCollector_3_01Q_00_01R_00_01E_01_4_a0409ca3a92399770709c6d5b1bdc2686.html</anchorfile>
+      <anchor>a0409ca3a92399770709c6d5b1bdc2686</anchor>
+      <arglist>(String sessionId, String taskId, NodeContext kernelContext, String name)</arglist>
+    </member>
+  </compound>
+  <compound kind="class">
+    <name>com::griddynamics::jagger::engine::e1::collector::SuccessRateFailsAggregatorProvider</name>
+    <filename>classcom_1_1griddynamics_1_1jagger_1_1engine_1_1e1_1_1collector_1_1SuccessRateFailsAggregatorProvider.html</filename>
+    <base>com::griddynamics::jagger::engine::e1::collector::MetricAggregatorProvider</base>
+    <member kind="function">
+      <type>MetricAggregator</type>
+      <name>provide</name>
+      <anchorfile>classcom_1_1griddynamics_1_1jagger_1_1engine_1_1e1_1_1collector_1_1SuccessRateFailsAggregatorProvider_a95c0b1898e73c71bb2309f7ef8201626.html</anchorfile>
+      <anchor>a95c0b1898e73c71bb2309f7ef8201626</anchor>
+      <arglist>()</arglist>
     </member>
   </compound>
   <compound kind="namespace">
@@ -951,38 +1020,17 @@
     <base>com::griddynamics::jagger::invoker::QueryPoolLoadBalancer&lt; Q, E &gt;</base>
     <member kind="function">
       <type>void</type>
-      <name>setEndpointProvider</name>
-      <anchorfile>classcom_1_1griddynamics_1_1jagger_1_1invoker_1_1PairSupplierFactoryLoadBalancer_3_01Q_00_01E_01_4_ac57ff2562cba7c5314dac721d6341444.html</anchorfile>
-      <anchor>ac57ff2562cba7c5314dac721d6341444</anchor>
-      <arglist>(Iterable&lt; E &gt; endpointProvider)</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
       <name>setPairSupplierFactory</name>
       <anchorfile>classcom_1_1griddynamics_1_1jagger_1_1invoker_1_1PairSupplierFactoryLoadBalancer_3_01Q_00_01E_01_4_a807a221a48891563f40856747f83b907.html</anchorfile>
       <anchor>a807a221a48891563f40856747f83b907</anchor>
       <arglist>(PairSupplierFactory&lt; Q, E &gt; pairSupplierFactory)</arglist>
     </member>
-    <member kind="function">
-      <type>void</type>
-      <name>setQueryProvider</name>
-      <anchorfile>classcom_1_1griddynamics_1_1jagger_1_1invoker_1_1PairSupplierFactoryLoadBalancer_3_01Q_00_01E_01_4_a19e266cc39b4acca052486117543f26e.html</anchorfile>
-      <anchor>a19e266cc39b4acca052486117543f26e</anchor>
-      <arglist>(Iterable&lt; Q &gt; queryProvider)</arglist>
-    </member>
-    <member kind="variable" protection="protected">
+    <member kind="function" protection="protected">
       <type>PairSupplier&lt; Q, E &gt;</type>
-      <name>pairSupplier</name>
-      <anchorfile>classcom_1_1griddynamics_1_1jagger_1_1invoker_1_1PairSupplierFactoryLoadBalancer_3_01Q_00_01E_01_4_aa9ec9c4522a64e02e461cec71cbeb6fb.html</anchorfile>
-      <anchor>aa9ec9c4522a64e02e461cec71cbeb6fb</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="variable" protection="protected">
-      <type>PairSupplierFactory&lt; Q, E &gt;</type>
-      <name>pairSupplierFactory</name>
-      <anchorfile>classcom_1_1griddynamics_1_1jagger_1_1invoker_1_1PairSupplierFactoryLoadBalancer_3_01Q_00_01E_01_4_aed091ebec381b684f878e8b1873b836e.html</anchorfile>
-      <anchor>aed091ebec381b684f878e8b1873b836e</anchor>
-      <arglist></arglist>
+      <name>getPairSupplier</name>
+      <anchorfile>classcom_1_1griddynamics_1_1jagger_1_1invoker_1_1PairSupplierFactoryLoadBalancer_3_01Q_00_01E_01_4_a533fa9bb0c988f19a40962471997abcb.html</anchorfile>
+      <anchor>a533fa9bb0c988f19a40962471997abcb</anchor>
+      <arglist>()</arglist>
     </member>
   </compound>
   <compound kind="class">
@@ -1529,6 +1577,9 @@
     <file>NotNullResponseValidator.java</file>
     <file>ResponseValidator.java</file>
     <file>SimpleMetricCalculator.java</file>
+    <file>SuccessRateAggregatorProvider.java</file>
+    <file>SuccessRateCollector.java</file>
+    <file>SuccessRateFailsAggregatorProvider.java</file>
   </compound>
   <compound kind="dir">
     <name>chassis/providers/src/main/java/com</name>

@@ -1,5 +1,6 @@
 var searchData=
 [
+  ['implementations_20of_20aggregators',['Implementations of aggregators',['../group__Main__Aggregators__group.html',1,'']]],
   ['implementations_20of_20collectors',['Implementations of collectors',['../group__Main__Collectors__group.html',1,'']]],
   ['implementations_20of_20decision_20makers',['Implementations of decision makers',['../group__Main__DecisionMakers__group.html',1,'']]],
   ['implementations_20of_20distributors',['Implementations of distributors',['../group__Main__Distributors__group.html',1,'']]],
