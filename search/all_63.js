@@ -1,7 +1,8 @@
 var searchData=
 [
-  ['calculate',['calculate',['../interfacecom_1_1griddynamics_1_1jagger_1_1engine_1_1e1_1_1collector_1_1MetricCalculator_3_01R_01_4_a119b094c90a9e66fcae721ac425b81cd.html#a119b094c90a9e66fcae721ac425b81cd',1,'com.griddynamics.jagger.engine.e1.collector.MetricCalculator&lt; R &gt;.calculate()'],['../classcom_1_1griddynamics_1_1jagger_1_1engine_1_1e1_1_1collector_1_1SimpleMetricCalculator_a81f370f34c4492f5d749295973aefb00.html#a81f370f34c4492f5d749295973aefb00',1,'com.griddynamics.jagger.engine.e1.collector.SimpleMetricCalculator.calculate()']]],
+  ['calculate',['calculate',['../interfacecom_1_1griddynamics_1_1jagger_1_1engine_1_1e1_1_1collector_1_1MetricCalculator_3_01R_01_4_a365409167ad3369f732ae2d12e91a591.html#a365409167ad3369f732ae2d12e91a591',1,'com.griddynamics.jagger.engine.e1.collector.MetricCalculator&lt; R &gt;.calculate()'],['../classcom_1_1griddynamics_1_1jagger_1_1engine_1_1e1_1_1collector_1_1SimpleMetricCalculator_a81f370f34c4492f5d749295973aefb00.html#a81f370f34c4492f5d749295973aefb00',1,'com.griddynamics.jagger.engine.e1.collector.SimpleMetricCalculator.calculate()']]],
   ['calculatestopsamplescount',['calculateStopSamplesCount',['../classcom_1_1griddynamics_1_1jagger_1_1engine_1_1e1_1_1scenario_1_1UserTerminationStrategy_a7994b770facfa034ea14e780acf221ed.html#a7994b770facfa034ea14e780acf221ed',1,'com::griddynamics::jagger::engine::e1::scenario::UserTerminationStrategy']]],
+  ['calculatorcontextaware',['CalculatorContextAware',['../classCalculatorContextAware.html',1,'']]],
   ['collector',['collector',['../namespacecom_1_1griddynamics_1_1jagger_1_1engine_1_1e1_1_1collector.html',1,'com::griddynamics::jagger::engine::e1']]],
   ['com',['com',['../namespacecom.html',1,'']]],
   ['compositevalidator',['CompositeValidator',['../classcom_1_1griddynamics_1_1jagger_1_1engine_1_1e1_1_1collector_1_1CompositeValidator.html',1,'com::griddynamics::jagger::engine::e1::collector']]],
