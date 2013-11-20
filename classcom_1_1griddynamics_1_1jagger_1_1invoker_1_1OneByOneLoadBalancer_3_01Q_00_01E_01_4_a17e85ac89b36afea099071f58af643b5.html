@@ -120,39 +120,39 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <dl class="section return"><dt>Returns</dt><dd>iterator over pairs </dd></dl>
 
 <p>Implements <a class="el" href="interfacecom_1_1griddynamics_1_1jagger_1_1invoker_1_1LoadBalancer_3_01Q_00_01E_01_4_adac16d396a67a3a8642c75a4d02922b9.html#adac16d396a67a3a8642c75a4d02922b9">com.griddynamics.jagger.invoker.LoadBalancer&lt; Q, E &gt;</a>.</p>
-<div class="fragment"><div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;                                          {</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        <span class="keyword">final</span> CircularSupplier&lt;Q&gt; querySupplier = CircularSupplier.create(<a class="code" href="classcom_1_1griddynamics_1_1jagger_1_1invoker_1_1QueryPoolLoadBalancer_3_01Q_00_01E_01_4_a8c4bb9b7afbaefac72bead6b6aed6fb4.html#a8c4bb9b7afbaefac72bead6b6aed6fb4">queryProvider</a>);</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        <span class="keyword">final</span> CircularSupplier&lt;E&gt; endpointSupplier = CircularSupplier.create(<a class="code" href="classcom_1_1griddynamics_1_1jagger_1_1invoker_1_1QueryPoolLoadBalancer_3_01Q_00_01E_01_4_a56bdd9074cb524b53222a2ad083b61fd.html#a56bdd9074cb524b53222a2ad083b61fd">endpointProvider</a>);</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">new</span> Iterator&lt;Pair&lt;Q, E&gt;&gt;() {</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;            @Override</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;            <span class="keyword">public</span> <span class="keywordtype">boolean</span> hasNext() {</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;                <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;            }</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;            @Override</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;            <span class="keyword">public</span> Pair&lt;Q, E&gt; next() {</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;                <span class="keywordtype">boolean</span> exceeded = endpointSupplier.exceeded();</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;                E endpoint = endpointSupplier.pop();</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;                Q query = exceeded ? querySupplier.pop() : querySupplier.peek();</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;                <span class="keywordflow">return</span> Pair.of(query, endpoint);</div>
+<div class="fragment"><div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;                                          {</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        <span class="keyword">final</span> CircularSupplier&lt;Q&gt; querySupplier = CircularSupplier.create(<a class="code" href="classcom_1_1griddynamics_1_1jagger_1_1invoker_1_1QueryPoolLoadBalancer_3_01Q_00_01E_01_4_a8c4bb9b7afbaefac72bead6b6aed6fb4.html#a8c4bb9b7afbaefac72bead6b6aed6fb4">queryProvider</a>);</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        <span class="keyword">final</span> CircularSupplier&lt;E&gt; endpointSupplier = CircularSupplier.create(<a class="code" href="classcom_1_1griddynamics_1_1jagger_1_1invoker_1_1QueryPoolLoadBalancer_3_01Q_00_01E_01_4_a56bdd9074cb524b53222a2ad083b61fd.html#a56bdd9074cb524b53222a2ad083b61fd">endpointProvider</a>);</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">new</span> Iterator&lt;Pair&lt;Q, E&gt;&gt;() {</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;            @Override</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;            <span class="keyword">public</span> <span class="keywordtype">boolean</span> hasNext() {</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;                <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;            }</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;            @Override</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;            <span class="keyword">public</span> Pair&lt;Q, E&gt; next() {</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;                <span class="keywordtype">boolean</span> exceeded = endpointSupplier.exceeded();</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;                E endpoint = endpointSupplier.pop();</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;                Q query = exceeded ? querySupplier.pop() : querySupplier.peek();</div>
 <div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;            }</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;                <span class="keywordflow">return</span> Pair.of(query, endpoint);</div>
 <div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;            @Override</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;            <span class="keyword">public</span> <span class="keywordtype">void</span> <span class="keyword">remove</span>() {</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;                <span class="keywordflow">throw</span> <span class="keyword">new</span> UnsupportedOperationException(<span class="stringliteral">&quot;Read only iterator&quot;</span>);</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;            }</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;            @Override</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;            <span class="keyword">public</span> String <a class="code" href="classcom_1_1griddynamics_1_1jagger_1_1invoker_1_1OneByOneLoadBalancer_3_01Q_00_01E_01_4_aed6cc515f4ff9f177edd4057754aa393.html#aed6cc515f4ff9f177edd4057754aa393">toString</a>() {</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;                <span class="keywordflow">return</span> <span class="stringliteral">&quot;OneByOneLoadBalancer iterator&quot;</span>;</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;            }</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        };</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    }</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;            }</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;            @Override</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;            <span class="keyword">public</span> <span class="keywordtype">void</span> <span class="keyword">remove</span>() {</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;                <span class="keywordflow">throw</span> <span class="keyword">new</span> UnsupportedOperationException(<span class="stringliteral">&quot;Read only iterator&quot;</span>);</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;            }</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;            @Override</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;            <span class="keyword">public</span> String <a class="code" href="classcom_1_1griddynamics_1_1jagger_1_1invoker_1_1OneByOneLoadBalancer_3_01Q_00_01E_01_4_aed6cc515f4ff9f177edd4057754aa393.html#aed6cc515f4ff9f177edd4057754aa393">toString</a>() {</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;                <span class="keywordflow">return</span> <span class="stringliteral">&quot;OneByOneLoadBalancer iterator&quot;</span>;</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;            }</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;        };</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -162,7 +162,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Oct 30 2013 19:02:58 for Jagger by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Nov 20 2013 19:01:45 for Jagger by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.4
 </small></address>

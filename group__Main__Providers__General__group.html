@@ -5,7 +5,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.4"/>
-<title>Jagger: General information about providers</title>
+<title>Jagger: Providers main page</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -83,19 +83,55 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 <div class="header">
   <div class="headertitle">
-<div class="title">General information about providers</div>  </div>
+<div class="title">Providers main page</div>  </div>
 </div><!--header-->
 <div class="contents">
-<p>Provides are providing list of endpoints and queries to distributors. <br/>
- </p>
 <ul>
 <li>Available implementations: <a class="el" href="group__Main__Providers__group.html">Implementations of providers</a> </li>
-<li>How to customize: <a class="el" href="group__Main__HowToCustomizeProviders__group.html">Custom providers</a> </li>
+<li>How to customize: <a class="el" href="group__Main__HowToCustomizeProviders__group.html">Custom providers</a> <br/>
+ <br/>
+</li>
 </ul>
+<dl class="section user"><dt>General info</dt><dd>Provides are providing list of endpoints and queries to distributors. <br/>
+ Endpoint - target for the test (address of System Under Test). <br/>
+ Query - request for System Under Test. <br/>
+ Providers are executed single time before start of the tests. Test run sequence you can find here: <a class="el" href="group__Main__Test__Flow__group.html">Test execution sequence</a> <br/>
+</dd></dl>
+<dl class="section user"><dt>Example of providers setup in XML:</dt><dd>Below is example of XML <a href="./xsd/http___www.griddynamics.com_schema_jagger/element/test-description.html">test-description</a> section <br/>
+ In current example endpoints are hardcoded and list of queries is empty. <br/>
+ In real life it is more complicated. Endpoints and queries are usually provided as CVS files, property files or as some SUT test service <br/>
+ In this case you need to implement custom provider(s). How to do this you can read here: <a class="el" href="group__Main__HowToCustomizeProviders__group.html">Custom providers</a>  <div class="fragment"><div class="line">    &lt;!-- begin: following section is used <span class="keywordflow">for</span> docu generation - simple providers usage --&gt;</div>
+<div class="line">    &lt;test-description <span class="keywordtype">id</span>=<span class="stringliteral">&quot;googlePageTest&quot;</span> parent=<span class="stringliteral">&quot;default&quot;</span> calibration=<span class="stringliteral">&quot;true&quot;</span>&gt;</div>
+<div class="line">        &lt;scenario  xsi:type=<span class="stringliteral">&quot;scenario-query-pool&quot;</span>&gt;</div>
+<div class="line"></div>
+<div class="line">            &lt;query-distributor xsi:type=<span class="stringliteral">&quot;query-distributor-round-robin&quot;</span>/&gt;</div>
+<div class="line"></div>
+<div class="line">            &lt;invoker xsi:type=<span class="stringliteral">&quot;invoker-class&quot;</span> <span class="keyword">class</span>=<span class="stringliteral">&quot;${package}.invoker.PageVisitorInvoker&quot;</span>/&gt;</div>
+<div class="line"></div>
+<div class="line">            &lt;endpoint-provider xsi:type=<span class="stringliteral">&quot;endpoint-provider-list&quot;</span>&gt;</div>
+<div class="line">                &lt;endpoint&gt;http:<span class="comment">//google.com&lt;/endpoint&gt;</span></div>
+<div class="line">                &lt;endpoint&gt;http:<span class="comment">//google.ru&lt;/endpoint&gt;</span></div>
+<div class="line">            &lt;/endpoint-provider&gt;</div>
+<div class="line"></div>
+<div class="line">            &lt;query-provider xsi:type=<span class="stringliteral">&quot;query-provider-list&quot;</span>&gt;</div>
+<div class="line">                &lt;query&gt;&lt;/query&gt;</div>
+<div class="line">            &lt;/query-provider&gt;</div>
+<div class="line"></div>
+<div class="line">        &lt;/scenario&gt;</div>
+<div class="line">    &lt;/test-description&gt;</div>
+<div class="line">    &lt;!-- end: following section is used <span class="keywordflow">for</span> docu generation - simple providers usage --&gt;</div>
+</div><!-- fragment --></dd></dl>
+<dl class="section user"><dt>Variants of proviers available in XML:</dt><dd><a href="./xsd/http___www.griddynamics.com_schema_jagger/element/endpoint-provider.html">endpoint-provider</a> - documentation of endpoint provider element in XML schema <br/>
+ <a href="./xsd/http___www.griddynamics.com_schema_jagger/element/query-provider.html">query-provider</a> - documentation of query provider element in XML schema <br/>
+ <a href="./xsd/http___www.griddynamics.com_schema_jagger/complexType/endpointProviderAbstract.html">endpointProviderAbstract</a> - types of endpoint providers available in XML schema. See <b> 'Sub Types' </b> section of man page <br/>
+ <a href="./xsd/http___www.griddynamics.com_schema_jagger/complexType/queryProviderAbstract.html">queryProviderAbstract</a> - types of query providers available in XML schema. See <b> 'Sub Types' </b> section of man page <br/>
+ How providers mentioned above are implemented you can see in section: <a class="el" href="group__Main__Providers__group.html">Implementations of providers</a> <br/>
+ <br/>
+ </dd></dl>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Oct 30 2013 19:02:58 for Jagger by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Nov 20 2013 19:01:45 for Jagger by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.4
 </small></address>

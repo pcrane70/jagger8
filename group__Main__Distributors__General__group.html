@@ -5,7 +5,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.4"/>
-<title>Jagger: General information about distributors</title>
+<title>Jagger: Distributors main page</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -83,19 +83,49 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 <div class="header">
   <div class="headertitle">
-<div class="title">General information about distributors</div>  </div>
+<div class="title">Distributors main page</div>  </div>
 </div><!--header-->
 <div class="contents">
-<p>Distributors provide pairs of endpoints and queries for invokers</p>
 <ul>
-<li>General information: <a class="el" href="group__Main__Distributors__Base__group.html">Distributor</a> </li>
+<li>General information about interface: <a class="el" href="group__Main__Distributors__Base__group.html">Distributor</a> </li>
 <li>Available implementations: <a class="el" href="group__Main__Distributors__group.html">Implementations of distributors</a> </li>
 <li>How to customize: <a class="el" href="group__Main__HowToCustomizeDistributors__group.html">Custom distributors</a> </li>
+<li>How to run test with randomized order of requests: <a class="el" href="group__Main__Distributors__General__group.html#Section_distributors_random">Access SUT with random order of endpoint / query pairs</a> <br/>
+ <br/>
+</li>
 </ul>
-</div><!-- contents -->
+<dl class="section user"><dt>General info</dt><dd>Distributors provide pairs of endpoints and queries for invokers <br/>
+ Before start of the test distributor is combining all endpoints and queries according to user setup and stores these combination in internal list. <br/>
+ <b>Important:</b> mentioned list is shared by all threads that produce load. it is not possible to have separate list per workload thread <br/>
+ Before every invoke distributor is providing single pair of endpoint / query to invoker. Test run sequence you can find here: <a class="el" href="group__Main__Test__Flow__group.html">Test execution sequence</a> <br/>
+</dd></dl>
+<dl class="section user"><dt>Example of distributor setup in XML:</dt><dd>Following XML code should be included in <a href="./xsd/http___www.griddynamics.com_schema_jagger/element/test-description.html">test-description</a> section <br/>
+  <div class="fragment"><div class="line">    &lt;!-- begin: following section is used <span class="keywordflow">for</span> docu generation - invoker usage --&gt;</div>
+<div class="line">    &lt;scenario <span class="keywordtype">id</span>=<span class="stringliteral">&quot;pageScenario&quot;</span> xsi:type=<span class="stringliteral">&quot;scenario-query-pool&quot;</span>&gt;</div>
+<div class="line">        &lt;query-distributor xsi:type=<span class="stringliteral">&quot;query-distributor-round-robin&quot;</span>/&gt;</div>
+<div class="line">        &lt;invoker xsi:type=<span class="stringliteral">&quot;invoker-class&quot;</span> <span class="keyword">class</span>=<span class="stringliteral">&quot;${package}.invoker.PageVisitorInvoker&quot;</span>/&gt;</div>
+<div class="line">    &lt;/scenario&gt;</div>
+<div class="line">    &lt;!-- end: following section is used <span class="keywordflow">for</span> docu generation - invoker usage --&gt;</div>
+</div><!-- fragment --></dd></dl>
+<dl class="section user"><dt>Variants of distributors available in XML:</dt><dd><a href="./xsd/http___www.griddynamics.com_schema_jagger/element/query-distributor.html">query-distributor</a> - documentation of distributor element in XML schema <br/>
+ <a href="./xsd/http___www.griddynamics.com_schema_jagger/complexType/queryDistributorAbstract.html">queryDistributorAbstract</a> - types of distributors available in XML schema. See <b> 'Sub Types' </b> section of man page <br/>
+ How distributors mentioned above are implemented you can see in section: <a class="el" href="group__Main__Distributors__group.html">Implementations of distributors</a> <br/>
+ <br/>
+ </dd></dl>
+<h1><a class="anchor" id="Section_distributors_random"></a>
+Access SUT with random order of endpoint / query pairs</h1>
+<p>Pairs of endpoint / query are collected into list single time during Jagger start up. <br/>
+ By default all threads are accessing elements of mentioned list in the same order: from first element to the last, doing this in cycle. <br/>
+ If it is necessary to execute endpoint / query pairs in random order, set <a href="./xsd/http___www.griddynamics.com_schema_jagger/element/query-distributor.html#attr_randomSeed">randomSeed</a> attribute of <a href="./xsd/http___www.griddynamics.com_schema_jagger/element/query-distributor.html">query-distributor</a> equal to some integer value <br/>
+ </p>
+<div class="image">
+<img src="jagger_random_query_distribution.png" alt="jagger_random_query_distribution.png"/>
+<div class="caption">
+Access SUT with random order of endpoint / query pairs</div></div>
+ </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Oct 30 2013 19:02:58 for Jagger by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Nov 20 2013 19:01:45 for Jagger by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.4
 </small></address>

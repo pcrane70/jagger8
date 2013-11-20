@@ -305,7 +305,7 @@
   </compound>
   <compound kind="group">
     <name>Main_Invokers_General_group</name>
-    <title>General information about invokers</title>
+    <title>Invokers main page</title>
     <filename>group__Main__Invokers__General__group.html</filename>
   </compound>
   <compound kind="group">
@@ -391,8 +391,9 @@
   </compound>
   <compound kind="group">
     <name>Main_Distributors_General_group</name>
-    <title>General information about distributors</title>
+    <title>Distributors main page</title>
     <filename>group__Main__Distributors__General__group.html</filename>
+    <docanchor file="group__Main__Distributors__General__group" title="Access SUT with random order of endpoint / query pairs">Section_distributors_random</docanchor>
   </compound>
   <compound kind="group">
     <name>Main_HowToCustomizeDistributors_group</name>
@@ -401,7 +402,7 @@
   </compound>
   <compound kind="group">
     <name>Main_Collectors_General_group</name>
-    <title>General information about collectors</title>
+    <title>Collectors main page</title>
     <filename>group__Main__Collectors__General__group.html</filename>
     <docanchor file="group__Main__Collectors__General__group" title="Collectors execution sequence">Section_collectors_execution_flow</docanchor>
   </compound>
@@ -417,7 +418,7 @@
   </compound>
   <compound kind="group">
     <name>Main_Providers_General_group</name>
-    <title>General information about providers</title>
+    <title>Providers main page</title>
     <filename>group__Main__Providers__General__group.html</filename>
   </compound>
   <compound kind="group">
@@ -1850,7 +1851,7 @@
   </compound>
   <compound kind="page">
     <name>index</name>
-    <title>Custom components for Jagger</title>
+    <title>Jagger source code documentation</title>
     <filename>index</filename>
   </compound>
 </tagfile>

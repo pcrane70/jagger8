@@ -11,9 +11,5 @@ var searchData=
   ['getpairsupplier',['getPairSupplier',['../classcom_1_1griddynamics_1_1jagger_1_1invoker_1_1PairSupplierFactoryLoadBalancer_3_01Q_00_01E_01_4_a533fa9bb0c988f19a40962471997abcb.html#a533fa9bb0c988f19a40962471997abcb',1,'com::griddynamics::jagger::invoker::PairSupplierFactoryLoadBalancer&lt; Q, E &gt;']]],
   ['getpath',['getPath',['../classcom_1_1griddynamics_1_1jagger_1_1providers_1_1FileProvider_3_01T_01_4_a50acb43505968a47530f16209696d154.html#a50acb43505968a47530f16209696d154',1,'com.griddynamics.jagger.providers.FileProvider&lt; T &gt;.getPath()'],['../classcom_1_1griddynamics_1_1jagger_1_1providers_1_1CsvProvider_3_01T_01_4_a7c222710b97b02be87d7d3aa7ca04f07.html#a7c222710b97b02be87d7d3aa7ca04f07',1,'com.griddynamics.jagger.providers.CsvProvider&lt; T &gt;.getPath()']]],
   ['getreadheader',['getReadHeader',['../classcom_1_1griddynamics_1_1jagger_1_1providers_1_1CsvProvider_3_01T_01_4_a9115bc75061abfe77c64aa1ea2c77d28.html#a9115bc75061abfe77c64aa1ea2c77d28',1,'com::griddynamics::jagger::providers::CsvProvider&lt; T &gt;']]],
-  ['getstrategy',['getStrategy',['../classcom_1_1griddynamics_1_1jagger_1_1providers_1_1CsvProvider_3_01T_01_4_ab0b1791ebae1901a91655dc4de9b3347.html#ab0b1791ebae1901a91655dc4de9b3347',1,'com::griddynamics::jagger::providers::CsvProvider&lt; T &gt;']]],
-  ['general_20information_20about_20collectors',['General information about collectors',['../group__Main__Collectors__General__group.html',1,'']]],
-  ['general_20information_20about_20distributors',['General information about distributors',['../group__Main__Distributors__General__group.html',1,'']]],
-  ['general_20information_20about_20invokers',['General information about invokers',['../group__Main__Invokers__General__group.html',1,'']]],
-  ['general_20information_20about_20providers',['General information about providers',['../group__Main__Providers__General__group.html',1,'']]]
+  ['getstrategy',['getStrategy',['../classcom_1_1griddynamics_1_1jagger_1_1providers_1_1CsvProvider_3_01T_01_4_ab0b1791ebae1901a91655dc4de9b3347.html#ab0b1791ebae1901a91655dc4de9b3347',1,'com::griddynamics::jagger::providers::CsvProvider&lt; T &gt;']]]
 ];
