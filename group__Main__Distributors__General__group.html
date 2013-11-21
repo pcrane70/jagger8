@@ -116,7 +116,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 Access SUT with random order of endpoint / query pairs</h1>
 <p>Pairs of endpoint / query are collected into list single time during Jagger start up. <br/>
  By default all threads are accessing elements of mentioned list in the same order: from first element to the last, doing this in cycle. <br/>
- If it is necessary to execute endpoint / query pairs in random order, set <a href="./xsd/http___www.griddynamics.com_schema_jagger/element/query-distributor.html#attr_randomSeed">randomSeed</a> attribute of <a href="./xsd/http___www.griddynamics.com_schema_jagger/element/query-distributor.html">query-distributor</a> equal to some integer value <br/>
+ If it is necessary to execute endpoint / query pairs in random order, set <a href="./xsd/http___www.griddynamics.com_schema_jagger/complexType/queryDistributorRandomAbstract.html#attr_randomSeed">randomSeed</a> attribute of f.e. <a href="./xsd/http___www.griddynamics.com_schema_jagger/element/query-distributor-round-robin.html">query-distributor-round-robin</a> equal to some integer value <br/>
  </p>
 <div class="image">
 <img src="jagger_random_query_distribution.png" alt="jagger_random_query_distribution.png"/>
@@ -125,7 +125,7 @@ Access SUT with random order of endpoint / query pairs</div></div>
  </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Nov 20 2013 19:01:45 for Jagger by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu Nov 21 2013 10:12:37 for Jagger by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.4
 </small></address>
