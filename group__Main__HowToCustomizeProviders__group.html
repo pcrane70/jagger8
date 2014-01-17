@@ -5,7 +5,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.4"/>
-<title>Jagger: Jagger source code documentation</title>
+<title>Jagger: Custom providers</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -42,7 +42,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </script>
   <div id="navrow1" class="tabs">
     <ul class="tablist">
-      <li class="current"><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="index.html"><span>Main&#160;Page</span></a></li>
       <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
       <li><a href="modules.html"><span>Modules</span></a></li>
       <li><a href="namespaces.html"><span>Packages</span></a></li>
@@ -83,27 +83,37 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 <div class="header">
   <div class="headertitle">
-<div class="title">Jagger source code documentation </div>  </div>
+<div class="title">Custom providers</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p>Back to <a href="https://github.com/griddynamics/jagger/wiki">GitHub</a> documentation <br/>
+<p><a class="el" href="group__Main__Providers__General__group.html">Providers main page</a> <br/>
  <br/>
- </p>
-<ul>
-<li><a class="el" href="group__Main__Test__Suite__Flow__group.html">Test suite execution sequence</a> </li>
-<li><a class="el" href="group__Main__Test__Flow__group.html">Test execution sequence</a></li>
+ To add custom provider you need to do -</p>
+<ol type="1">
+<li>Create class which implements interface Iterable&lt;Q&gt;  <div class="fragment"><div class="line"><span class="keyword">public</span> <span class="keyword">class </span>FileReaderIterable <span class="keyword">implements</span> <a class="code" href="classIterable.html">Iterable</a>&lt;String&gt; {</div>
+</div><!-- fragment --> <br/>
+</li>
+<li>Create bean in XML file with some id  <div class="fragment"><div class="line">    &lt;!-- begin: following section is used <span class="keywordflow">for</span> docu generation - provider usage --&gt;</div>
+<div class="line">    &lt;beans:bean <span class="keywordtype">id</span>=<span class="stringliteral">&quot;fileEndpointProvider&quot;</span> <span class="keyword">class</span>=<span class="stringliteral">&quot;${package}.provider.FileReaderIterable&quot;</span>&gt;</div>
+<div class="line">        &lt;beans:<span class="keyword">property</span> name=<span class="stringliteral">&quot;filePath&quot;</span> value=<span class="stringliteral">&quot;suite/provider/resources/endpoints.txt&quot;</span>/&gt;</div>
+<div class="line">    &lt;/beans:bean&gt;</div>
+<div class="line">    &lt;!-- end: following section is used <span class="keywordflow">for</span> docu generation - provider usage --&gt;</div>
+</div><!-- fragment --> <br/>
+</li>
+<li>Create component <a href="./xsd/http___www.griddynamics.com_schema_jagger/element/query-provider.html">query-provider</a>(or <a href="./xsd/http___www.griddynamics.com_schema_jagger/element/endpoint-provider.html">endpoint-provider</a>) with type query-provider-ref and set id of provider to attribute ref.  <div class="fragment"><div class="line">        &lt;!-- begin: following section is used <span class="keywordflow">for</span> docu generation - provider custom --&gt;</div>
+<div class="line">        &lt;scenario <span class="keywordtype">id</span>=<span class="stringliteral">&quot;fileProviderScenario&quot;</span> xsi:type=<span class="stringliteral">&quot;scenario-query-pool&quot;</span> parent=<span class="stringliteral">&quot;pageScenario&quot;</span>&gt;</div>
+<div class="line">            &lt;endpoint-provider xsi:type=<span class="stringliteral">&quot;endpoint-provider-ref&quot;</span> ref=<span class="stringliteral">&quot;fileEndpointProvider&quot;</span>/&gt;</div>
+<div class="line">            &lt;query-provider xsi:type=<span class="stringliteral">&quot;query-provider-ref&quot;</span> ref=<span class="stringliteral">&quot;fileQueryProvider&quot;</span>/&gt;</div>
+<div class="line">        &lt;/scenario&gt;</div>
+<div class="line">        &lt;!-- end: following section is used <span class="keywordflow">for</span> docu generation - provider custom --&gt;</div>
+</div><!-- fragment --> <br/>
+ <b>Note:</b> <ul>
+<li>full examples of the code are available in maven archetype-examples </li>
+<li>instead of ${package} write the name of your package </li>
 </ul>
-<ul>
-<li><a class="el" href="group__Main__Collectors__General__group.html">Collectors main page</a> </li>
-<li><a class="el" href="group__Main__Providers__General__group.html">Providers main page</a> </li>
-<li><a class="el" href="group__Main__Distributors__General__group.html">Distributors main page</a> </li>
-<li><a class="el" href="group__Main__Services__General__group.html">Jagger services main page</a> <em> <font color="#009900">NEW ver 1.2.3</font></em> </li>
-<li><a class="el" href="group__Main__Listeners__General__group.html">Listeners main page</a> <em> <font color="#009900">NEW ver 1.2.3</font></em> </li>
-</ul>
-<ul>
-<li><a class="el" href="group__Main__Custom__Components__group.html">Custom component</a> </li>
-</ul>
-</div></div><!-- contents -->
+</li>
+</ol>
+</div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated on Fri Jan 17 2014 11:36:25 for Jagger by &#160;<a href="http://www.doxygen.org/index.html">

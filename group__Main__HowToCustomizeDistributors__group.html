@@ -5,7 +5,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.4"/>
-<title>Jagger: Jagger source code documentation</title>
+<title>Jagger: Custom distributors</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -42,7 +42,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </script>
   <div id="navrow1" class="tabs">
     <ul class="tablist">
-      <li class="current"><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="index.html"><span>Main&#160;Page</span></a></li>
       <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
       <li><a href="modules.html"><span>Modules</span></a></li>
       <li><a href="namespaces.html"><span>Packages</span></a></li>
@@ -83,27 +83,36 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 <div class="header">
   <div class="headertitle">
-<div class="title">Jagger source code documentation </div>  </div>
+<div class="title">Custom distributors</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p>Back to <a href="https://github.com/griddynamics/jagger/wiki">GitHub</a> documentation <br/>
+<p><a class="el" href="group__Main__Distributors__General__group.html">Distributors main page</a> <br/>
  <br/>
- </p>
+ To add custom distributor you need to do:</p>
+<ol type="1">
+<li>Create class which implements <a class="el" href="group__Main__Distributors__Base__group.html">Distributor</a> interface or extends one of classes <a class="el" href="group__Main__Distributors__group.html">Implementations of distributors</a>  <div class="fragment"><div class="line"><span class="keyword">public</span> <span class="keyword">class </span>RandomQueryDistributor&lt;Q, E&gt;  <span class="keyword">extends</span> QueryPoolLoadBalancer&lt;Q, E&gt; {</div>
+</div><!-- fragment --> <br/>
+</li>
+<li>Create bean in XML file in the directory "suite/distributor/" with this class  <div class="fragment"><div class="line">    &lt;!-- begin: following section is used <span class="keywordflow">for</span> docu generation - distributor bean --&gt;</div>
+<div class="line">    &lt;beans:bean <span class="keywordtype">id</span>=<span class="stringliteral">&quot;randomQueryDistributor&quot;</span> <span class="keyword">class</span>=<span class="stringliteral">&quot;${package}.distributor.RandomQueryDistributor&quot;</span>/&gt;</div>
+<div class="line">    &lt;!-- end: following section is used <span class="keywordflow">for</span> docu generation - distributor bean --&gt;</div>
+</div><!-- fragment --> <br/>
+</li>
+<li>Refer this class in your <a href="./xsd/http___www.griddynamics.com_schema_jagger/element/scenario-query-pool.html">scenario-query-pool</a> with element <a href="./xsd/http___www.griddynamics.com_schema_jagger/element/query-distributor.html">query-distributor</a>  <div class="fragment"><div class="line">    &lt;!-- begin: following section is used <span class="keywordflow">for</span> docu generation - distributor usage --&gt;</div>
+<div class="line">    &lt;test-description <span class="keywordtype">id</span>=<span class="stringliteral">&quot;jaggerRandomPageTest&quot;</span> parent=<span class="stringliteral">&quot;jaggerPageTest&quot;</span> calibration=<span class="stringliteral">&quot;true&quot;</span>&gt;</div>
+<div class="line">        &lt;scenario xsi:type=<span class="stringliteral">&quot;scenario-query-pool&quot;</span> parent=<span class="stringliteral">&quot;jaggerPageScenario&quot;</span>&gt;</div>
+<div class="line">            &lt;query-distributor xsi:type=<span class="stringliteral">&quot;query-distributor-ref&quot;</span> ref=<span class="stringliteral">&quot;randomQueryDistributor&quot;</span>/&gt;</div>
+<div class="line">        &lt;/scenario&gt;</div>
+<div class="line">    &lt;/test-description&gt;</div>
+<div class="line">    &lt;!-- end: following section is used <span class="keywordflow">for</span> docu generation - distributor usage --&gt;</div>
+</div><!-- fragment --></li>
+</ol>
+<p><b>Note:</b> </p>
 <ul>
-<li><a class="el" href="group__Main__Test__Suite__Flow__group.html">Test suite execution sequence</a> </li>
-<li><a class="el" href="group__Main__Test__Flow__group.html">Test execution sequence</a></li>
+<li>full examples of the code are available in maven archetype-examples </li>
+<li>instead of ${package} write the name of your package </li>
 </ul>
-<ul>
-<li><a class="el" href="group__Main__Collectors__General__group.html">Collectors main page</a> </li>
-<li><a class="el" href="group__Main__Providers__General__group.html">Providers main page</a> </li>
-<li><a class="el" href="group__Main__Distributors__General__group.html">Distributors main page</a> </li>
-<li><a class="el" href="group__Main__Services__General__group.html">Jagger services main page</a> <em> <font color="#009900">NEW ver 1.2.3</font></em> </li>
-<li><a class="el" href="group__Main__Listeners__General__group.html">Listeners main page</a> <em> <font color="#009900">NEW ver 1.2.3</font></em> </li>
-</ul>
-<ul>
-<li><a class="el" href="group__Main__Custom__Components__group.html">Custom component</a> </li>
-</ul>
-</div></div><!-- contents -->
+</div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated on Fri Jan 17 2014 11:36:25 for Jagger by &#160;<a href="http://www.doxygen.org/index.html">

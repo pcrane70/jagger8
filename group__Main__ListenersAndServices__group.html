@@ -5,7 +5,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.4"/>
-<title>Jagger: Jagger source code documentation</title>
+<title>Jagger: Relation of listeners and Jagger services</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -42,7 +42,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </script>
   <div id="navrow1" class="tabs">
     <ul class="tablist">
-      <li class="current"><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="index.html"><span>Main&#160;Page</span></a></li>
       <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
       <li><a href="modules.html"><span>Modules</span></a></li>
       <li><a href="namespaces.html"><span>Packages</span></a></li>
@@ -83,27 +83,36 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 <div class="header">
   <div class="headertitle">
-<div class="title">Jagger source code documentation </div>  </div>
+<div class="title">Relation of listeners and Jagger services</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p>Back to <a href="https://github.com/griddynamics/jagger/wiki">GitHub</a> documentation <br/>
- <br/>
- </p>
-<ul>
-<li><a class="el" href="group__Main__Test__Suite__Flow__group.html">Test suite execution sequence</a> </li>
-<li><a class="el" href="group__Main__Test__Flow__group.html">Test execution sequence</a></li>
-</ul>
-<ul>
-<li><a class="el" href="group__Main__Collectors__General__group.html">Collectors main page</a> </li>
-<li><a class="el" href="group__Main__Providers__General__group.html">Providers main page</a> </li>
-<li><a class="el" href="group__Main__Distributors__General__group.html">Distributors main page</a> </li>
-<li><a class="el" href="group__Main__Services__General__group.html">Jagger services main page</a> <em> <font color="#009900">NEW ver 1.2.3</font></em> </li>
-<li><a class="el" href="group__Main__Listeners__General__group.html">Listeners main page</a> <em> <font color="#009900">NEW ver 1.2.3</font></em> </li>
-</ul>
-<ul>
-<li><a class="el" href="group__Main__Custom__Components__group.html">Custom component</a> </li>
-</ul>
-</div></div><!-- contents -->
+<p>Jagger is providing set of services to simplify custom code development. <br/>
+ Services allow to access Jagger internal components with small effort. What services exist you can find under link: <a class="el" href="group__Main__Services__group.html">Implementations of Jagger services</a> <br/>
+ All custom listeners have access to Jagger services. But list of available services can be different for different types of listeners. <br/>
+ Please see table below to find what services can be used in what listeners. <br/>
+  <div class="fragment"><div class="line">        <span class="comment">/* begin: following section is used for docu generation - listeners to services relation */</span></div>
+<div class="line"></div>
+<div class="line">        <span class="comment">/* Services available for test listener */</span></div>
+<div class="line">        <span class="keywordflow">if</span> (environment.equals(JaggerPlace.TEST_LISTENER)){</div>
+<div class="line">            metricService       = <span class="keyword">new</span> DefaultMetricService(sessionId, taskId, context);         <span class="comment">/* Available */</span></div>
+<div class="line">            sessionInfoService  = <span class="keyword">new</span> DefaultSessionInfoService(context);                       <span class="comment">/* Available */</span></div>
+<div class="line">        }</div>
+<div class="line">        <span class="comment">/* Services available for test group listener */</span></div>
+<div class="line">        <span class="keywordflow">if</span> (environment.equals(JaggerPlace.TEST_GROUP_LISTENER)){</div>
+<div class="line">            metricService       = <span class="keyword">new</span> EmptyMetricService(JaggerPlace.TEST_GROUP_LISTENER);      <span class="comment">/* NOT AVAILABLE */</span></div>
+<div class="line">            sessionInfoService  = <span class="keyword">new</span> DefaultSessionInfoService(context);                       <span class="comment">/* Available */</span></div>
+<div class="line">        }</div>
+<div class="line">        <span class="comment">/* Services available for test suite listener */</span></div>
+<div class="line">        <span class="keywordflow">if</span> (environment.equals(JaggerPlace.TEST_SUITE_LISTENER)){</div>
+<div class="line">            metricService       = <span class="keyword">new</span> EmptyMetricService(JaggerPlace.TEST_SUITE_LISTENER);      <span class="comment">/* NOT AVAILABLE */</span></div>
+<div class="line">            sessionInfoService  = <span class="keyword">new</span> DefaultSessionInfoService(context);                       <span class="comment">/* Available */</span></div>
+<div class="line">        }</div>
+<div class="line"></div>
+<div class="line">        <span class="comment">/* end: following section is used for docu generation - listeners to services relation */</span></div>
+</div><!-- fragment --> <br/>
+ If you will try to use unavailable service in some listener - nothing will happen and warning will be logged <br/>
+ Example of services usage in listeners are available in maven archetype-examples or here: <a class="el" href="group__Main__CustomListenersExamples__group.html">Custom listener examples code</a> </p>
+</div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated on Fri Jan 17 2014 11:36:25 for Jagger by &#160;<a href="http://www.doxygen.org/index.html">

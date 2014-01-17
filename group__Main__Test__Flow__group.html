@@ -5,7 +5,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.4"/>
-<title>Jagger: Jagger source code documentation</title>
+<title>Jagger: Test execution sequence</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -42,7 +42,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </script>
   <div id="navrow1" class="tabs">
     <ul class="tablist">
-      <li class="current"><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="index.html"><span>Main&#160;Page</span></a></li>
       <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
       <li><a href="modules.html"><span>Modules</span></a></li>
       <li><a href="namespaces.html"><span>Packages</span></a></li>
@@ -83,27 +83,33 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 <div class="header">
   <div class="headertitle">
-<div class="title">Jagger source code documentation </div>  </div>
+<div class="title">Test execution sequence</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p>Back to <a href="https://github.com/griddynamics/jagger/wiki">GitHub</a> documentation <br/>
- <br/>
- </p>
+<p>Click on diagram components to learn more about every component: </p>
 <ul>
-<li><a class="el" href="group__Main__Test__Suite__Flow__group.html">Test suite execution sequence</a> </li>
-<li><a class="el" href="group__Main__Test__Flow__group.html">Test execution sequence</a></li>
+<li>Interface description </li>
+<li>Interface implementations in Jagger </li>
+<li>How to customize component <div class="dotgraph">
+<img src="dot_jagger_test_flow.png" alt="dot_jagger_test_flow.png" border="0" usemap="#dot_jagger_test_flow.map"/>
+<map name="dot_jagger_test_flow.map" id="dot_jagger_test_flow.map"><area shape="rect" id="node3" href="group__Main__Distributors__General__group.html" title="Distributor \n\n Pair&#60;E,Q&#62; = distributor.getPair();" alt="" coords="363,111,651,190"/><area shape="rect" id="node5" href="group__Main__Invokers__General__group.html" title="Invoker \n\n result = invoker.invoke(Pair);" alt="" coords="363,213,651,291"/><area shape="rect" id="node16" href="group__Main__Test__Suite__Flow__group.html" title="Start / change workload" alt="" coords="699,111,987,190"/><area shape="rect" id="node6" href="group__Main__Collectors__General__group.html" title="Collector \n\n result = collector.collect(result);" alt="" coords="363,314,651,393"/><area shape="rect" id="node14" href="group__Main__Test__Suite__Flow__group.html" title="Terminate?" alt="" coords="699,314,987,393"/><area shape="rect" id="node9" href="group__Main__Providers__General__group.html" title="Endpoint provider \n\n return Iterator&#60;E&#62;;" alt="" coords="27,61,315,139"/><area shape="rect" id="node10" href="group__Main__Providers__General__group.html" title="Query provider \n\n return Iterator&#60;Q&#62;;" alt="" coords="27,162,315,241"/></map>
+<div class="caption">
+Simplified test execution sequence</div>
+</div>
+<br/>
+</li>
 </ul>
+<p>Main components of test flow : </p>
 <ul>
-<li><a class="el" href="group__Main__Collectors__General__group.html">Collectors main page</a> </li>
-<li><a class="el" href="group__Main__Providers__General__group.html">Providers main page</a> </li>
-<li><a class="el" href="group__Main__Distributors__General__group.html">Distributors main page</a> </li>
-<li><a class="el" href="group__Main__Services__General__group.html">Jagger services main page</a> <em> <font color="#009900">NEW ver 1.2.3</font></em> </li>
-<li><a class="el" href="group__Main__Listeners__General__group.html">Listeners main page</a> <em> <font color="#009900">NEW ver 1.2.3</font></em> </li>
+<li>endpoint – where to apply test </li>
+<li>query – what request to provide during test </li>
+<li>distributor – how to combine endpoints and queries </li>
+<li>invoker – how to transfer query to endpoint </li>
+<li>collector – how to collect data <br/>
+</li>
 </ul>
-<ul>
-<li><a class="el" href="group__Main__Custom__Components__group.html">Custom component</a> </li>
-</ul>
-</div></div><!-- contents -->
+<p>To see full test suite execution sequence click here <a class="el" href="group__Main__Test__Suite__Flow__group.html">Test suite execution sequence</a> </p>
+</div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated on Fri Jan 17 2014 11:36:25 for Jagger by &#160;<a href="http://www.doxygen.org/index.html">
