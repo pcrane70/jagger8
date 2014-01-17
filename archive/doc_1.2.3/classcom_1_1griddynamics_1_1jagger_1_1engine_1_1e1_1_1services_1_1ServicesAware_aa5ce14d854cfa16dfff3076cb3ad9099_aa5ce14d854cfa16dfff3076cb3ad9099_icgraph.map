@@ -1,0 +1,4 @@
+<map id="com.griddynamics.jagger.engine.e1.services.ServicesAware.getMetricService" name="com.griddynamics.jagger.engine.e1.services.ServicesAware.getMetricService">
+<area shape="rect" id="node3" href="$classcom_1_1griddynamics_1_1jagger_1_1engine_1_1e1_1_1collector_1_1CollectThreadsTestListener_a12ccac9b5bc110b51a063e814e64531f.html#a12ccac9b5bc110b51a063e814e64531f" title="Method is executed single time when listener is created. " alt="" coords="340,5,623,51"/>
+<area shape="rect" id="node5" href="$classcom_1_1griddynamics_1_1jagger_1_1engine_1_1e1_1_1collector_1_1CollectThreadsTestListener_a0f9dfb6d28ad76572c14a8423be69147.html#a0f9dfb6d28ad76572c14a8423be69147" title="Method is providing listener to Jagger that will trigger listener methods during test run..." alt="" coords="340,74,623,121"/>
+</map>
