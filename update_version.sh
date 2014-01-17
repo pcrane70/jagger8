@@ -26,6 +26,8 @@ then
         echo "- Archive"
         rm -rf ./archive/$folder
         mv $folder ./archive/
+        #Correct link
+        sed -i.bak "s/..\/archive\/index.html/..\/index.html/g" ./archive/$folder/index.html
 
         echo "- Index"
         cd ./archive/

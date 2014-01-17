@@ -8,6 +8,8 @@ echo "<!DOCTYPE html>" >> index.html
 echo "<html>" >> index.html
 echo "<body>" >> index.html
 
+echo "<a href=\"../doc/index.html\">current version</a><br/>" >> index.html
+
 # Search for directories with index.html
 find . -maxdepth 2 -mindepth 2 -name 'index.html' | while read line; do
     # Extract name of directory
