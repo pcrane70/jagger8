@@ -1,5 +1,0 @@
-<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node3" href="$interfacecom_1_1griddynamics_1_1jagger_1_1engine_1_1e1_1_1collector_1_1MetricAggregatorProvider.html" title="com.griddynamics.jagger.engine.e1.collector.\lMetricAggregatorProvider" alt="" coords="127,39,409,86"/>
-<area shape="rect" id="node5" href="$classcom_1_1griddynamics_1_1jagger_1_1engine_1_1e1_1_1collector_1_1SuccessRateAggregatorProvider.html" title="Calculates accumulative success rate from data collected by SuccessRateCollector&lt;Q,R,E&gt; " alt="" coords="460,5,743,51"/>
-<area shape="rect" id="node7" href="$classcom_1_1griddynamics_1_1jagger_1_1engine_1_1e1_1_1collector_1_1SuccessRateFailsAggregatorProvider.html" title="Calculates accumulative number of failed invokes from data collected by SuccessRateCollector&lt;Q,R,E&gt; " alt="" coords="460,74,743,121"/>
-</map>
