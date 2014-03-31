@@ -1,0 +1,4 @@
+<map id="com.griddynamics.jagger.engine.e1.services.JaggerService" name="com.griddynamics.jagger.engine.e1.services.JaggerService">
+<area shape="rect" id="node3" href="$interfacecom_1_1griddynamics_1_1jagger_1_1engine_1_1e1_1_1services_1_1MetricService.html" title="Service gives an ability to create and describe metrics, save metric values. " alt="" coords="340,5,623,51"/>
+<area shape="rect" id="node5" href="$interfacecom_1_1griddynamics_1_1jagger_1_1engine_1_1e1_1_1services_1_1SessionInfoService.html" title="Service gives ability to create and modify session metadata(such as session comment) ..." alt="" coords="340,74,623,121"/>
+</map>
