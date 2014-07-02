@@ -1,0 +1,4 @@
+<map id="com.griddynamics.jagger.engine.e1.collector.CollectThreadsTestListener.init" name="com.griddynamics.jagger.engine.e1.collector.CollectThreadsTestListener.init">
+<area shape="rect" id="node3" href="$interfacecom_1_1griddynamics_1_1jagger_1_1engine_1_1e1_1_1services_1_1MetricService_a5e94b4e63dbfe45467136aa69df5dd14.html#a5e94b4e63dbfe45467136aa69df5dd14" title="Creates metric. " alt="" coords="340,5,623,51"/>
+<area shape="rect" id="node5" href="$classcom_1_1griddynamics_1_1jagger_1_1engine_1_1e1_1_1services_1_1ServicesAware_aa5ce14d854cfa16dfff3076cb3ad9099.html#aa5ce14d854cfa16dfff3076cb3ad9099" title="Gives access to MetricService. " alt="" coords="340,74,623,121"/>
+</map>

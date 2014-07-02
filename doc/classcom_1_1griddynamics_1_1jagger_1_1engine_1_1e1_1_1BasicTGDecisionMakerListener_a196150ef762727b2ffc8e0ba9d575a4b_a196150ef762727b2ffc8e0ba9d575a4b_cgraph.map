@@ -1,0 +1,5 @@
+<map id="com.griddynamics.jagger.engine.e1.BasicTGDecisionMakerListener.provide" name="com.griddynamics.jagger.engine.e1.BasicTGDecisionMakerListener.provide">
+<area shape="rect" id="node3" href="$classcom_1_1griddynamics_1_1jagger_1_1engine_1_1e1_1_1sessioncomparation_1_1WorstCaseDecisionMaker_a15971c60492bdfba816427c20fb20b7f.html#a15971c60492bdfba816427c20fb20b7f" title="Returns the worst decision from list of input decisions. " alt="" coords="308,5,657,51"/>
+<area shape="rect" id="node5" href="$classcom_1_1griddynamics_1_1jagger_1_1engine_1_1e1_1_1collector_1_1testgroup_1_1TestGroupDecisionMakerInfo_a8e96138a09b56889bbc3ba0107520b28.html#a8e96138a09b56889bbc3ba0107520b28" title="Returns detailed information about decision per every test in this test group. " alt="" coords="312,74,653,121"/>
+<area shape="rect" id="node7" href="$classcom_1_1griddynamics_1_1jagger_1_1engine_1_1e1_1_1collector_1_1testgroup_1_1TestGroupDecisionMakerInfo_ae54d8b3bd2c5f17ac6cd617dc2e1588b.html#ae54d8b3bd2c5f17ac6cd617dc2e1588b" title="Returns full information about current test&#45;group. " alt="" coords="312,143,653,190"/>
+</map>
