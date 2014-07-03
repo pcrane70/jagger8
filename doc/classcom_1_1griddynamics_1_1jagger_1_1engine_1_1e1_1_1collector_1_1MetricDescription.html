@@ -187,15 +187,30 @@ Protected Attributes</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Class to describe metric. </p>
-<dl class="section author"><dt>Author</dt><dd>Gribov Kirill <br/>
- </dd></dl>
+<dl class="section author"><dt>Author</dt><dd>Gribov Kirill</dd></dl>
+<p>Example of metric setup and creation with use of <a class="el" href="interfacecom_1_1griddynamics_1_1jagger_1_1engine_1_1e1_1_1services_1_1MetricService.html">MetricService</a>  <div class="fragment"><div class="line">        <span class="comment">// begin: following section is used for docu generation - example of metric creation</span></div>
+<div class="line"></div>
+<div class="line">        <span class="comment">// In this example, we will create custom metric to collect internal metrics of SUT</span></div>
+<div class="line">        <span class="comment">// Approach is the following:</span></div>
+<div class="line">        <span class="comment">// - Declare custom metric</span></div>
+<div class="line">        <span class="comment">// - Run test. SUT will usually collect some internal data (metrics)</span></div>
+<div class="line">        <span class="comment">// - After test is finished, get all internal data from SUT and save to custom metric</span></div>
+<div class="line">        <span class="comment">// In this case internal data will be save to result DB, displayed in test report and Web UI,</span></div>
+<div class="line">        <span class="comment">// you can use it in decision maker when running Continues Integration</span></div>
+<div class="line">        <a class="code" href="classcom_1_1griddynamics_1_1jagger_1_1engine_1_1e1_1_1collector_1_1MetricDescription_a2663af1ea7b1d81de4b0131e76f922d2.html#a2663af1ea7b1d81de4b0131e76f922d2" title="Constructor. ">MetricDescription</a> metricDescription = <span class="keyword">new</span> <a class="code" href="classcom_1_1griddynamics_1_1jagger_1_1engine_1_1e1_1_1collector_1_1MetricDescription_a2663af1ea7b1d81de4b0131e76f922d2.html#a2663af1ea7b1d81de4b0131e76f922d2" title="Constructor. ">MetricDescription</a>(<span class="stringliteral">&quot;internalData&quot;</span>);</div>
+<div class="line">        metricDescription.plotData(<span class="keyword">false</span>).showSummary(<span class="keyword">true</span>).addAggregator(<span class="keyword">new</span> AvgMetricAggregatorProvider());</div>
+<div class="line">        getMetricService().createMetric(metricDescription);</div>
+<div class="line"></div>
+<div class="line">        <span class="comment">// end: following section is used for docu generation - example of metric creation</span></div>
+</div><!-- fragment --> <br/>
+ </p>
 </div><hr/>The documentation for this class was generated from the following file:<ul>
 <li>chassis/core/src/main/java/com/griddynamics/jagger/engine/e1/collector/<a class="el" href="MetricDescription_8java.html">MetricDescription.java</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Jul 2 2014 18:37:52 for Jagger by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu Jul 3 2014 13:23:24 for Jagger by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.4
 </small></address>

@@ -696,7 +696,7 @@
     <title>How to start monitoring agent</title>
     <filename>MonitoringSetup</filename>
     <docanchor file="MonitoringSetup" title="Terms">section_mon_terms</docanchor>
-    <docanchor file="MonitoringSetup" title="Server setup">section_mon_server_setup</docanchor>
+    <docanchor file="MonitoringSetup" title="Jagger server setup">section_mon_server_setup</docanchor>
     <docanchor file="MonitoringSetup" title="Starting agent">section_mon_agent_start</docanchor>
     <docanchor file="MonitoringSetup" title="JMX monitoring configuration for JBoss 6 and later">section_mon_agent_start_jboss</docanchor>
   </compound>
@@ -2834,10 +2834,10 @@
       <arglist>()</arglist>
     </member>
     <member kind="function">
-      <type>String</type>
+      <type>Date</type>
       <name>getEndDate</name>
-      <anchorfile>classcom_1_1griddynamics_1_1jagger_1_1engine_1_1e1_1_1services_1_1data_1_1service_1_1SessionEntity_adf1ca3d5af890fc84f0830c1d9263b9c.html</anchorfile>
-      <anchor>adf1ca3d5af890fc84f0830c1d9263b9c</anchor>
+      <anchorfile>classcom_1_1griddynamics_1_1jagger_1_1engine_1_1e1_1_1services_1_1data_1_1service_1_1SessionEntity_a70823d39d0daee3559358eae0408068f.html</anchorfile>
+      <anchor>a70823d39d0daee3559358eae0408068f</anchor>
       <arglist>()</arglist>
     </member>
     <member kind="function">
@@ -2855,10 +2855,10 @@
       <arglist>()</arglist>
     </member>
     <member kind="function">
-      <type>String</type>
+      <type>Date</type>
       <name>getStartDate</name>
-      <anchorfile>classcom_1_1griddynamics_1_1jagger_1_1engine_1_1e1_1_1services_1_1data_1_1service_1_1SessionEntity_acbdba0f28cd2b4f4673cc9bd5424cf16.html</anchorfile>
-      <anchor>acbdba0f28cd2b4f4673cc9bd5424cf16</anchor>
+      <anchorfile>classcom_1_1griddynamics_1_1jagger_1_1engine_1_1e1_1_1services_1_1data_1_1service_1_1SessionEntity_a619aac212061a9cd7634bbbb05575ee3.html</anchorfile>
+      <anchor>a619aac212061a9cd7634bbbb05575ee3</anchor>
       <arglist>()</arglist>
     </member>
     <member kind="function">
@@ -2878,9 +2878,9 @@
     <member kind="function">
       <type>void</type>
       <name>setEndDate</name>
-      <anchorfile>classcom_1_1griddynamics_1_1jagger_1_1engine_1_1e1_1_1services_1_1data_1_1service_1_1SessionEntity_a4909a2e32009c960477f8de17e98873e.html</anchorfile>
-      <anchor>a4909a2e32009c960477f8de17e98873e</anchor>
-      <arglist>(String endDate)</arglist>
+      <anchorfile>classcom_1_1griddynamics_1_1jagger_1_1engine_1_1e1_1_1services_1_1data_1_1service_1_1SessionEntity_a09ba060b6d03b00de1986eb86774083b.html</anchorfile>
+      <anchor>a09ba060b6d03b00de1986eb86774083b</anchor>
+      <arglist>(Date endDate)</arglist>
     </member>
     <member kind="function">
       <type>void</type>
@@ -2899,9 +2899,9 @@
     <member kind="function">
       <type>void</type>
       <name>setStartDate</name>
-      <anchorfile>classcom_1_1griddynamics_1_1jagger_1_1engine_1_1e1_1_1services_1_1data_1_1service_1_1SessionEntity_ad990ef7e3ffb322947321216f7a47f9d.html</anchorfile>
-      <anchor>ad990ef7e3ffb322947321216f7a47f9d</anchor>
-      <arglist>(String startDate)</arglist>
+      <anchorfile>classcom_1_1griddynamics_1_1jagger_1_1engine_1_1e1_1_1services_1_1data_1_1service_1_1SessionEntity_a875a87dd89fe75426d60577ee08a6337.html</anchorfile>
+      <anchor>a875a87dd89fe75426d60577ee08a6337</anchor>
+      <arglist>(Date startDate)</arglist>
     </member>
     <member kind="function">
       <type>String</type>
@@ -2957,10 +2957,10 @@
       <arglist>()</arglist>
     </member>
     <member kind="function">
-      <type>String</type>
+      <type>Date</type>
       <name>getStartDate</name>
-      <anchorfile>classcom_1_1griddynamics_1_1jagger_1_1engine_1_1e1_1_1services_1_1data_1_1service_1_1TestEntity_ae45a9ee3713a27ec1215ad6d7b87f9e1.html</anchorfile>
-      <anchor>ae45a9ee3713a27ec1215ad6d7b87f9e1</anchor>
+      <anchorfile>classcom_1_1griddynamics_1_1jagger_1_1engine_1_1e1_1_1services_1_1data_1_1service_1_1TestEntity_ad3c044c0249b70589f6ddc987a72e4fc.html</anchorfile>
+      <anchor>ad3c044c0249b70589f6ddc987a72e4fc</anchor>
       <arglist>()</arglist>
     </member>
     <member kind="function">
@@ -3029,9 +3029,9 @@
     <member kind="function">
       <type>void</type>
       <name>setStartDate</name>
-      <anchorfile>classcom_1_1griddynamics_1_1jagger_1_1engine_1_1e1_1_1services_1_1data_1_1service_1_1TestEntity_ac2bc33990294f169b546db516abed2de.html</anchorfile>
-      <anchor>ac2bc33990294f169b546db516abed2de</anchor>
-      <arglist>(String startDate)</arglist>
+      <anchorfile>classcom_1_1griddynamics_1_1jagger_1_1engine_1_1e1_1_1services_1_1data_1_1service_1_1TestEntity_a31ed43602c482d8e6a86713c3a4a1ba5.html</anchorfile>
+      <anchor>a31ed43602c482d8e6a86713c3a4a1ba5</anchor>
+      <arglist>(Date startDate)</arglist>
     </member>
     <member kind="function">
       <type>void</type>

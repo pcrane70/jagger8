@@ -99,12 +99,35 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
  Simplest example: after measurement there are 1000 points, but you want to save only 200 points to database <br/>
  So you are applying averaging aggregator that takes average value for every 5 points from raw data and saves it to DB as single value. <br/>
 </dd></dl>
-<dl class="section user"><dt>Example of aggregators setup in XML:</dt><dd> <div class="fragment"><div class="line">            &lt;!-- begin: following section is used <span class="keywordflow">for</span> docu generation - standard aggregator usage --&gt;</div>
+<dl class="section user"><dt>Example of aggregators setup in XML:</dt><dd></dd></dl>
+<p>Simple example: <br/>
+  <div class="fragment"><div class="line">            &lt;!-- begin: following section is used <span class="keywordflow">for</span> docu generation - standard aggregator usage --&gt;</div>
 <div class="line">            &lt;metric <span class="keywordtype">id</span>=<span class="stringliteral">&quot;CustomSuccessRateSummary&quot;</span> xsi:type=<span class="stringliteral">&quot;metric-success-rate&quot;</span> saveSummary=<span class="stringliteral">&quot;true&quot;</span>&gt;</div>
 <div class="line">                &lt;metric-aggregator xsi:type=<span class="stringliteral">&quot;metric-aggregator-avg&quot;</span>/&gt;</div>
 <div class="line">            &lt;/metric&gt;</div>
 <div class="line">            &lt;!-- end: following section is used <span class="keywordflow">for</span> docu generation - standard aggregator usage --&gt;</div>
-</div><!-- fragment --></dd></dl>
+</div><!-- fragment --></p>
+<p>Example with additional setting for aggregation: <br/>
+  <div class="fragment"><div class="line">            &lt;!-- begin: following section is used <span class="keywordflow">for</span> docu generation - metrics with aggregators --&gt;</div>
+<div class="line"></div>
+<div class="line">            &lt;!-- Math functions with aggregators with settings --&gt;</div>
+<div class="line">            &lt;!-- Normalize metric value by seconds --&gt;</div>
+<div class="line">            &lt;metric <span class="keywordtype">id</span>=<span class="stringliteral">&quot;constant1-sum-normalized-1s&quot;</span> xsi:type=<span class="stringliteral">&quot;metric-custom&quot;</span> calculator=<span class="stringliteral">&quot;constant&quot;</span> plotData=<span class="stringliteral">&quot;true&quot;</span> saveSummary=<span class="stringliteral">&quot;true&quot;</span>&gt;</div>
+<div class="line">                &lt;metric-aggregator xsi:type=<span class="stringliteral">&quot;metric-aggregator-sum&quot;</span> normalizeBy=<span class="stringliteral">&quot;SECOND&quot;</span>/&gt;</div>
+<div class="line">            &lt;/metric&gt;</div>
+<div class="line"></div>
+<div class="line">            &lt;!-- Set number of points in the plots <span class="keywordflow">for</span> <span class="keyword">this</span> metric --&gt;</div>
+<div class="line">            &lt;metric <span class="keywordtype">id</span>=<span class="stringliteral">&quot;increase1-sum-point-count-10&quot;</span> xsi:type=<span class="stringliteral">&quot;metric-custom&quot;</span> calculator=<span class="stringliteral">&quot;alwaysIncrease&quot;</span> plotData=<span class="stringliteral">&quot;true&quot;</span> saveSummary=<span class="stringliteral">&quot;true&quot;</span>&gt;</div>
+<div class="line">                &lt;metric-aggregator xsi:type=<span class="stringliteral">&quot;metric-aggregator-sum&quot;</span> pointCount=<span class="stringliteral">&quot;10&quot;</span>/&gt;</div>
+<div class="line">            &lt;/metric&gt;</div>
+<div class="line"></div>
+<div class="line">            &lt;!-- Set exact interval between points in the plots <span class="keywordflow">for</span> <span class="keyword">this</span> metric --&gt;</div>
+<div class="line">            &lt;metric <span class="keywordtype">id</span>=<span class="stringliteral">&quot;sin1-sum-point-interval-2s&quot;</span> xsi:type=<span class="stringliteral">&quot;metric-custom&quot;</span> calculator=<span class="stringliteral">&quot;sin&quot;</span> plotData=<span class="stringliteral">&quot;true&quot;</span> saveSummary=<span class="stringliteral">&quot;true&quot;</span>&gt;</div>
+<div class="line">                &lt;metric-aggregator xsi:type=<span class="stringliteral">&quot;metric-aggregator-sum&quot;</span> pointInterval=<span class="stringliteral">&quot;2000&quot;</span>/&gt;</div>
+<div class="line">            &lt;/metric&gt;</div>
+<div class="line"></div>
+<div class="line">            &lt;!-- end: following section is used <span class="keywordflow">for</span> docu generation - metrics with aggregators --&gt;</div>
+</div><!-- fragment --></p>
 <dl class="section user"><dt>Aggregators XML elements</dt><dd><a href="./xsd/http___www.griddynamics.com_schema_jagger/complexType/metricAggregatorAbstract.html">metricAggregatorAbstract</a> - what aggregators can be used in XML elements. See <b> 'Sub Types' </b> section of man page <br/>
  How aggregators mentioned above are implemented you can see in section: <a class="el" href="group__Main__Aggregators__group.html">Implementations of aggregators</a> <br/>
  <br/>
@@ -120,6 +143,8 @@ Aggregation interval</h1>
 <div class="line"><span class="preprocessor"></span><span class="preprocessor"># Properties will influence aggregation interval of measured parameters</span></div>
 <div class="line"><span class="preprocessor"></span><span class="preprocessor"># You can define exact interval between points,</span></div>
 <div class="line"><span class="preprocessor"></span><span class="preprocessor">#   or you can define count of points and interval will be calculated</span></div>
+<div class="line"><span class="preprocessor"></span><span class="preprocessor"># It is also possible to set interval or point count for every measured parameter separatly</span></div>
+<div class="line"><span class="preprocessor"></span><span class="preprocessor"># See Aggregators documentation for more info</span></div>
 <div class="line"><span class="preprocessor"></span></div>
 <div class="line">chassis.engine.e1.reporting.task.type=count</div>
 <div class="line"><span class="preprocessor"># chassis.engine.e1.reporting.task.type=interval</span></div>
@@ -145,7 +170,7 @@ Aggregation interval setup</div></div>
  </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Jul 2 2014 18:37:52 for Jagger by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu Jul 3 2014 13:23:24 for Jagger by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.4
 </small></address>

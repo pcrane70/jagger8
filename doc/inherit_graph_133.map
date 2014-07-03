@@ -1,2 +1,13 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="node3" href="$classcom_1_1griddynamics_1_1jagger_1_1engine_1_1e1_1_1BasicTGDecisionMakerListener.html" title="Listener, after test group to make decision about test group execution status. " alt="" coords="553,109,783,155"/>
+<area shape="rect" id="node5" href="$classcom_1_1griddynamics_1_1jagger_1_1engine_1_1e1_1_1collector_1_1CollectThreadsTestListener.html" title="Listener, executed periodically during test to collect number of workload threads. " alt="" coords="527,39,809,86"/>
+<area shape="rect" id="node7" href="$interfacecom_1_1griddynamics_1_1jagger_1_1engine_1_1e1_1_1collector_1_1MetricAggregatorProvider.html" title="com.griddynamics.jagger.engine.e1.collector.\lMetricAggregatorProvider" alt="" coords="527,178,809,225"/>
+<area shape="rect" id="node9" href="$classcom_1_1griddynamics_1_1jagger_1_1engine_1_1e1_1_1collector_1_1AvgMetricAggregatorProvider.html" title="Calculates average value on interval. " alt="" coords="860,5,1143,51"/>
+<area shape="rect" id="node11" href="$classcom_1_1griddynamics_1_1jagger_1_1engine_1_1e1_1_1collector_1_1CumulativeMetricAggregatorProvider.html" title="Calculates increment of the value on interval. " alt="" coords="860,74,1143,121"/>
+<area shape="rect" id="node13" href="$classcom_1_1griddynamics_1_1jagger_1_1engine_1_1e1_1_1collector_1_1StdDevMetricAggregatorProvider.html" title="Calculates standard deviation on interval. " alt="" coords="860,143,1143,190"/>
+<area shape="rect" id="node15" href="$classcom_1_1griddynamics_1_1jagger_1_1engine_1_1e1_1_1collector_1_1SuccessRateAggregatorProvider.html" title="Calculates accumulative success rate from data collected by SuccessRateCollector&lt;Q,R,E&gt; " alt="" coords="860,213,1143,259"/>
+<area shape="rect" id="node17" href="$classcom_1_1griddynamics_1_1jagger_1_1engine_1_1e1_1_1collector_1_1SuccessRateFailsAggregatorProvider.html" title="Calculates accumulative number of failed invokes from data collected by SuccessRateCollector&lt;Q,R,E&gt; " alt="" coords="860,282,1143,329"/>
+<area shape="rect" id="node19" href="$classcom_1_1griddynamics_1_1jagger_1_1engine_1_1e1_1_1collector_1_1SumMetricAggregatorProvider.html" title="Calculates summary of all values on interval. " alt="" coords="860,351,1143,398"/>
+<area shape="rect" id="node20" href="$classServicesInitializable.html" title="ServicesInitializable" alt="" coords="5,52,144,81"/>
+<area shape="rect" id="node22" href="$classcom_1_1griddynamics_1_1jagger_1_1engine_1_1e1_1_1services_1_1ServicesAware.html" title="An abstract class, that gives user an access to Jagger services. " alt="" coords="193,43,476,90"/>
 </map>

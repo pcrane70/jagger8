@@ -99,14 +99,38 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </dd></dl>
 <dl class="section user"><dt>Example of collectors setup in XML:</dt><dd>Following XML code should be included in <a href="./xsd/http___www.griddynamics.com_schema_jagger/element/test-description.html">test-description</a> section <br/>
  Order of collectors execution is the same as order of their declaration in XML <br/>
- If <a href="./xsd/http___www.griddynamics.com_schema_jagger/element/test-description.html">test-description</a> has <a href="./xsd/http___www.griddynamics.com_schema_jagger/element/test-description.html#attr_parent">parent</a>, collectors from <a href="./xsd/http___www.griddynamics.com_schema_jagger/element/test-description.html#attr_parent">parent</a> will be executed first  <div class="fragment"><div class="line">        &lt;!-- begin: following section is used <span class="keywordflow">for</span> docu generation - metric calculator usage--&gt;</div>
+ If <a href="./xsd/http___www.griddynamics.com_schema_jagger/element/test-description.html">test-description</a> has <a href="./xsd/http___www.griddynamics.com_schema_jagger/element/test-description.html#attr_parent">parent</a>, collectors from <a href="./xsd/http___www.griddynamics.com_schema_jagger/element/test-description.html#attr_parent">parent</a> will be executed first <br/>
+</dd></dl>
+<p>Simple example: <br/>
+  <div class="fragment"><div class="line">        &lt;!-- begin: following section is used <span class="keywordflow">for</span> docu generation - metric calculator usage--&gt;</div>
 <div class="line">        &lt;info-collectors <span class="keywordtype">id</span>=<span class="stringliteral">&quot;defaultCollectors&quot;</span>&gt;</div>
 <div class="line">            &lt;validator xsi:type=<span class="stringliteral">&quot;validator-not-null-response&quot;</span>/&gt;</div>
-<div class="line">            &lt;metric <span class="keywordtype">id</span>=<span class="stringliteral">&quot;responseSize&quot;</span>  xsi:type=<span class="stringliteral">&quot;metric-custom&quot;</span> calculator=<span class="stringliteral">&quot;responseSize&quot;</span> plotData=<span class="stringliteral">&quot;true&quot;</span>/&gt;</div>
+<div class="line">            &lt;metric xsi:type=<span class="stringliteral">&quot;metric-custom&quot;</span> <span class="keywordtype">id</span>=<span class="stringliteral">&quot;responseSize&quot;</span> calculator=<span class="stringliteral">&quot;responseSize&quot;</span> plotData=<span class="stringliteral">&quot;true&quot;</span>/&gt;</div>
 <div class="line">            &lt;metric xsi:type=<span class="stringliteral">&quot;metric-ref&quot;</span> ref=<span class="stringliteral">&quot;successRateCollector&quot;</span> plotData=<span class="stringliteral">&quot;true&quot;</span>/&gt;</div>
 <div class="line">        &lt;/info-collectors&gt;</div>
 <div class="line">        &lt;!-- end: following section is used <span class="keywordflow">for</span> docu generation - metric calculator usage--&gt;</div>
-</div><!-- fragment --></dd></dl>
+</div><!-- fragment --></p>
+<p>Example with additional setting for aggregation: <br/>
+  <div class="fragment"><div class="line">            &lt;!-- begin: following section is used <span class="keywordflow">for</span> docu generation - metrics with aggregators --&gt;</div>
+<div class="line"></div>
+<div class="line">            &lt;!-- Math functions with aggregators with settings --&gt;</div>
+<div class="line">            &lt;!-- Normalize metric value by seconds --&gt;</div>
+<div class="line">            &lt;metric <span class="keywordtype">id</span>=<span class="stringliteral">&quot;constant1-sum-normalized-1s&quot;</span> xsi:type=<span class="stringliteral">&quot;metric-custom&quot;</span> calculator=<span class="stringliteral">&quot;constant&quot;</span> plotData=<span class="stringliteral">&quot;true&quot;</span> saveSummary=<span class="stringliteral">&quot;true&quot;</span>&gt;</div>
+<div class="line">                &lt;metric-aggregator xsi:type=<span class="stringliteral">&quot;metric-aggregator-sum&quot;</span> normalizeBy=<span class="stringliteral">&quot;SECOND&quot;</span>/&gt;</div>
+<div class="line">            &lt;/metric&gt;</div>
+<div class="line"></div>
+<div class="line">            &lt;!-- Set number of points in the plots <span class="keywordflow">for</span> <span class="keyword">this</span> metric --&gt;</div>
+<div class="line">            &lt;metric <span class="keywordtype">id</span>=<span class="stringliteral">&quot;increase1-sum-point-count-10&quot;</span> xsi:type=<span class="stringliteral">&quot;metric-custom&quot;</span> calculator=<span class="stringliteral">&quot;alwaysIncrease&quot;</span> plotData=<span class="stringliteral">&quot;true&quot;</span> saveSummary=<span class="stringliteral">&quot;true&quot;</span>&gt;</div>
+<div class="line">                &lt;metric-aggregator xsi:type=<span class="stringliteral">&quot;metric-aggregator-sum&quot;</span> pointCount=<span class="stringliteral">&quot;10&quot;</span>/&gt;</div>
+<div class="line">            &lt;/metric&gt;</div>
+<div class="line"></div>
+<div class="line">            &lt;!-- Set exact interval between points in the plots <span class="keywordflow">for</span> <span class="keyword">this</span> metric --&gt;</div>
+<div class="line">            &lt;metric <span class="keywordtype">id</span>=<span class="stringliteral">&quot;sin1-sum-point-interval-2s&quot;</span> xsi:type=<span class="stringliteral">&quot;metric-custom&quot;</span> calculator=<span class="stringliteral">&quot;sin&quot;</span> plotData=<span class="stringliteral">&quot;true&quot;</span> saveSummary=<span class="stringliteral">&quot;true&quot;</span>&gt;</div>
+<div class="line">                &lt;metric-aggregator xsi:type=<span class="stringliteral">&quot;metric-aggregator-sum&quot;</span> pointInterval=<span class="stringliteral">&quot;2000&quot;</span>/&gt;</div>
+<div class="line">            &lt;/metric&gt;</div>
+<div class="line"></div>
+<div class="line">            &lt;!-- end: following section is used <span class="keywordflow">for</span> docu generation - metrics with aggregators --&gt;</div>
+</div><!-- fragment --></p>
 <dl class="section user"><dt>Info collector XML elements</dt><dd><a href="./xsd/http___www.griddynamics.com_schema_jagger/complexType/metricAbstract.html">metricAbstract</a> - what metrics can be used in information collector XML element. See <b> 'Sub Types' </b> section of man page <br/>
  <a href="./xsd/http___www.griddynamics.com_schema_jagger/complexType/validatorAbstract.html">validatorAbstract</a> - what validators can be used in information collector XML element. See <b> 'Sub Types' </b> section of man page <br/>
  How metrics and validators mentioned above are implemented you can see in section: <a class="el" href="group__Main__Collectors__group.html">Implementations of collectors</a> <br/>
@@ -124,7 +148,7 @@ Simplified Collectors execution sequence</div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Jul 2 2014 18:37:52 for Jagger by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu Jul 3 2014 13:23:24 for Jagger by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.4
 </small></address>
