@@ -48,8 +48,7 @@
         <property name="maxActive" value="40"/>
     </bean>
 
-	<bean id="sessionFactory"
-		class="org.springframework.orm.hibernate3.annotation.AnnotationSessionFactoryBean">
+	<bean id="sessionFactory" class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
 		<property name="dataSource" ref="dataSource" />
 		<property name="hibernateProperties" ref="hibernateProperties"/>
 		<property name="packagesToScan" ref="entityPackages"/>
