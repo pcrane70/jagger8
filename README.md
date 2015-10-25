@@ -1,37 +1,9 @@
-Jagger
-======
+Jagger8
+==========
 
-Jagger is a free application suite for continuous performance testing.
-
-Jagger features:
-----------------
-
-* <b>Full Automation</b>
-  Fully automated test run from CI tools, results tracking and alerting.
-
-* <b>Distributed Testing</b>
-  Distributed workload generation and monitoring.
-
-* <b>Embedded Monitoring</b>
-  Collection of system metrics and JVM metrics via JMX or SNMP.
-
-* <b>Embedded JVM Profiler</b>
-  Sampling profiler for Java applications and hot spots detection.
-
-* <b>Results Warehousing and Browsing</b>
-  Test results saving to DB and web console for results browsing.
-
-* <b>Advanced Workload Management</b>
-  Specify workload as a function of time, CPU utilization, memory usage and more.
-
-* <b>Passive Performance Measurements</b>
-  Load arbitrary metrics from external sources to Jagger and involve them into analysis.
-
-* <b>Functional Validation under Workload</b>
-  Automatic capturing of expected results before performance test.
-
-* <b>Open Configuration</b>
-  Override any component and write test scenarios in Java, Groovy, or JRuby.
-
-* <b>Simulation of Network Failures and Maintenance Operations</b>
-  Simulate packet losses, communication delays, nodes restart in cluster environment.
+This is fork of [Jagger](https://github.com/griddynamics/jagger) load testing tool.
+Current fork is addressed to migrate to latest version of java(java 8) and third-party dependencies like springframework, jaspperreports, etc.
+ 
+### Project state
+Migration to java8 is done, but migration of thirdparty dependencies is in progress. 
+Theoretically this fork will be transferred to griddynamics Jagger repository when work will done.
