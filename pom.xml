@@ -246,14 +246,14 @@
             <dependency>
                 <groupId>org.hibernate</groupId>
                 <artifactId>hibernate-core</artifactId>
-                <version>4.3.11.Final</version>
+                <version>3.6.9.Final</version>
                 <scope>compile</scope>
             </dependency>
 
             <dependency>
                 <groupId>org.hibernate</groupId>
                 <artifactId>hibernate-entitymanager</artifactId>
-                <version>4.3.11.Final</version>
+                <version>3.6.9.Final</version>
             </dependency>
 
             <dependency>
