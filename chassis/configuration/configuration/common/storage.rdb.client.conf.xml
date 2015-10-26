@@ -25,7 +25,7 @@
 
 
     <bean id="h2KeyValueStorage" class="com.griddynamics.jagger.storage.rdb.HibernateKeyValueStorage">
-        <property name="sessionFactory" ref="sessionFactory"/>
+        <property name="hibernateTemplate" ref="hibernateTemplate"/>
         <property name="hibernateBatchSize" value="${chassis.storage.hibernate.batch_size}"/>
         <property name="sessionTempDataCount" value="${chassis.storage.temporary.data.session.count}"/>
     </bean>
@@ -61,6 +61,11 @@
 			</list>
 		</property>
 	</bean>
+
+    <bean id="hibernateTemplate" class="org.springframework.orm.hibernate4.HibernateTemplate" scope="prototype">
+        <property name="sessionFactory" ref="sessionFactory"/>
+        <property name="checkWriteOperations" value="false"/>
+    </bean>
 
     <!-- this bean provides EntityManager in class, which use PersistenceAnnotation -->
     <bean class="org.springframework.orm.jpa.support.PersistenceAnnotationBeanPostProcessor"/>

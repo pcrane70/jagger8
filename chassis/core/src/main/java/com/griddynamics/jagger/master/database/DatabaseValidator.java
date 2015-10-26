@@ -6,10 +6,9 @@ import org.hibernate.criterion.DetachedCriteria;
 import org.hibernate.criterion.Projections;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.orm.hibernate3.HibernateCallback;
-import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
+import org.springframework.orm.hibernate4.HibernateCallback;
+import org.springframework.orm.hibernate4.support.HibernateDaoSupport;
 
-import java.sql.SQLException;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
@@ -66,7 +65,7 @@ public class DatabaseValidator extends HibernateDaoSupport {
                 final long initialValue = ++lastIndex + MetricDetails.ALLOCATION_SIZE;
                 getHibernateTemplate().execute(new HibernateCallback<Void>() {
                     @Override
-                    public Void doInHibernate(Session session) throws HibernateException, SQLException {
+                    public Void doInHibernate(Session session) throws HibernateException {
                         session.persist(new IdGeneratorEntity(MetricDetails.METRIC_ID, initialValue));
                         session.flush();
                         return null;
@@ -102,7 +101,7 @@ public class DatabaseValidator extends HibernateDaoSupport {
     private String validateType(final ColumnType expectedType){
         return getHibernateTemplate().execute(new HibernateCallback<String>() {
             @Override
-            public String doInHibernate(org.hibernate.Session session) throws HibernateException, SQLException {
+            public String doInHibernate(org.hibernate.Session session) throws HibernateException {
                 SQLQuery query = session.createSQLQuery("SELECT DATA_TYPE " +
                                                         "FROM information_schema.COLUMNS " +
                                                         "WHERE TABLE_SCHEMA=DATABASE() " +

@@ -38,8 +38,9 @@ import com.griddynamics.jagger.storage.Namespace;
 import org.hibernate.HibernateException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.orm.hibernate3.HibernateTemplate;
-import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
+import org.springframework.orm.hibernate4.HibernateTemplate;
+import org.springframework.orm.hibernate4.support.HibernateDaoSupport;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.Collection;
 import java.util.Date;
@@ -134,6 +135,7 @@ public class BasicAggregator extends HibernateDaoSupport implements Distribution
         log.debug("onTaskStarted invoked");
     }
 
+    @Transactional
     @Override
     public void onTaskDistributionCompleted(String sessionId, String taskId, Task task) {
         if (task instanceof MonitoringTask){

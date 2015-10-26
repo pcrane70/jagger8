@@ -39,7 +39,7 @@
     <alias name="sequenceSessionIdProvider" alias="sessionIdProviderReadOnly_false"/>
 
     <bean id="sequenceSessionIdProvider" class="com.griddynamics.jagger.master.HibernateSessionIdProvider">
-        <property name="sessionFactory" ref="sessionFactory"/>
+        <property name="hibernateTemplate" ref="hibernateTemplate"/>
         <property name="sessionName" value="${report.session.name}"/>
         <property name="sessionComment" value="${report.session.comment}"/>
     </bean>
@@ -68,7 +68,7 @@
 
     <bean id="abstractReportProviderBean" class="com.griddynamics.jagger.reporting.AbstractReportProviderBean" abstract="true">
         <property name="context" ref="reportingContext"/>
-        <property name="sessionFactory" ref="sessionFactory"/>
+        <property name="hibernateTemplate" ref="hibernateTemplate"/>
         <property name="sessionIdProvider" ref="sessionIdProvider"/>
     </bean>
 

@@ -24,7 +24,7 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
     <bean id="e1ScenarioAggregator" class="com.griddynamics.jagger.engine.e1.aggregator.workload.WorkloadAggregator">
-        <property name="sessionFactory" ref="sessionFactory"/>
+        <property name="hibernateTemplate" ref="hibernateTemplate"/>
         <property name="keyValueStorage" ref="h2KeyValueStorage"/>
         <property name="databaseService" ref="databaseService"/>
 
@@ -33,14 +33,14 @@
     </bean>
 
     <bean id="basicAggregator" class="com.griddynamics.jagger.engine.e1.aggregator.session.BasicAggregator">
-        <property name="sessionFactory" ref="sessionFactory"/>
+        <property name="hibernateTemplate" ref="hibernateTemplate"/>
         <property name="keyValueStorage" ref="h2KeyValueStorage"/>
         <property name="taskExecutionStatusProvider" ref="taskStatusProvider"/>
         <property name="sessionMetaDataStorage" ref="metaDataStorage"/>
     </bean>
 
     <bean id="decisionMakerDistributionListener" class="com.griddynamics.jagger.master.DecisionMakerDistributionListener">
-        <property name="sessionFactory" ref="sessionFactory"/>
+        <property name="hibernateTemplate" ref="hibernateTemplate"/>
     </bean>
 
     <bean id="standardPercentilesGlobal" class="java.util.ArrayList">
@@ -83,7 +83,7 @@
     </bean>
 
     <bean id="durationLogProcessor" class="com.griddynamics.jagger.engine.e1.aggregator.workload.DurationLogProcessor">
-        <property name="sessionFactory" ref="sessionFactory"/>
+        <property name="hibernateTemplate" ref="hibernateTemplate"/>
         <property name="logAggregator" ref="chronologyLogAggregator"/>
         <property name="sessionIdProvider" ref="sessionIdProvider"/>
         <property name="intervalSizeProvider" ref="durationIntervalSizeProvider_${chassis.engine.e1.reporting.task.type}"/>
@@ -108,7 +108,7 @@
     </bean>
 
     <bean id="metricLogProcessor" class="com.griddynamics.jagger.engine.e1.aggregator.workload.MetricLogProcessor">
-        <property name="sessionFactory" ref="sessionFactory"/>
+        <property name="hibernateTemplate" ref="hibernateTemplate"/>
         <property name="logAggregator" ref="chronologyLogAggregator"/>
         <property name="sessionIdProvider" ref="sessionIdProvider"/>
         <property name="intervalSizeProvider" ref="metricIntervalSizeProvider_${chassis.engine.e1.reporting.task.type}"/>
@@ -123,7 +123,7 @@
     </bean>
 
     <bean id="profilerLogProcessor" class="com.griddynamics.jagger.engine.e1.aggregator.workload.ProfilerLogProcessor">
-        <property name="sessionFactory" ref="sessionFactory"/>
+        <property name="hibernateTemplate" ref="hibernateTemplate"/>
         <property name="fileStorage" ref="fileStorage"/>
         <property name="logReader"  ref="bufferedLogReader"/>
 

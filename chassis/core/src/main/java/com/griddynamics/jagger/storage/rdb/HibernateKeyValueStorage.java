@@ -30,7 +30,8 @@ import org.hibernate.Session;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Required;
-import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
+import org.springframework.orm.hibernate4.support.HibernateDaoSupport;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.*;
 
@@ -80,6 +81,7 @@ public class HibernateKeyValueStorage extends HibernateDaoSupport implements Key
         this.sessionId=sessionId;
     }
 
+    @Transactional
     @Override
     public void put(Namespace namespace, String key, Object value) {
         getHibernateTemplate().persist(createKeyValue(namespace, key, value));

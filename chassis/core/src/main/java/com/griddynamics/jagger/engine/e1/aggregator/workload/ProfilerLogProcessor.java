@@ -37,7 +37,7 @@ import org.hibernate.Session;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Required;
-import org.springframework.orm.hibernate3.HibernateCallback;
+import org.springframework.orm.hibernate4.HibernateCallback;
 
 import java.io.IOException;
 import java.sql.SQLException;
@@ -110,7 +110,7 @@ public class ProfilerLogProcessor extends LogProcessor implements DistributionLi
 
             getHibernateTemplate().execute(new HibernateCallback<Void>() {
                 @Override
-                public Void doInHibernate(Session session) throws HibernateException, SQLException {
+                public Void doInHibernate(Session session) throws HibernateException {
                     String prefix = "Agent on (" + profileDTO.getHostAddress() + ") : ";
                     for (Map.Entry<String, RuntimeGraph> runtimeGraphEntry : profileDTO.getRuntimeGraphs().entrySet()) {
                         String context = SerializationUtils.toString(runtimeGraphEntry.getValue());

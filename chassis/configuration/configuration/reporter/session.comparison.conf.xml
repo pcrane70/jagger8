@@ -92,7 +92,7 @@
 
         <property name="monitoringParameterDecisionMaker" ref="stdDevMonitoringParameterDecisionMaker"/>
         <property name="monitoringSummaryRetriever" ref="monitoringSummaryRetriever"/>
-        <property name="sessionFactory"  ref="sessionFactory"/>
+        <property name="hibernateTemplate" ref="hibernateTemplate"/>
     </bean>
     <bean id="stdDevMonitoringParameterDecisionMaker"
           class="com.griddynamics.jagger.engine.e1.sessioncomparation.monitoring.StdDevMonitoringParameterDecisionMaker">
@@ -105,12 +105,12 @@
     </bean>
     <bean id="monitoringSummaryRetriever"
           class="com.griddynamics.jagger.engine.e1.sessioncomparation.monitoring.DefaultMonitoringSummaryRetriever">
-        <property name="sessionFactory" ref="sessionFactory"/>
+        <property name="hibernateTemplate" ref="hibernateTemplate"/>
     </bean>
 
     <!-- Limits -->
     <bean id="limitsBasedFeatureComparator" class="com.griddynamics.jagger.engine.e1.sessioncomparation.limits.LimitsBasedFeatureComparator">
-        <property name="sessionFactory" ref="sessionFactory"/>
+        <property name="hibernateTemplate" ref="hibernateTemplate"/>
         <property name="databaseService" ref="databaseService"/>
     </bean>
 

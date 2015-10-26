@@ -34,8 +34,8 @@ import org.hibernate.Session;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Required;
-import org.springframework.orm.hibernate3.HibernateCallback;
-import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
+import org.springframework.orm.hibernate4.HibernateCallback;
+import org.springframework.orm.hibernate4.support.HibernateDaoSupport;
 
 import java.sql.SQLException;
 import java.util.*;
@@ -92,7 +92,7 @@ public class LimitsBasedFeatureComparator extends HibernateDaoSupport implements
 
             getHibernateTemplate().execute(new HibernateCallback<Void>() {
                 @Override
-                public Void doInHibernate(Session session) throws HibernateException, SQLException {
+                public Void doInHibernate(Session session) throws HibernateException {
                     session.persist(decisionPerSessionEntity);
                     session.flush();
                     return null;

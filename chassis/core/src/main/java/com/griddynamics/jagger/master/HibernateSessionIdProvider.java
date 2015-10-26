@@ -22,10 +22,12 @@ package com.griddynamics.jagger.master;
 
 import java.util.List;
 
-import org.springframework.orm.hibernate3.HibernateTemplate;
-import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
+import org.springframework.orm.hibernate4.HibernateTemplate;
+import org.springframework.orm.hibernate4.HibernateTransactionManager;
+import org.springframework.orm.hibernate4.support.HibernateDaoSupport;
 
 import com.griddynamics.jagger.exception.TechnicalException;
+import org.springframework.transaction.annotation.Transactional;
 
 public class HibernateSessionIdProvider extends HibernateDaoSupport implements SessionIdProvider {
 	private final Object lock = new Object();
@@ -33,6 +35,7 @@ public class HibernateSessionIdProvider extends HibernateDaoSupport implements S
     private String sessionName;
     private String sessionComment;
 
+	@Transactional
 	@Override
 	public String getSessionId() {
 		if (sessionId == null) {
@@ -43,6 +46,8 @@ public class HibernateSessionIdProvider extends HibernateDaoSupport implements S
 				}
 			}
 		}
+		HibernateTransactionManager m;
+
 		return sessionId;
 	}
 

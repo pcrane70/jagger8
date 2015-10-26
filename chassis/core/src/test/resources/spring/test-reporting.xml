@@ -39,14 +39,14 @@
                     <bean class="com.griddynamics.jagger.reporting.MonitoringReportProvider">
                         <property name="context" ref="reportingContext"/>
                         <property name="template" value="reporting/test-report-monitoring.jrxml"/>
-                        <property name="sessionFactory" ref="sessionFactory"/>
+                        <property name="hibernateTemplate" ref="hibernateTemplate"/>
                     </bean>
                     </entry>
                 <entry key="latency-plot">
                     <bean class="com.griddynamics.jagger.reporting.LatencyPlotReportProvider">
                         <property name="context" ref="reportingContext"/>
                         <property name="template" value="reporting/test-report-latency-chart.jrxml"/>
-                        <property name="sessionFactory" ref="sessionFactory"/>
+                        <property name="hibernateTemplate" ref="hibernateTemplate"/>
                     </bean>
                 </entry>
             </map>

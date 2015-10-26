@@ -42,12 +42,11 @@ import org.hibernate.Session;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Required;
-import org.springframework.orm.hibernate3.HibernateCallback;
+import org.springframework.orm.hibernate4.HibernateCallback;
 
 import java.io.File;
 import java.io.IOException;
 import java.net.URLDecoder;
-import java.sql.SQLException;
 import java.util.*;
 
 
@@ -145,7 +144,7 @@ public class MetricLogProcessor extends LogProcessor implements DistributionList
                     log.debug("BEGIN: Save to data base " + metricPath);
                     getHibernateTemplate().execute(new HibernateCallback<Void>() {
                         @Override
-                        public Void doInHibernate(Session session) throws HibernateException, SQLException {
+                        public Void doInHibernate(Session session) throws HibernateException {
                             for (MetricPointEntity stat : statistics) {
                                 session.persist(stat);
                             }

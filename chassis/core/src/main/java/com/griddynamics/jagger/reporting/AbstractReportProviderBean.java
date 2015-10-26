@@ -2,7 +2,7 @@ package com.griddynamics.jagger.reporting;
 
 import com.griddynamics.jagger.master.SessionIdProvider;
 import org.springframework.beans.factory.annotation.Required;
-import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
+import org.springframework.orm.hibernate4.support.HibernateDaoSupport;
 
 /**
  * @author "Artem Kirillov" (akirillov@griddynamics.com)

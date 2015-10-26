@@ -139,7 +139,7 @@
     </bean>
 
     <bean id="generalNodeInfoAggregator" class="com.griddynamics.jagger.engine.e1.aggregator.session.GeneralNodeInfoAggregator">
-        <property name="sessionFactory" ref="sessionFactory"/>
+        <property name="hibernateTemplate" ref="hibernateTemplate"/>
         <property name="nodeCollectInfoTime" ref="nodeCollectInfoTimeTimeout"/>
     </bean>
 
@@ -149,7 +149,7 @@
     </bean>
 
     <bean id="databaseValidator" class="com.griddynamics.jagger.master.database.DatabaseValidator">
-        <property name="sessionFactory" ref="sessionFactory"/>
+        <property name="hibernateTemplate" ref="hibernateTemplate"/>
     </bean>
 
     <bean id="metaDataStorage" class="com.griddynamics.jagger.engine.e1.services.SessionMetaDataStorage"/>
