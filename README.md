@@ -8,8 +8,8 @@ List of uprades:
 * Java - from 8 to 6. Done.
 * Spring framework - from 3.1.4.RELEASE to 4.2.2.RELEASE. Done.
 * Hibernate - from 3.5.4-Final to 4.3.11-Final. Done.
-* Slf4j - from  1.7.5 migration is in progress
-* Jasperreports - migration is in progress
+* Slf4j - from 1.5.2 to 1.7.5. Done.
+* Jasperreports - from 4.0.1 to 6.1.1. Migration is in progress
 
  
 ### Project state
