@@ -29,6 +29,11 @@ import com.griddynamics.jagger.storage.fs.logging.LogReader;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Map;
+import java.util.Set;
+
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.is;
 import static org.mockito.Mockito.*;
@@ -39,9 +44,9 @@ public class ConsistencyValidatorTest {
     private String taskId;
     private NodeId nodeId;
     private LogReader logReader;
-    private Equivalence<Integer> queryEquivalence;
-    private Equivalence<Integer> endpointEquivalence;
-    private Equivalence<Integer> resultEquivalence;
+    private EquivalenceMock<Integer> queryEquivalence;
+    private EquivalenceMock<Integer> endpointEquivalence;
+    private EquivalenceMock<Integer> resultEquivalence;
 
     @BeforeMethod
     public void setUp() throws Exception {
@@ -49,9 +54,9 @@ public class ConsistencyValidatorTest {
         taskId = "task";
         nodeId = NodeId.kernelNode("1");
         logReader = mock(LogReader.class);
-        queryEquivalence = mock(Equivalence.class);
-        endpointEquivalence = mock(Equivalence.class);
-        resultEquivalence = mock(Equivalence.class);
+        queryEquivalence = new EquivalenceMock<>();
+        endpointEquivalence = new EquivalenceMock<>();
+        resultEquivalence = new EquivalenceMock<>();
 
         NodeContext kernelContext = mock(NodeContext.class);
         consistencyValidator = new ConsistencyValidator<Integer, Integer, Integer>(taskId, kernelContext, sessionId, queryEquivalence, endpointEquivalence, resultEquivalence);
@@ -62,58 +67,58 @@ public class ConsistencyValidatorTest {
 
     @Test
     public void shouldValidateCorrectly() throws Exception {
-        currentCalibrationInfo(CalibrationInfo.create(1, 2, 3));
-        when(queryEquivalence.equivalent(1, 1)).thenReturn(true);
-        when(endpointEquivalence.equivalent(2, 2)).thenReturn(true);
-        when(resultEquivalence.equivalent(3, 3)).thenReturn(true);
+        currentCalibrationInfo(CalibrationInfo.create(new Integer(1), new Integer(2), new Integer(3)));
+        queryEquivalence.shouldBeEquals(1, 1);
+        endpointEquivalence.shouldBeEquals(2, 2);
+        resultEquivalence.shouldBeEquals(3, 3);
 
         boolean validate = consistencyValidator.validate(1, 2, 3, 10L);
 
         assertThat(validate, is(true));
-        verify(queryEquivalence).equivalent(1, 1);
-        verify(endpointEquivalence).equivalent(2, 2);
-        verify(resultEquivalence).equivalent(3, 3);
+        queryEquivalence.verifyInvokation(1, 1);
+        endpointEquivalence.verifyInvokation(2, 2);
+        resultEquivalence.verifyInvokation(3, 3);
     }
 
     @Test
     public void shouldFailBecauseResultDoesNotMatch() throws Exception {
-        currentCalibrationInfo(CalibrationInfo.create(1, 2, 3));
-        when(queryEquivalence.equivalent(1, 1)).thenReturn(true);
-        when(endpointEquivalence.equivalent(2, 2)).thenReturn(true);
-        when(resultEquivalence.equivalent(3, 3)).thenReturn(false);
+        currentCalibrationInfo(CalibrationInfo.create(new Integer(1), new Integer(2), new Integer(3)));
+        queryEquivalence.shouldBeEquals(1, 1);
+        endpointEquivalence.shouldBeEquals(2, 2);
+        resultEquivalence.shouldBeFifferent(3, 3);
 
         boolean validate = consistencyValidator.validate(1, 2, 3, 10L);
 
         assertThat(validate, is(false));
-        verify(queryEquivalence).equivalent(1, 1);
-        verify(endpointEquivalence).equivalent(2, 2);
-        verify(resultEquivalence).equivalent(3, 3);
+        queryEquivalence.verifyInvokation(1, 1);
+        endpointEquivalence.verifyInvokation(2, 2);
+        resultEquivalence.verifyInvokation(3, 3);
     }
 
     @Test
     public void shouldFailBecauseQueryDoesNotMatch() throws Exception {
-        currentCalibrationInfo(CalibrationInfo.create(1, 2, 3));
-        when(queryEquivalence.equivalent(1, 1)).thenReturn(false);
-        when(endpointEquivalence.equivalent(2, 2)).thenReturn(true);
+        currentCalibrationInfo(CalibrationInfo.create(new Integer(1), new Integer(2), new Integer(3)));
+        queryEquivalence.shouldBeFifferent(1, 1);
+        endpointEquivalence.shouldBeEquals(2, 2);
 
         boolean validate = consistencyValidator.validate(1, 2, 3, 10L);
 
         assertThat(validate, is(false));
-        verify(queryEquivalence).equivalent(1, 1);
-        verify(resultEquivalence, never()).equivalent(anyInt(), anyInt());
+        queryEquivalence.verifyInvokation(1, 1);
+        resultEquivalence.verifyNotInvoked();
     }
 
     @Test
     public void shouldFailBecauseEndpointDoesNotMatch() throws Exception {
-        currentCalibrationInfo(CalibrationInfo.create(1, 2, 3));
-        when(queryEquivalence.equivalent(1, 1)).thenReturn(true);
-        when(endpointEquivalence.equivalent(2, 2)).thenReturn(false);
+        currentCalibrationInfo(CalibrationInfo.create(new Integer(1), new Integer(2), new Integer(3)));
+        queryEquivalence.shouldBeEquals(1, 1);
+        endpointEquivalence.shouldBeFifferent(2, 2);
 
         boolean validate = consistencyValidator.validate(1, 2, 3, 10L);
 
         assertThat(validate, is(false));
-        verify(endpointEquivalence).equivalent(2, 2);
-        verify(resultEquivalence, never()).equivalent(anyInt(), anyInt());
+        endpointEquivalence.verifyInvokation(2, 2);
+        resultEquivalence.verifyNotInvoked();
     }
 
     private void currentCalibrationInfo(CalibrationInfo... elements) {
@@ -122,5 +127,50 @@ public class ConsistencyValidatorTest {
         LogReader.FileReader<CalibrationInfo> result = mock(LogReader.FileReader.class);
         when(result.iterator()).thenReturn(list.iterator());
         when(logReader.read(sessionId, taskId + "/Calibration", "kernel", CalibrationInfo.class)).thenReturn(result);
+    }
+
+    private static class EquivalenceMock<T> extends Equivalence<T> {
+
+        private Map<T, Set<T>> equals = new HashMap<>();
+        private Map<T, Set<T>> invokations = new HashMap<>();
+
+        public void shouldBeEquals(T a, T b) {
+            equals.putIfAbsent(a, new HashSet<>());
+            Set<T> set = equals.get(a);
+            set.add(b);
+        }
+
+        public void shouldBeFifferent(T a, T b) {
+            equals.putIfAbsent(a, new HashSet<>());
+            Set<T> set = equals.get(a);
+            set.remove(b);
+        }
+
+        public void verifyInvokation(T a, T b) {
+            invokations.putIfAbsent(a, new HashSet<>());
+            Set<T> set = invokations.get(a);
+            if (!set.contains(b)) {
+                throw new IllegalStateException("Verified but not invoked " + a + ".equals(" + b + ")");
+            }
+        }
+
+        public void verifyNotInvoked() {
+            if (!invokations.isEmpty()) {
+                throw new IllegalStateException("Not wanted but invoked " + invokations);
+            }
+        }
+
+        @Override
+        protected boolean doEquivalent(T a, T b) {
+            final Set<T> set = equals.getOrDefault(a, new HashSet<>());
+            invokations.putIfAbsent(a, new HashSet<>());
+            invokations.get(a).add(b);
+            return set.contains(b);
+        }
+
+        @Override
+        protected int doHash(T t) {
+            return t.hashCode();
+        }
     }
 }

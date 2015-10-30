@@ -1,4 +1,4 @@
-/*
+package com.griddynamics.jagger.util;/*
  * Copyright (c) 2010-2012 Grid Dynamics Consulting Services, Inc, All Rights Reserved
  * http://www.griddynamics.com
  *
@@ -18,8 +18,6 @@
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-package com.griddynamics.jagger.util;
-
 import com.google.common.base.Equivalence;
 
 /**
@@ -27,7 +25,7 @@ import com.google.common.base.Equivalence;
  *
  * @author Mairbek Khadikov
  */
-public class Eq {
+public abstract class Eq {
     private Eq() {
 
     }
@@ -40,30 +38,30 @@ public class Eq {
         return AlwaysFalse.INSTANCE;
     }
 
-    private static enum AlwaysTrue implements Equivalence<Object> {
-        INSTANCE;
+    private static class AlwaysTrue extends Equivalence<Object> {
+        private static AlwaysTrue INSTANCE = new AlwaysTrue();
 
         @Override
-        public boolean equivalent(Object a, Object b) {
+        protected boolean doEquivalent(Object a, Object b) {
             return true;
         }
 
         @Override
-        public int hash(Object o) {
+        protected int doHash(Object o) {
             return 0;
         }
     }
 
-    private static enum AlwaysFalse implements Equivalence<Object> {
-        INSTANCE;
+    private static class AlwaysFalse extends Equivalence<Object> {
+        private static AlwaysFalse INSTANCE = new AlwaysFalse();
 
         @Override
-        public boolean equivalent(Object a, Object b) {
+        protected boolean doEquivalent(Object a, Object b) {
             return false;
         }
 
         @Override
-        public int hash(Object o) {
+        protected int doHash(Object o) {
             return 0;
         }
     }

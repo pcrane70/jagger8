@@ -27,6 +27,7 @@ import com.google.common.io.Closeables;
 import com.google.common.util.concurrent.ThreadFactoryBuilder;
 import com.griddynamics.jagger.storage.FileStorage;
 import com.griddynamics.jagger.storage.Namespace;
+import com.griddynamics.jagger.util.IOUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -180,7 +181,7 @@ public abstract class BufferedLogWriter implements LogWriter {
 
                     } finally {
                         try {
-                            Closeables.closeQuietly(objectOutput);
+                            IOUtil.closeQuietly(objectOutput);
                             Closeables.close(os, true);
                         } catch (IOException e) {
                             log.error(e.getMessage(), e);
