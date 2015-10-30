@@ -20,7 +20,7 @@
 
 package com.griddynamics.jagger.master;
 
-import com.google.common.util.concurrent.AbstractExecutionThreadService;
+import com.griddynamics.jagger.util.concurrent.AbstractExecutionThreadService;
 
 import java.util.concurrent.Executor;
 

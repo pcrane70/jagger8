@@ -20,8 +20,8 @@
 
 package com.griddynamics.jagger.engine.e1.process;
 
-import com.google.common.util.concurrent.Service;
-import com.google.common.util.concurrent.Service.State;
+import com.griddynamics.jagger.util.concurrent.Service;
+import com.griddynamics.jagger.util.concurrent.Service.State;
 import com.griddynamics.jagger.util.TimeUtils;
 
 import java.util.concurrent.TimeoutException;

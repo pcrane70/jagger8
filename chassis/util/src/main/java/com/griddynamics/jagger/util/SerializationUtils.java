@@ -88,7 +88,7 @@ public class SerializationUtils {
             if (s.isEmpty()) {
                 log.info("toString({}, '{}', '{}')", new Object[] {toStringCount.getAndIncrement(), s, o});
             }
-            IOUtil.closeQuietly(oos);
+            IOUtils.closeQuietly(oos);
             return s;
         }
     }
@@ -109,8 +109,8 @@ public class SerializationUtils {
         } catch (Exception e) {
             throw new RuntimeException("Error during " + obj + " serialization", e);
         }  finally {
-            IOUtil.closeQuietly(ous);
-            IOUtil.closeQuietly(baos);
+            IOUtils.closeQuietly(ous);
+            IOUtils.closeQuietly(baos);
         }
     }
 

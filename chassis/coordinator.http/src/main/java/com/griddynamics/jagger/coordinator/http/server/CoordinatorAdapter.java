@@ -23,7 +23,7 @@ package com.griddynamics.jagger.coordinator.http.server;
 import com.google.common.base.Throwables;
 import com.google.common.collect.Maps;
 import com.google.common.collect.Sets;
-import com.google.common.util.concurrent.SettableFuture;
+import com.griddynamics.jagger.util.concurrent.SettableFuture;
 import com.griddynamics.jagger.coordinator.*;
 import com.griddynamics.jagger.coordinator.async.AsyncCallback;
 import com.griddynamics.jagger.coordinator.async.AsyncRunner;

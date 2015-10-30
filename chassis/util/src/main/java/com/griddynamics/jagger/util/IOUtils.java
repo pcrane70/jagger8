@@ -3,7 +3,7 @@ package com.griddynamics.jagger.util;
 import java.io.Closeable;
 import java.io.IOException;
 
-public class IOUtil {
+public class IOUtils {
 
     public static void closeQuietly(Closeable closeable) {
         if (closeable != null) {

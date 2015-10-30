@@ -24,10 +24,10 @@ import com.google.common.base.Preconditions;
 import com.google.common.collect.LinkedHashMultimap;
 import com.google.common.collect.Multimap;
 import com.google.common.io.Closeables;
-import com.google.common.util.concurrent.ThreadFactoryBuilder;
+import com.griddynamics.jagger.util.concurrent.ThreadFactoryBuilder;
 import com.griddynamics.jagger.storage.FileStorage;
 import com.griddynamics.jagger.storage.Namespace;
-import com.griddynamics.jagger.util.IOUtil;
+import com.griddynamics.jagger.util.IOUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -181,7 +181,7 @@ public abstract class BufferedLogWriter implements LogWriter {
 
                     } finally {
                         try {
-                            IOUtil.closeQuietly(objectOutput);
+                            IOUtils.closeQuietly(objectOutput);
                             Closeables.close(os, true);
                         } catch (IOException e) {
                             log.error(e.getMessage(), e);

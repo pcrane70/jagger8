@@ -21,8 +21,8 @@ package com.griddynamics.jagger.monitoring;
 
 import com.google.common.collect.Multimap;
 import com.google.common.collect.Sets;
-import com.google.common.util.concurrent.AbstractExecutionThreadService;
-import com.google.common.util.concurrent.Service;
+import com.griddynamics.jagger.util.concurrent.AbstractExecutionThreadService;
+import com.griddynamics.jagger.util.concurrent.Service;
 import com.griddynamics.jagger.coordinator.*;
 import com.griddynamics.jagger.dbapi.entity.TaskData;
 import com.griddynamics.jagger.master.AbstractDistributor;

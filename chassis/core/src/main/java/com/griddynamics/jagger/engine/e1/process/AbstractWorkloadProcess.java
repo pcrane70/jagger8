@@ -1,8 +1,8 @@
 package com.griddynamics.jagger.engine.e1.process;
 
 import com.google.common.collect.Lists;
-import com.google.common.util.concurrent.ListenableFuture;
-import com.google.common.util.concurrent.Service;
+import com.griddynamics.jagger.util.concurrent.ListenableFuture;
+import com.griddynamics.jagger.util.concurrent.Service;
 import com.griddynamics.jagger.coordinator.NodeContext;
 import com.griddynamics.jagger.engine.e1.Provider;
 import com.griddynamics.jagger.engine.e1.ProviderUtil;

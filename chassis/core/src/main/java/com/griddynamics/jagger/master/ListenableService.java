@@ -1,7 +1,7 @@
 package com.griddynamics.jagger.master;
 
 import com.google.common.base.Function;
-import com.google.common.util.concurrent.*;
+import com.griddynamics.jagger.util.concurrent.*;
 import com.griddynamics.jagger.coordinator.NodeId;
 import com.griddynamics.jagger.coordinator.RemoteExecutor;
 import com.griddynamics.jagger.master.configuration.Task;

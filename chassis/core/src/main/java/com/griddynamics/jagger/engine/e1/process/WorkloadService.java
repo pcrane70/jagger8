@@ -1,6 +1,6 @@
 package com.griddynamics.jagger.engine.e1.process;
 
-import com.google.common.util.concurrent.Service;
+import com.griddynamics.jagger.util.concurrent.Service;
 
 public interface WorkloadService extends Service {
 

@@ -22,9 +22,9 @@ package com.griddynamics.jagger.engine.e1.process;
 
 import com.google.common.base.Preconditions;
 import com.google.common.collect.Maps;
-import com.google.common.util.concurrent.ListenableFuture;
-import com.google.common.util.concurrent.Service;
-import com.google.common.util.concurrent.ThreadFactoryBuilder;
+import com.griddynamics.jagger.util.concurrent.ListenableFuture;
+import com.griddynamics.jagger.util.concurrent.Service;
+import com.griddynamics.jagger.util.concurrent.ThreadFactoryBuilder;
 import com.griddynamics.jagger.agent.model.GetGeneralNodeInfo;
 import com.griddynamics.jagger.coordinator.CommandExecutor;
 import com.griddynamics.jagger.coordinator.ConfigurableWorker;

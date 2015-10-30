@@ -20,9 +20,8 @@
 
 package com.griddynamics.jagger.storage.fs.logging;
 
-import com.google.common.io.Closeables;
 import com.griddynamics.jagger.storage.FileStorage;
-import com.griddynamics.jagger.util.IOUtil;
+import com.griddynamics.jagger.util.IOUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Required;
@@ -114,7 +113,7 @@ public class ChronologyLogAggregator implements LogAggregator {
                 queue.add(streamInfo);
             }
         } finally {
-            IOUtil.closeQuietly(objectOutput);
+            IOUtils.closeQuietly(objectOutput);
         }
 
         return new AggregationInfo(minTime, maxTime, count);

@@ -21,7 +21,7 @@
 package com.griddynamics.jagger.master;
 
 import com.google.common.collect.Multimap;
-import com.google.common.util.concurrent.Service;
+import com.griddynamics.jagger.util.concurrent.Service;
 import com.griddynamics.jagger.coordinator.Coordinator;
 import com.griddynamics.jagger.coordinator.NodeContext;
 import com.griddynamics.jagger.coordinator.NodeId;

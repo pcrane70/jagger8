@@ -10,6 +10,7 @@ List of uprades:
 * *Hibernate* - from 3.5.2.Final to 3.6.9.Final
 * *JasperReports* - from 4.0.1 to 6.1.1
 * *Slf4j* - from 1.5.2 to 1.7.5
+* *Guava* - from r9 to 17.0
 
  
 ### Project state

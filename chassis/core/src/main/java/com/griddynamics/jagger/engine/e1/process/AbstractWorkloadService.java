@@ -22,10 +22,10 @@ package com.griddynamics.jagger.engine.e1.process;
 
 import com.google.common.base.Throwables;
 import com.google.common.collect.ImmutableList;
-import com.google.common.util.concurrent.AbstractExecutionThreadService;
-import com.google.common.util.concurrent.AbstractListenableFuture;
-import com.google.common.util.concurrent.Futures;
-import com.google.common.util.concurrent.ListenableFuture;
+import com.griddynamics.jagger.util.concurrent.AbstractExecutionThreadService;
+import com.griddynamics.jagger.util.concurrent.AbstractListenableFuture;
+import com.griddynamics.jagger.util.concurrent.Futures;
+import com.griddynamics.jagger.util.concurrent.ListenableFuture;
 import com.griddynamics.jagger.engine.e1.collector.Validator;
 import com.griddynamics.jagger.engine.e1.collector.invocation.InvocationListener;
 import com.griddynamics.jagger.engine.e1.scenario.Flushable;

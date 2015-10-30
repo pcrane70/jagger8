@@ -19,7 +19,7 @@
  */
 package com.griddynamics.jagger.coordinator.async;
 
-import com.google.common.util.concurrent.SettableFuture;
+import com.griddynamics.jagger.util.concurrent.SettableFuture;
 
 import java.io.Serializable;
 

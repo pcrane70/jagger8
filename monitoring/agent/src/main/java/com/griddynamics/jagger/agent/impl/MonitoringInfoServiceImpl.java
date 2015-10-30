@@ -22,7 +22,7 @@ package com.griddynamics.jagger.agent.impl;
 
 import com.google.common.base.Throwables;
 import com.google.common.collect.Maps;
-import com.google.common.util.concurrent.Futures;
+import com.griddynamics.jagger.util.concurrent.Futures;
 import com.griddynamics.jagger.agent.model.*;
 import com.griddynamics.jagger.dbapi.parameter.DefaultMonitoringParameters;
 import com.griddynamics.jagger.dbapi.parameter.MonitoringParameter;

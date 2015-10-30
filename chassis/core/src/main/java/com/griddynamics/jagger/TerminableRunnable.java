@@ -20,7 +20,7 @@
 
 package com.griddynamics.jagger;
 
-// todo com.google.common.util.concurrent.Service can be used
+// todo com.griddynamics.jagger.util.concurrent.Service can be used
 // todo name!!!!
 public interface TerminableRunnable extends Runnable, Terminable {
 }

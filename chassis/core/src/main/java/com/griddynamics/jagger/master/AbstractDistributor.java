@@ -22,7 +22,7 @@ package com.griddynamics.jagger.master;
 
 import com.google.common.collect.Maps;
 import com.google.common.collect.Multimap;
-import com.google.common.util.concurrent.*;
+import com.griddynamics.jagger.util.concurrent.*;
 import com.griddynamics.jagger.coordinator.*;
 import com.griddynamics.jagger.master.configuration.Task;
 import org.slf4j.Logger;
