@@ -79,7 +79,7 @@
         <snapshotRepository>
             <id>gd-jagger-nexus-snapshots</id>
             <name>gd-jagger-nexus-snapshots</name>
-            <url>${snapshotRepo}}</url>
+            <url>${snapshotRepo}</url>
             <layout>default</layout>
             <uniqueVersion>false</uniqueVersion>
         </snapshotRepository>
