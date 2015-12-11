@@ -34,7 +34,13 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <jagger.targetJdkVersion>1.8</jagger.targetJdkVersion>
         <spring.version>4.2.2.RELEASE</spring.version>
+
+        <snapshotRepoId>gd-jagger-nexus-snapshots</snapshotRepoId>
+        <snapshotRepoName>gd-jagger-nexus-snapshots</snapshotRepoName>
         <snapshotRepo>https://nexus.griddynamics.net/nexus/content/repositories/jagger-snapshots/</snapshotRepo>
+
+        <releaseRepoId>gd-jagger-nexus-releases</releaseRepoId>
+        <releaseRepoName>gd-jagger-nexus-releases</releaseRepoName>
         <releaseRepo>https://nexus.griddynamics.net/nexus/content/repositories/jagger-releases/</releaseRepo>
     </properties>
 
@@ -77,16 +83,16 @@
 
     <distributionManagement>
         <snapshotRepository>
-            <id>gd-jagger-nexus-snapshots</id>
-            <name>gd-jagger-nexus-snapshots</name>
+            <id>${snapshotRepoId}</id>
+            <name>${snapshotRepoName}</name>
             <url>${snapshotRepo}</url>
             <layout>default</layout>
             <uniqueVersion>false</uniqueVersion>
         </snapshotRepository>
 
         <repository>
-            <id>gd-jagger-nexus-releases</id>
-            <name>gd-jagger-nexus-releases</name>
+            <id>${releaseRepoId}</id>
+            <name>${releaseRepoName}</name>
             <url>${releaseRepo}</url>
             <layout>default</layout>
         </repository>
